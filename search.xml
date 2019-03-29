@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[实验]]></title>
+    <url>%2F2019%2F03%2F29%2F%E5%AE%9E%E9%AA%8C%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[hello]]></title>
     <url>%2F2019%2F03%2F07%2Fhello%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[hello123]]></title>
+    <url>%2F2019%2F03%2F07%2Fhello123%2F</url>
     <content type="text"></content>
   </entry>
   <entry>
