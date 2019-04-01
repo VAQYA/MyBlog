@@ -24,6 +24,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
 
 
 
@@ -98,6 +105,24 @@
 
 
 
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 
   <meta name="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
 <meta property="og:type" content="website">
@@ -234,6 +259,23 @@
         
         
           
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-archives">
 
     
@@ -330,7 +372,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
       <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -469,25 +511,20 @@
       
         
           
-            <p>java中Runnable 和 Callable 有什么不同？<br>Runnable和Callable都代表那些要在不同的线程中执行的任务，Runnable从jdk1.0开始就有了，Callable是在jdk1.5出的，Callable的call（）方法可以返回值和抛出异常，而Runnable的run（）方法没有这些功能，Callable可以返回装载有返回结果的Future对象。<br>当run（）或者call（）方法执行完成后，线程会自动结束。</p>
-<p>volatile是一个特殊的修饰符，只有成员变量才能使用它。在java并发程序缺少同步类的情况下，多线程对成员变量的操作对其他线程是透明的。volatile变量可以保证下一个读取操作在上一个写操作完成后进行。</p>
-<p>Vector使用同步方法来实现线程安全的，ArrayList不是线程安全的。</p>
-<p>如何在两个线程间实现共享数据？<br>通过共享对象，或者使用像阻塞队列这样的数据结构。</p>
-<p>notify和notifyAll的区别？<br>notify不能唤醒某个具体线程，所以只有一个线程在等待的时候才有用，notifyAll唤醒所有线程，并允许他们之间争夺线程锁，确保至少有一个线程能继续运行。</p>
-<p>wait、notify、notifyAll方法都是锁级别的操作，所 以把他们定义在Object中，因为锁属于对象。</p>
-<p>sleep（）和wait（）方法的区别？<br>都用来暂停当前运行的程序，sleep（）方法是Thread方法，只是短暂暂停，不释放线程锁，wait( )是对象方法，会释放对象锁。</p>
-<p>jsp的四大域对象：pageContext，request，session，application<br>九大内置对象：Request、Response、Session、Out、PageContext、Page、Exception、Application、Config</p>
-<p>AJAX通过异步模式，可以实现局部刷新，在不更新整个页面的前提下维护数据，承担了一部分本来由服务器承担的工作，从而减少了大量用户下的服务器负载。</p>
-<p>SpringMVC的常用注解：<br>@RequestMapping 用于请求url映射<br>@RequestBody 注释实现接收http请求的json数据，将json数据转换为java对象。<br>@ResponseBody 注释实现将controller方法返回对象转化为json相应给客户。</p>
-<p>拦截器与过滤器的区别：<br>拦截器是基于java的反射机制，过滤器是基于函数回调的；<br>拦截器不依赖于servlet容器。<br>拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。<br>拦截器可以访问action上下文，值栈（本质是ArrayList）里的对象，而过滤器不能。<br>action声明周期中，拦截器可以多次被调用，而过滤器只能在容器中初始化时被调用。</p>
-<p>Struts2<br>action是多例的<br>可分为三个部分：<br>核心控制器FilterDispatch、业务控制器action、用户实现的业务逻辑组件</p>
-<p>工作原理：<br>① 客户端初始化一个servlet容器的请求<br>② 请求经过一系列的过滤器<br>③ 接着FilterDispatch被调用<br>④ ActionMapper决定需要哪个action，FilterDispatch把请求的处理交给ActionProxy<br>⑤  ActionProxy通过Configuration Manager询问框架的配置文件，找到需要调用的action类<br>⑥ ActionProxy创建一个ActionInvocation的实例<br>⑦ ActionInvocation的实例通过命名模式来调用Action，前后涉及到拦截器调用<br>⑧ Action执行完毕，ActionInvocation负责根据struts.xml的配置找到对应的返回结果，返回结果通常是jsp。</p>
-<p> 工作流程<br>      1、客户端浏览器发出HTTP请求.<br>      2、根据web.xml配置，该请求被FilterDispatcher接收<br>      3、根据struts.xml配置，找到需要调用的Action类和方法， 并通过IoC方式，将值注入给Aciton<br>      4、Action调用业务逻辑组件处理业务逻辑，这一步包含表单验证。<br>      5、Action执行完毕，根据struts.xml中的配置找到对应的返回结果result，并跳转到相应页面<br>      6、返回HTTP响应到客户端浏览器</p>
-<p>Struts2和SpringMVC的区别<br>1.springmvc入口是一个servlet前端控制器(DispatcherServlet),struts2入口是一filter过滤器(StrutsPrepareAndExecuteFilter).<br>        2.struts2通过在action类中定义成员变量接收参数,(属性驱动和模型驱动),它只能使用多例模式管理action.<br> springmvc通过在coontroller方法中定义形参接收参数,springmvc可以使用单例模式管理controller.<br>        3.springmvc是基于方法开发的,注解开发中使用requestMapping将url和方法进行 映射,如果根据url找到controller类的方法生成一个handler处理器对象(只包括一个method).<br>struts2是基于类开发的,每个请求过来创建一个action实例,实例对象中有若干个方法.<br>开发中建议使用springmvc,springmvc方法更类似service业务方法.<br>        4.struts2采用值栈存储请求和相应的数据,通过OGNL存取数据,springmvc通过参数绑定期将request请求内容解析,并给方法形参赋值.</p>
-<pre><code>5.struts2和springmvc的速度是相当的,由于struts2的漏洞较多,跟多企业使用springmvc
-</code></pre><hr>
-
+            <p>
+              java中Runnable 和 Callable 有什么不同？Runnable和Callable都代表那些要在不同的线程中执行的任务，Runnable从jdk1.0开始就有了，Callable是在jdk1.5出的，Callable的call（）方法可以返回值和抛出异常，而Runnable的run（）方法没有这些功能，Callable可以返回装载有返回结果的Future对象。当run（）或者call（）方法执行完成后，线程会自动结束。
+volatile是一个特殊的修饰符，只有成员变量才能使用它。在java并发程序缺少同步类的情况下，多线程对成员变量的操作对
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/Java/实验/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -547,7 +584,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
       <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -668,8 +705,19 @@
       
         
           
-            
+            <p>
+              
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/hello123/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -729,7 +777,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
       <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -834,8 +882,19 @@
       
         
           
-            
+            <p>
+              
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/hello/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -895,7 +954,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
       <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1000,17 +1059,22 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new "My New Post"
+More info: Writing
+Run server$ h
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1081,6 +1145,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="VAQ">
+            
               <p class="site-author-name" itemprop="name">VAQ</p>
               <div class="site-description motion-element" itemprop="description">平庸，就是失去追求卓越信念的那个瞬间！</div>
           </div>
@@ -1125,6 +1191,32 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:863592923@qq.com" title="email &rarr; mailto:863592923@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>email</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="tencent://QQInterLive/?Cmd=2&Uin=863592923" title="QQ &rarr; tencent://QQInterLive/?Cmd=2&Uin=863592923" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+            </div>
           
 
           
@@ -1181,7 +1273,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  #<div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -1189,7 +1281,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
+  #<div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
 
 
 
