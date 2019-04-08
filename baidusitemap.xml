@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://vaq.gitee.io/uncategorized/CDN/</loc>
-    <lastmod>2019-04-03</lastmod>
+    <loc>http://vaq.gitee.io/Java/Shiro/</loc>
+    <lastmod>2019-04-08</lastmod>
   </url>  <url>
     <loc>http://vaq.gitee.io/Java/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2019-04-01</lastmod>
+    <lastmod>2019-04-06</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/CDN/</loc>
+    <lastmod>2019-04-03</lastmod>
   </url>  <url>
     <loc>http://vaq.gitee.io/uncategorized/hello-world/</loc>
     <lastmod>2019-03-07</lastmod>
