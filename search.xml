@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[jQuery]]></title>
+    <url>%2Funcategorized%2FjQuery%2F</url>
+    <content type="text"><![CDATA[Ajax的核心是通过XMLHttpRequest对象，使网页与服务器进行通信，获取非本页的内容，用于异步请求；Jsonp核心是动态添加&lt;script&gt;标签调用服务器提供的js脚本，用于跨域请求。Ajax也可以通过服务器代理解决跨域问题。 jQery对Ajax异步进行了封装，几种常用的方式：$.ajax , $.post , $.get , $.getJSON123456789101112131415$.ajax(&#123; //常用的参数 method //数据的提交方式，get或post url //数据的提交路径 async //是否支持异步，默认true data //需要提交的数据 dataType //服务器返回数据的类型，可指定HTML、xml、json、text success : function()&#123;&#125; //请求成功后的回调函数 error : functin()&#123;&#125; //请求失败后的回调函数&#125;);$.post(&#123; contentType //发送post请求的格式，可指定text/plain,application/json &#125;) $(document).ready(function(){ console.log(“hello”);});等同于$(function()){ console.log(“hello”);}); 12345678910111213bootstrapValidator插件API,使用前导入js文件bootstrapValidator.min.js//获取当前表单的验证状态var flag = $(formName).data("bootstrapValitor").isValid();//触发全部验证$(formName).data('bootstrapValidator').validate();//触发指定字段的验证$(formName).data(“bootstrapValidator”).validateField('fieldName');//重置表单所有验证规则$(formName).data("bootstrapValidator").resetForm(); JavaScript中数组的push方法，向数组的末尾添加一个或多个元素，并返回新的长度。 jQuery中$.each()方法的使用]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[web.xml配置]]></title>
     <url>%2Funcategorized%2FwebXM%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[在web.xml中配置Spring的配置文件applicationContext.xml,需要为其配置ContextLoaderListener监听器12345678&lt;context-param&gt; &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt; &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;&lt;/context-param&gt;&lt;listener&gt; &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;&lt;/listener&gt; Spring提供ServletContextListener的一个实现类ContextLoaderListener监听器，启动tomcat容器时，该类的作用就是自动装载ApplicationContext的配置信息，如果没有设置contextConfigLocation的初始参数，则会使用默认WEB_INF路径下的application.xml文件。 ContextLoaderListener会读取这些xml文件产生的WebApplicationContext对象，然后将这些对象放置在ServletContext的属性里，这样我们只要可以得到Servlet就可以得到WebApplicationContext对象，并利用对象访问Spring容器管理的bean。 ps: web.xml中元素的加载顺序：context-param–&gt;listeners–&gt;filters–&gt;servlets(load on startup)]]></content>
