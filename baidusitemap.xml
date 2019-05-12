@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://vaq.gitee.io/Java/WMS/</loc>
+    <loc>http://vaq.gitee.io/Java/Java%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     <lastmod>2019-05-12</lastmod>
   </url>  <url>
-    <loc>http://vaq.gitee.io/uncategorized/Java%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+    <loc>http://vaq.gitee.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF/CDN/</loc>
+    <lastmod>2019-05-12</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/Java/WMS/</loc>
     <lastmod>2019-05-12</lastmod>
   </url>  <url>
     <loc>http://vaq.gitee.io/uncategorized/jQuery/</loc>
@@ -18,9 +21,6 @@
   </url>  <url>
     <loc>http://vaq.gitee.io/Java/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2019-04-09</lastmod>
-  </url>  <url>
-    <loc>http://vaq.gitee.io/uncategorized/CDN/</loc>
-    <lastmod>2019-04-03</lastmod>
   </url>  <url>
     <loc>http://vaq.gitee.io/uncategorized/hello-world/</loc>
     <lastmod>2019-03-07</lastmod>
