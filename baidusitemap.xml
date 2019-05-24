@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://vaq.gitee.io/Java/JavaInterview/</loc>
-    <lastmod>2019-05-16</lastmod>
+    <lastmod>2019-05-24</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/%E6%95%B0%E6%8D%AE%E5%BA%93/sql/</loc>
+    <lastmod>2019-05-17</lastmod>
   </url>  <url>
     <loc>http://vaq.gitee.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF/CDN/</loc>
     <lastmod>2019-05-12</lastmod>
