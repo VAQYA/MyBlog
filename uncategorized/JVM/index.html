@@ -124,16 +124,17 @@
     }
 </style>
 
-  <meta name="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VAQ的博客">
-<meta property="og:url" content="http://vaq.gitee.io/archives/2019/03/index.html">
+  <meta name="description" content="JVM(Java Virtual Machine) Java虚拟机组成 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性信息）、编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM">
+<meta property="og:url" content="http://vaq.gitee.io/uncategorized/JVM/index.html">
 <meta property="og:site_name" content="VAQ的博客">
-<meta property="og:description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+<meta property="og:description" content="JVM(Java Virtual Machine) Java虚拟机组成 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性信息）、编">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-10-23T16:25:05.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VAQ的博客">
-<meta name="twitter:description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+<meta name="twitter:title" content="JVM">
+<meta name="twitter:description" content="JVM(Java Virtual Machine) Java虚拟机组成 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性信息）、编">
 
 
 
@@ -141,7 +142,7 @@
 
   
   
-  <link rel="canonical" href="http://vaq.gitee.io/archives/2019/03/">
+  <link rel="canonical" href="http://vaq.gitee.io/uncategorized/JVM/">
 
 
 
@@ -151,7 +152,7 @@
   };
 </script>
 
-  <title>归档 | VAQ的博客</title>
+  <title>JVM | VAQ的博客</title>
   
 
 
@@ -199,7 +200,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,7 +276,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -346,133 +347,253 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 16 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/JVM/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/Java/随笔/" itemprop="url">
-            
-              <span itemprop="name">随笔</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JVM
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-29T13:10:40+08:00" content="2019-03-29">
-          03-29
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-24 00:23:35 / 修改时间：00:25:05" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:35+08:00">2020-10-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">899</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/uncategorized/hello-world/" itemprop="url">
-            
-              <span itemprop="name">Hello World</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-07T13:51:10+08:00" content="2019-03-07">
-          03-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="JVM-Java-Virtual-Machine-Java虚拟机组成"><a href="#JVM-Java-Virtual-Machine-Java虚拟机组成" class="headerlink" title="JVM(Java Virtual Machine) Java虚拟机组成"></a>JVM(Java Virtual Machine) Java虚拟机组成</h3><ol>
+<li><p>类加载器子系统  将class文件装载到JVM运行时数据区中 </p>
+</li>
+<li><p>运行时数据区（内存模型）</p>
+<p> 2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆</p>
+<pre><code>年轻代+老年代 堆默认600m，老年代占2/3内存
+</code></pre><p> 2.2 方法区（元空间）： 线程共享</p>
+<pre><code>常量、静态变量、类信息（类名、方法信息、字段属性信息）、编译器编译后的代码
+方法区中有一块区域叫运行时常量池
+</code></pre><p> 2.3 栈(Stack)： 线程私有，内存连续，线程运行时会分配给该线程一块栈内存A，线程私有，该线程每运行一个方法都会创建一个栈帧，从A内存分配一块B内存给该方法 。 存放的一个个栈帧FILO先进后出 ，一个方法从调用到到执行完成就对应着一个栈帧在虚拟机栈中入栈到出栈的过程</p>
+<pre><code>局部变量表：基础类型时存局部变量的值，对象类型时存对象在堆中的内存地址（占用的空间大小在编译器时就确定了）
+操作数栈：变量操作时暂存的数值
+指向运行时常量池的引用：  方法运行时可能会用到类中的常量
+方法返回地址：方法执行完毕后要返回调用它的地方
+</code></pre></li>
+</ol>
+<pre><code>2.4 本地方法栈： 本地方法运行时需要的一块内存。  eg: native 修饰的方法是由C语言实现的，线程的start方法
+
+
+
+2.5 程序计数器(Program Counter Register) 线程私有： 也称为PC寄存器，记录运行代码的位置，这样线程切换时可以在当前位置继续运行。 字节码执行引擎负责修改记录程序计数器的值
+                                                程序计数器存储的数据所占空间的大小不会程序的执行而发生改变，所以程序计数器不会出现内存溢出现象（唯一一个）
+</code></pre><ol start="3">
+<li>字节码执行引擎    执行class文件的字节码指令，相当于机器的CPU</li>
+</ol>
+<p>类文件被编译成字节码文件后，JVM虚拟机通过类加载器子系统将其加载到数据区，再由字节码执行引擎去运行</p>
+<h3 id="GC，Garbage-Collection垃圾收集"><a href="#GC，Garbage-Collection垃圾收集" class="headerlink" title="GC，Garbage Collection垃圾收集"></a>GC，Garbage Collection垃圾收集</h3><p>回收垃圾对象（可达性分析后不可达的对象）</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+    <div>
+    
+		<br>
+        <div style="text-align:center;color: #ccc;font-size:20px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uncategorized/知行合一/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/uncategorized/Redis/" rel="prev" title="Redis">
+                Redis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzUwNi8yMDA0Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -492,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -586,6 +716,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-Java-Virtual-Machine-Java虚拟机组成"><span class="nav-number">1.</span> <span class="nav-text">JVM(Java Virtual Machine) Java虚拟机组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GC，Garbage-Collection垃圾收集"><span class="nav-number">2.</span> <span class="nav-text">GC，Garbage Collection垃圾收集</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -767,6 +914,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -782,6 +933,23 @@
 
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'uncategorized/JVM/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
