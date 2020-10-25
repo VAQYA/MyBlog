@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E5%8F%8D%E5%B0%84/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/Spring/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/Shell/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/Servlet/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/RestTemplate/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/Redis/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/RabbitMQ/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/IO/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/git/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/dom4j/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2020-10-25</lastmod>
+  </url>  <url>
     <loc>http://vaq.gitee.io/uncategorized/%E7%9F%A5%E8%A1%8C%E5%90%88%E4%B8%80/</loc>
     <lastmod>2020-10-23</lastmod>
   </url>  <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-10-23</lastmod>
-  </url>  <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2020-10-23</lastmod>
-  </url>  <url>
     <loc>http://vaq.gitee.io/uncategorized/%E7%BA%A2%E9%BB%91%E6%A0%91/</loc>
-    <lastmod>2020-10-23</lastmod>
-  </url>  <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2020-10-23</lastmod>
-  </url>  <url>
-    <loc>http://vaq.gitee.io/uncategorized/Redis/</loc>
     <lastmod>2020-10-23</lastmod>
   </url>  <url>
     <loc>http://vaq.gitee.io/uncategorized/JVM/</loc>

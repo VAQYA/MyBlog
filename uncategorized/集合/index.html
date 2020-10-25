@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="VAQ的博客">
 <meta property="og:description" content="HashMap数据结构 java7 数组+链表+（红黑树java8） 默认初始容量16 2的n次幂 是线程不安全的 死锁（1.7版本之前会）或数据丢失 多线程扩容可能会死锁，如果当前位置有两个数据AB，其中一个线程新扩容存储顺序可能是AB，另一个线程是BA，造成死锁  数组查找 时间复杂度O(1)插入、删除 设计到元素的移动，时间复杂度为O(n) 链表新增、删除 只需处理结点间的引用，时间复杂度为">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-23T16:26:20.324Z">
+<meta property="og:updated_time" content="2020-10-25T15:46:02.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合">
 <meta name="twitter:description" content="HashMap数据结构 java7 数组+链表+（红黑树java8） 默认初始容量16 2的n次幂 是线程不安全的 死锁（1.7版本之前会）或数据丢失 多线程扩容可能会死锁，如果当前位置有两个数据AB，其中一个线程新扩容存储顺序可能是AB，另一个线程是BA，造成死锁  数组查找 时间复杂度O(1)插入、删除 设计到元素的移动，时间复杂度为O(n) 链表新增、删除 只需处理结点间的引用，时间复杂度为">
@@ -410,12 +410,24 @@
                 
               
 
-              <time title="创建时间：2020-10-24 00:24:24 / 修改时间：00:26:20" itemprop="dateCreated datePublished" datetime="2020-10-24T00:24:24+08:00">2020-10-24</time>
+              <time title="创建时间：2020-10-24 00:24:24" itemprop="dateCreated datePublished" datetime="2020-10-24T00:24:24+08:00">2020-10-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-25 23:46:02" itemprop="dateModified" datetime="2020-10-25T23:46:02+08:00">2020-10-25</time>
               
             
           </span>
@@ -450,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">344</span>
+                <span title="本文字数">731</span>
               
 
               
@@ -493,6 +505,11 @@
 <h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>新增、删除 只需处理结点间的引用，时间复杂度为O(1)<br>查找 需要遍历列表的所有结点逐一进行对比，复杂度为O(n)</p>
 <h3 id="存入数据put"><a href="#存入数据put" class="headerlink" title="存入数据put"></a>存入数据put</h3><p>通过对数据元素的hashCode值对容量取模（hashCode值 % 容量）来分配位置到数组，取模值相同则在数组的当前位置以链表结构形式继续存入</p>
 <h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p>扩容时，是用位运算，将旧数据元素分配位置，迁移到新数组</p>
+<h2 id="容器-在java-util包中"><a href="#容器-在java-util包中" class="headerlink" title="容器-在java.util包中"></a>容器-在java.util包中</h2><h2 id="Collection是一个个的存"><a href="#Collection是一个个的存" class="headerlink" title="Collection是一个个的存"></a>Collection是一个个的存</h2><h2 id="Map是键值对的形式存"><a href="#Map是键值对的形式存" class="headerlink" title="Map是键值对的形式存"></a>Map是键值对的形式存</h2><h3 id="Collection对象在调用remove、contains方法时会调用equals和hashCode方法，重写equals时必须重写hashCode方法"><a href="#Collection对象在调用remove、contains方法时会调用equals和hashCode方法，重写equals时必须重写hashCode方法" class="headerlink" title="Collection对象在调用remove、contains方法时会调用equals和hashCode方法，重写equals时必须重写hashCode方法"></a>Collection对象在调用remove、contains方法时会调用equals和hashCode方法，重写equals时必须重写hashCode方法</h3><h3 id="Collection继承了Iterable接口，有个iterator-方法"><a href="#Collection继承了Iterable接口，有个iterator-方法" class="headerlink" title="Collection继承了Iterable接口，有个iterator()方法"></a>Collection继承了Iterable接口，有个iterator()方法</h3><p>用于统一遍历元素，返回的Iterator对象，称为迭代器，可以方便的删除集合中的内容</p>
+<h3 id="Set-无序不可重复"><a href="#Set-无序不可重复" class="headerlink" title="Set 无序不可重复"></a>Set 无序不可重复</h3><p>HashSet、TreeSet</p>
+<h3 id="List-有序可重复"><a href="#List-有序可重复" class="headerlink" title="List 有序可重复"></a>List 有序可重复</h3><p>ArrayList、LinkedList</p>
+<h3 id="java-lang-Comparable接口，只有一个方法compareTo"><a href="#java-lang-Comparable接口，只有一个方法compareTo" class="headerlink" title="java.lang.Comparable接口，只有一个方法compareTo()"></a>java.lang.Comparable接口，只有一个方法compareTo()</h3><p>所有排序的类都实现了该接口<br>public int compareTo(Object object);<br>返回0，相等，<br>返回正数，大于object，<br>返回负数，小于object。</p>
+<p>### </p>
 
       
     </div>
@@ -622,7 +639,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -709,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap数据结构"><span class="nav-number">1.</span> <span class="nav-text">HashMap数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表"><span class="nav-number">3.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存入数据put"><span class="nav-number">4.</span> <span class="nav-text">存入数据put</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩容"><span class="nav-number">5.</span> <span class="nav-text">扩容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap数据结构"><span class="nav-number">1.</span> <span class="nav-text">HashMap数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表"><span class="nav-number">3.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存入数据put"><span class="nav-number">4.</span> <span class="nav-text">存入数据put</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩容"><span class="nav-number">5.</span> <span class="nav-text">扩容</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#容器-在java-util包中"><span class="nav-number"></span> <span class="nav-text">容器-在java.util包中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection是一个个的存"><span class="nav-number"></span> <span class="nav-text">Collection是一个个的存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map是键值对的形式存"><span class="nav-number"></span> <span class="nav-text">Map是键值对的形式存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection对象在调用remove、contains方法时会调用equals和hashCode方法，重写equals时必须重写hashCode方法"><span class="nav-number">1.</span> <span class="nav-text">Collection对象在调用remove、contains方法时会调用equals和hashCode方法，重写equals时必须重写hashCode方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection继承了Iterable接口，有个iterator-方法"><span class="nav-number">2.</span> <span class="nav-text">Collection继承了Iterable接口，有个iterator()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-无序不可重复"><span class="nav-number">3.</span> <span class="nav-text">Set 无序不可重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-有序可重复"><span class="nav-number">4.</span> <span class="nav-text">List 有序可重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-lang-Comparable接口，只有一个方法compareTo"><span class="nav-number">5.</span> <span class="nav-text">java.lang.Comparable接口，只有一个方法compareTo()</span></a></li></ol></li></div>
             
 
           </div>
@@ -741,7 +758,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">66k</span>
   
 
   
@@ -750,7 +767,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">41 分钟</span>
+    <span title="站点阅读时长">1:01</span>
   
 </div>
 

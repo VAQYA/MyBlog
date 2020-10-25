@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="VAQ的博客">
 <meta property="og:description" content="Rediskey-value型数据库 Redis的持久化 RDB默认方式按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期 AOF将每一个收到的写命令通过write函数追加到文件最后，重">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-23T16:25:22.540Z">
+<meta property="og:updated_time" content="2020-10-25T15:52:42.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
 <meta name="twitter:description" content="Rediskey-value型数据库 Redis的持久化 RDB默认方式按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期 AOF将每一个收到的写命令通过write函数追加到文件最后，重">
@@ -410,12 +410,24 @@
                 
               
 
-              <time title="创建时间：2020-10-24 00:23:47 / 修改时间：00:25:22" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:47+08:00">2020-10-24</time>
+              <time title="创建时间：2020-10-24 00:23:47" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:47+08:00">2020-10-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-25 23:52:42" itemprop="dateModified" datetime="2020-10-25T23:52:42+08:00">2020-10-25</time>
               
             
           </span>
@@ -450,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.3k</span>
               
 
               
@@ -518,6 +530,14 @@
 <li>单线程避免了频繁的上下文切换</li>
 <li>采用了非阻塞I/O多路复用机制</li>
 </ol>
+<h1 id="Redis-1"><a href="#Redis-1" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redisson"><a href="#Redisson" class="headerlink" title="Redisson"></a>Redisson</h2><p>是Redis官方Java版客户端</p>
+<ol>
+<li>key：value存储系统</li>
+</ol>
+<h3 id="五种类型"><a href="#五种类型" class="headerlink" title="五种类型"></a>五种类型</h3><p>String、list、set、sorted set（或zset，因为有序集合相关的操作指令都是以z开头的，比如zrange、zadd、zrevrange、zrangebyscore等等)、hash</p>
+<h3 id="值是否带有双引号问题"><a href="#值是否带有双引号问题" class="headerlink" title="值是否带有双引号问题"></a>值是否带有双引号问题</h3><p>@Autowired<br>private RedisTemplate&lt;String,String&gt; redisTemplate;</p>
+<p>set和get的redisTemplate中应该用泛型保持一致</p>
+<p>### </p>
 
       
     </div>
@@ -647,7 +667,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -734,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis的持久化"><span class="nav-number">1.1.</span> <span class="nav-text">Redis的持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存雪崩"><span class="nav-number">1.2.</span> <span class="nav-text">缓存雪崩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存穿透"><span class="nav-number">1.3.</span> <span class="nav-text">缓存穿透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存击穿"><span class="nav-number">1.4.</span> <span class="nav-text">缓存击穿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存预热"><span class="nav-number">1.5.</span> <span class="nav-text">缓存预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存更新"><span class="nav-number">1.6.</span> <span class="nav-text">缓存更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存降级"><span class="nav-number">1.7.</span> <span class="nav-text">缓存降级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热点数据、冷数据"><span class="nav-number">1.8.</span> <span class="nav-text">热点数据、冷数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程的Redis为什么那么快"><span class="nav-number">1.9.</span> <span class="nav-text">单线程的Redis为什么那么快</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis的持久化"><span class="nav-number">1.1.</span> <span class="nav-text">Redis的持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存雪崩"><span class="nav-number">1.2.</span> <span class="nav-text">缓存雪崩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存穿透"><span class="nav-number">1.3.</span> <span class="nav-text">缓存穿透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存击穿"><span class="nav-number">1.4.</span> <span class="nav-text">缓存击穿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存预热"><span class="nav-number">1.5.</span> <span class="nav-text">缓存预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存更新"><span class="nav-number">1.6.</span> <span class="nav-text">缓存更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存降级"><span class="nav-number">1.7.</span> <span class="nav-text">缓存降级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热点数据、冷数据"><span class="nav-number">1.8.</span> <span class="nav-text">热点数据、冷数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程的Redis为什么那么快"><span class="nav-number">1.9.</span> <span class="nav-text">单线程的Redis为什么那么快</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-1"><span class="nav-number"></span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redisson"><span class="nav-number">1.</span> <span class="nav-text">Redisson</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#五种类型"><span class="nav-number">1.1.</span> <span class="nav-text">五种类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值是否带有双引号问题"><span class="nav-number">1.2.</span> <span class="nav-text">值是否带有双引号问题</span></a></li></ol></li></ol></li></div>
             
 
           </div>
@@ -766,7 +786,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">66k</span>
   
 
   
@@ -775,7 +795,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">41 分钟</span>
+    <span title="站点阅读时长">1:01</span>
   
 </div>
 

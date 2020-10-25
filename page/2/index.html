@@ -367,7 +367,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/webXML配置/">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/dom4j/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
@@ -387,7 +387,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/uncategorized/webXML配置/" class="post-title-link" itemprop="url">web.xml配置</a>
+                <a href="/uncategorized/dom4j/" class="post-title-link" itemprop="url">dom4j</a>
               
             
           </h1>
@@ -412,7 +412,7 @@
                 
               
 
-              <time title="创建时间：2019-04-16 15:32:33 / 修改时间：15:59:48" itemprop="dateCreated datePublished" datetime="2019-04-16T15:32:33+08:00">2019-04-16</time>
+              <time title="创建时间：2020-10-25 23:47:54 / 修改时间：23:51:31" itemprop="dateCreated datePublished" datetime="2020-10-25T23:47:54+08:00">2020-10-25</time>
             
 
             
@@ -445,7 +445,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">818</span>
+                <span title="本文字数">385</span>
               
 
               
@@ -482,13 +482,21 @@
         
           
             <p>
-              在web.xml中配置Spring的配置文件applicationContext.xml,需要为其配置ContextLoaderListener监听器&lt;context-param&gt;	&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;	&lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;&lt;/context-param&gt;&lt;listener&gt;	&lt;listener-c
+              dom4j开源xml解析包，把整个xml文档当成一个对象，把内容一次性装载进内存
+xml转mapMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+SAXReader reader = new SAXReader();
+
+InputStream ins = request.getInputStream();
+Document doc = reader.read(ins);
+//获取根节点
+Element root = doc.getRootElement();
+List&lt;Element&gt
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/uncategorized/webXML配置/#more" rel="contents">
+              <a class="btn" href="/uncategorized/dom4j/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -552,7 +560,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/Java/JavaInterview/">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/设计模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
@@ -572,7 +580,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/Java/JavaInterview/" class="post-title-link" itemprop="url">Java面试题-持续更新</a>
+                <a href="/uncategorized/设计模式/" class="post-title-link" itemprop="url">设计模式</a>
               
             
           </h1>
@@ -597,7 +605,7 @@
                 
               
 
-              <time title="创建时间：2019-04-09 00:17:45" itemprop="dateCreated datePublished" datetime="2019-04-09T00:17:45+08:00">2019-04-09</time>
+              <time title="创建时间：2020-10-24 00:24:33" itemprop="dateCreated datePublished" datetime="2020-10-24T00:24:33+08:00">2020-10-24</time>
             
 
             
@@ -614,29 +622,11 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-26 01:56:38" itemprop="dateModified" datetime="2019-06-26T01:56:38+08:00">2019-06-26</time>
+                <time title="修改时间：2020-10-25 23:46:57" itemprop="dateModified" datetime="2020-10-25T23:46:57+08:00">2020-10-25</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -660,457 +650,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">28k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">26 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Java基础面向对象的三（四）大特征封装、继承、多态。（抽象）
-
-封装：就是对数据和数据操作进行封装，只对外界提供一个接口，封装可以提高代码的重用性和安全性。
-
-
-继承：从已有的类中继承信息创建新的类，提高了代码的复用性，是多态的前提。
-
-
-多态：分为两种：
-
-编译时多态机制，是静态分派的: 同类中方法的重载。运行时多态机制，是动态分派的：子类中方法的重写。实现多态的前提就是父类的引用或接口的引用指向子类的对象，子类进行方法重写。
-
-
-多态的好处多态可以实现同样的对象引用调用同样的方法做出不同的事情。具有可扩充性，增加新的子类不影响已经存在的类的结构。
-
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Java/JavaInterview/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	
-	<div>
-    
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/Java/Shiro/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="VAQ">
-      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VAQ的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/Java/Shiro/" class="post-title-link" itemprop="url">Shiro</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-06 10:52:56" itemprop="dateCreated datePublished" datetime="2019-04-06T10:52:56+08:00">2019-04-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-10 00:10:09" itemprop="dateModified" datetime="2019-04-10T00:10:09+08:00">2019-04-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.7k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。
-Shiro的核心部分是SecurityManager，负责安全认证和授权
-Subject 主体
-代表了当前操作“用户”，是个抽象概念，不一定是指具体的人，与当前应用交互的任何东西都称为Subject，如第三方进程、后台帐户,网路爬虫、机器人。所有的Subject都绑定到SecurityManager，与Subject的所有交互，都委托给SecurityManager，SecurityManager才是实际的执行者。
-
-
-通过SecurityUtils.get
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Java/Shiro/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	
-	<div>
-    
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/计算机网路/CDN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="VAQ">
-      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VAQ的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/计算机网路/CDN/" class="post-title-link" itemprop="url">CDN</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-03 23:09:08" itemprop="dateCreated datePublished" datetime="2019-04-03T23:09:08+08:00">2019-04-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-13 00:11:53" itemprop="dateModified" datetime="2019-05-13T00:11:53+08:00">2019-05-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网路/" itemprop="url" rel="index"><span itemprop="name">计算机网路</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">531</span>
+                <span title="本文字数">467</span>
               
 
               
@@ -1147,15 +687,18 @@ Subject 主体
         
           
             <p>
-              CDN介绍CDN，Content Delivery Network（内容分发网络），是建立在网络之上的，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网路拥塞，提高用户访问相应速度和命中率。
-CDN的关键技术为：内容存储、分发技术。CDN目的：解决因分布、宽带、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等，使用户可就近获得所需内容，解决Internet网络拥挤，提高用户网站响应速度和成功率。
-CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择一台所属区域的区域负载均衡
+              单例模式懒汉模式 ：使用的时候再进行初始化，延迟加载
+保证线程安全
+防止指令重排
+双重检查优化
+
+//声明对象的引用private static volition Singleton object = null;//私有化构造器private Singleton ()&#123;&#125;//返回对象实例private static Singleton getInstance()&#123;	if(object == null)&#123;		synchronized(Singleton.class)&#123;			if(object == null
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/计算机网路/CDN/#more" rel="contents">
+              <a class="btn" href="/uncategorized/设计模式/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1219,7 +762,7 @@ CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/Java/随笔/">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VAQ">
@@ -1239,7 +782,7 @@ CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/Java/随笔/" class="post-title-link" itemprop="url">随笔</a>
+                <a href="/uncategorized/集合/" class="post-title-link" itemprop="url">集合</a>
               
             
           </h1>
@@ -1264,7 +807,7 @@ CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择
                 
               
 
-              <time title="创建时间：2019-03-29 13:10:40" itemprop="dateCreated datePublished" datetime="2019-03-29T13:10:40+08:00">2019-03-29</time>
+              <time title="创建时间：2020-10-24 00:24:24" itemprop="dateCreated datePublished" datetime="2020-10-24T00:24:24+08:00">2020-10-24</time>
             
 
             
@@ -1281,7 +824,1412 @@ CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-09 23:09:47" itemprop="dateModified" datetime="2019-04-09T23:09:47+08:00">2019-04-09</time>
+                <time title="修改时间：2020-10-25 23:46:02" itemprop="dateModified" datetime="2020-10-25T23:46:02+08:00">2020-10-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">731</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              HashMap数据结构
+java7 数组+链表+（红黑树java8）
+默认初始容量16 2的n次幂
+是线程不安全的 死锁（1.7版本之前会）或数据丢失 多线程扩容可能会死锁，如果当前位置有两个数据AB，其中一个线程新扩容存储顺序可能是AB，另一个线程是BA，造成死锁
+
+数组查找 时间复杂度O(1)插入、删除 设计到元素的移动，时间复杂度为O(n)
+链表新增、删除 只需处理结点间的引用，时间复杂度为O(1)查找 需要遍历列表的所有结点逐一进行对比，复杂度为O(n)
+存入数据put通过对数据元素的hashCode值对容量取模（hashCode值 % 容量）来
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/集合/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/红黑树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/uncategorized/红黑树/" class="post-title-link" itemprop="url">红黑树</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-24 00:24:17 / 修改时间：00:25:59" itemprop="dateCreated datePublished" datetime="2020-10-24T00:24:17+08:00">2020-10-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">140</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              红黑树是一种含有红黑结点并能自平衡的二叉查找树。它必须满足下面性质：
+性质1：每个节点要么是黑色，要么是红色。性质2：根节点是黑色。性质3：每个叶子节点（NIL）是黑色。性质4：每个红色结点的两个子结点一定都是黑色。性质5：任意一结点到每个叶子结点的路径都包含数量相同的黑结点。
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/红黑树/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/多线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/uncategorized/多线程/" class="post-title-link" itemprop="url">多线程</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-24 00:23:59" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:59+08:00">2020-10-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-25 23:43:29" itemprop="dateModified" datetime="2020-10-25T23:43:29+08:00">2020-10-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              volatile保证了可见性，即使多线程之间，一个线程修改后其他线程也能感知变化
+java内存模型(JMM)数据原子操作
+read(读取)： 从主内存读取数据
+load(载入)： 将从主内存读取的数据载入工作内存
+use(使用)： 从工作内存读取数据来运行计算
+assign(赋值)： 将计算好的值重新赋值到工作内存中
+store(存储)： 将工作内存数据存到主内存
+write(写入)： 将store过去的变量值赋值给主内存的变量
+lock(锁定)： 将主内存变量加锁，标识为线程独占内存
+unlock(解锁)： 将主内存变量解锁，解锁后其他线程才可以锁定该
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/多线程/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/uncategorized/Redis/" class="post-title-link" itemprop="url">Redis</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-24 00:23:47" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:47+08:00">2020-10-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-25 23:52:42" itemprop="dateModified" datetime="2020-10-25T23:52:42+08:00">2020-10-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Rediskey-value型数据库
+Redis的持久化
+RDB默认方式按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期
+AOF将每一个收到的写命令通过write函数追加到文件最后，重启Redis后会根据内存的写命令在内存中重建整个数据库的内容
+
+两种方式同时开启时，优先执行AOF方式
+缓存雪崩原因：设置的缓存采用了相同的过期时间，同一时刻出
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/Redis/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/uncategorized/JVM/" class="post-title-link" itemprop="url">JVM</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-24 00:23:35 / 修改时间：00:25:05" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:35+08:00">2020-10-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">899</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              JVM(Java Virtual Machine) Java虚拟机组成
+类加载器子系统  将class文件装载到JVM运行时数据区中 
+
+运行时数据区（内存模型）
+ 2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆
+年轻代+老年代 堆默认600m，老年代占2/3内存
+ 2.2 方法区（元空间）： 线程共享
+常量、静态变量、类信息（类名、方法信息、字段属性信息）、编译器编译后的代码
+方法区中有一块区域叫运行时常量池
+ 2.3 栈(Stack)： 线程私有，内存连续，线程运行时会分配给该线程一块栈内存A，线程私有，该线程每运
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/JVM/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/知行合一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/uncategorized/知行合一/" class="post-title-link" itemprop="url">未命名</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-19 20:33:30" itemprop="dateCreated datePublished" datetime="2020-07-19T20:33:30+08:00">2020-07-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-24 00:27:37" itemprop="dateModified" datetime="2020-10-24T00:27:37+08:00">2020-10-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">649</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              知行合一 知行互相依靠推进，是一个环
+第一步.过去(很久之前或1秒之前)的行–&gt;第二步.形成现在的知以及知之后的意识–&gt;第三步.马上要做出的行（马上要做出的行的同时也会变成第一步中的过去的行而又引起新的知，这是个环）
+
+在第二步中形成的现在的知这种感觉只有过去的行才能改变，意识层面的空想99%都没用，想要摆脱(由过去的行引起的现在的知而又导致的将要做出的行)行，必须在舒适区做出新的行才可以，空想是没用的。
+
+建立一个模型，一个一一对应，又不断被新的行所替代的模型
+
+
+
+知，不是意识，是在接下来要做出的行之前的比意识更早的感觉，它发于瞬间，转瞬
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/知行合一/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/MySQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/uncategorized/MySQL/" class="post-title-link" itemprop="url">MySQL</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-27 11:36:29" itemprop="dateCreated datePublished" datetime="2019-05-27T11:36:29+08:00">2019-05-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-24 00:20:47" itemprop="dateModified" datetime="2020-10-24T00:20:47+08:00">2020-10-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              索引帮助快速获取数据的排好序的数据结构索引的建立就是对数据的排序的过程
+select *会全局扫描，速度会很慢
+二叉树最多有两个子节点左子结点元素&lt;父节点元素&lt;右子节点元素
+满二叉树所有结点都有左右两个子节点，并且叶子都同一层。
+完全二叉树按照层次给所有结点编号，编号是连续的 。 没有满二叉树完美，满二叉树也属于完全二叉树
+二叉树的存储结构顺序存储结构用一维数组存储二叉树的结点，一般只用于存储完全二叉树。
+链表存储结构数据域+指针域
+bigint一般主键id是这种类型并且设为自增，占8个字节。
+###MySQL创建的B+Tree索引的根节点是
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/uncategorized/MySQL/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/Java/WMS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/Java/WMS/" class="post-title-link" itemprop="url">WMS</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-11 00:27:36" itemprop="dateCreated datePublished" datetime="2019-05-11T00:27:36+08:00">2019-05-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-12 23:53:36" itemprop="dateModified" datetime="2019-05-12T23:53:36+08:00">2019-05-12</time>
               
             
           </span>
@@ -1327,7 +2275,7 @@ CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.5k</span>
+                <span title="本文字数">2.4k</span>
               
 
               
@@ -1364,198 +2312,25 @@ CDN负载均衡设备会根据用户IP地址，以及用户请求的URL，选择
         
           
             <p>
-              java中Runnable 和 Callable 有什么不同？Runnable和Callable都代表那些要在不同的线程中执行的任务，Runnable从jdk1.0开始就有了，Callable是在jdk1.5出的，Callable的call（）方法可以返回值和抛出异常，而Runnable的run（）方法没有这些功能，Callable可以返回装载有返回结果的Future对象。当run（）或者call（）方法执行完成后，线程会自动结束。
-volatile是一个特殊的修饰符，只有成员变量才能使用它。在java并发程序缺少同步类的情况下，多线程对成员变量的操作对
+              1001-1234561018-1234561019-10191021-123456
+mainPage.jsp用于定义导航链接的部分
+
+bootstrap中的class
+
+.navbar 设置nav元素为导航条组件
+.navbar-default 控制颜色的属性，默认白
+.navbar-inverse 控制颜色的属性，黑
+.navbar-nav 设置ul为导航条组件内的列表元素
+.navbar-right 设置导航条内元素向右对齐
+.navbar-fixed-top 设置导航条组件固定到底部
+role=”navigation” 可以增强访问性
+.cont
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/Java/随笔/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	
-	<div>
-    
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/uncategorized/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="VAQ">
-      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="VAQ的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/uncategorized/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-07 13:51:10" itemprop="dateCreated datePublished" datetime="2019-03-07T13:51:10+08:00">2019-03-07</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">430</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new "My New Post"
-More info: Writing
-Run server$ h
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/uncategorized/hello-world/#more" rel="contents">
+              <a class="btn" href="/Java/WMS/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1608,7 +2383,7 @@ Run server$ h
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1652,7 +2427,7 @@ Run server$ h
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1754,7 +2529,7 @@ Run server$ h
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">66k</span>
   
 
   
@@ -1763,7 +2538,7 @@ Run server$ h
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">41 分钟</span>
+    <span title="站点阅读时长">1:01</span>
   
 </div>
 
