@@ -124,17 +124,17 @@
     }
 </style>
 
-  <meta name="description" content="JVM(Java Virtual Machine) Java虚拟机组成 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性信息）、编">
+  <meta name="description" content="JVM(Java Virtual Machine) 是运行Java字节码的虚拟机 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM">
 <meta property="og:url" content="http://vaq.gitee.io/uncategorized/JVM/index.html">
 <meta property="og:site_name" content="VAQ的博客">
-<meta property="og:description" content="JVM(Java Virtual Machine) Java虚拟机组成 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性信息）、编">
+<meta property="og:description" content="JVM(Java Virtual Machine) 是运行Java字节码的虚拟机 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-23T16:25:05.750Z">
+<meta property="og:updated_time" content="2020-11-05T14:45:28.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM">
-<meta name="twitter:description" content="JVM(Java Virtual Machine) Java虚拟机组成 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性信息）、编">
+<meta name="twitter:description" content="JVM(Java Virtual Machine) 是运行Java字节码的虚拟机 类加载器子系统  将class文件装载到JVM运行时数据区中   运行时数据区（内存模型）  2.1 堆(Heap) ： 线程共享，内存不连续，存储对象，一个JVM中只有一个堆 年轻代+老年代 堆默认600m，老年代占2/3内存  2.2 方法区（元空间）： 线程共享 常量、静态变量、类信息（类名、方法信息、字段属性">
 
 
 
@@ -410,12 +410,24 @@
                 
               
 
-              <time title="创建时间：2020-10-24 00:23:35 / 修改时间：00:25:05" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:35+08:00">2020-10-24</time>
+              <time title="创建时间：2020-10-24 00:23:35" itemprop="dateCreated datePublished" datetime="2020-10-24T00:23:35+08:00">2020-10-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-11-05 22:45:28" itemprop="dateModified" datetime="2020-11-05T22:45:28+08:00">2020-11-05</time>
               
             
           </span>
@@ -450,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">899</span>
+                <span title="本文字数">1.4k</span>
               
 
               
@@ -484,7 +496,7 @@
       
 
       
-        <h3 id="JVM-Java-Virtual-Machine-Java虚拟机组成"><a href="#JVM-Java-Virtual-Machine-Java虚拟机组成" class="headerlink" title="JVM(Java Virtual Machine) Java虚拟机组成"></a>JVM(Java Virtual Machine) Java虚拟机组成</h3><ol>
+        <h3 id="JVM-Java-Virtual-Machine-是运行Java字节码的虚拟机"><a href="#JVM-Java-Virtual-Machine-是运行Java字节码的虚拟机" class="headerlink" title="JVM(Java Virtual Machine) 是运行Java字节码的虚拟机"></a>JVM(Java Virtual Machine) 是运行Java字节码的虚拟机</h3><ol>
 <li><p>类加载器子系统  将class文件装载到JVM运行时数据区中 </p>
 </li>
 <li><p>运行时数据区（内存模型）</p>
@@ -493,8 +505,10 @@
 </code></pre><p> 2.2 方法区（元空间）： 线程共享</p>
 <pre><code>常量、静态变量、类信息（类名、方法信息、字段属性信息）、编译器编译后的代码
 方法区中有一块区域叫运行时常量池
-</code></pre><p> 2.3 栈(Stack)： 线程私有，内存连续，线程运行时会分配给该线程一块栈内存A，线程私有，该线程每运行一个方法都会创建一个栈帧，从A内存分配一块B内存给该方法 。 存放的一个个栈帧FILO先进后出 ，一个方法从调用到到执行完成就对应着一个栈帧在虚拟机栈中入栈到出栈的过程</p>
-<pre><code>局部变量表：基础类型时存局部变量的值，对象类型时存对象在堆中的内存地址（占用的空间大小在编译器时就确定了）
+</code></pre><p> 2.3 栈(Stack)： 线程私有，内存连续，线程运行时会分配给该线程一块栈内存A，线程私有，该线程每运行一个方法都会创建一个栈帧，从A内存分配一块B内存给该方法 。</p>
+<pre><code>        存放的一个个栈帧FILO先进后出 ，一个方法从调用到到执行完成就对应着一个栈帧在虚拟机栈中入栈到出栈的过程
+
+局部变量表：基础类型时存局部变量的值，对象类型时存对象在堆中的内存地址（占用的空间大小在编译器时就确定了）
 操作数栈：变量操作时暂存的数值
 指向运行时常量池的引用：  方法运行时可能会用到类中的常量
 方法返回地址：方法执行完毕后要返回调用它的地方
@@ -511,6 +525,12 @@
 </ol>
 <p>类文件被编译成字节码文件后，JVM虚拟机通过类加载器子系统将其加载到数据区，再由字节码执行引擎去运行</p>
 <h3 id="GC，Garbage-Collection垃圾收集"><a href="#GC，Garbage-Collection垃圾收集" class="headerlink" title="GC，Garbage Collection垃圾收集"></a>GC，Garbage Collection垃圾收集</h3><p>回收垃圾对象（可达性分析后不可达的对象）</p>
+<h3 id="字节码"><a href="#字节码" class="headerlink" title="字节码"></a>字节码</h3><p>扩展名是.class的文件，只是面向虚拟机的，因此Java程序无需重新编译就能在不同的操作系统上运行</p>
+<h3 id="HotSpot"><a href="#HotSpot" class="headerlink" title="HotSpot"></a>HotSpot</h3><p>消耗大部分资源的只有那一小部分热点代码，JVM会根据代码被执行的情况收集信息进行优化，所以代码执行的次数越多，运行的速度越快</p>
+<h3 id="JDK和JRE"><a href="#JDK和JRE" class="headerlink" title="JDK和JRE"></a>JDK和JRE</h3><p>JRE是Java程序的运行环境，包括了JVM和Java类库<br>JDK是Java Development Kit(Java开发工具)即Java SDK，它包括了JRE，还具有编译器javac和工具javadoc，能够创建和编译Java程序。</p>
+<h3 id="Java语言是编译和解释并存"><a href="#Java语言是编译和解释并存" class="headerlink" title="Java语言是编译和解释并存"></a>Java语言是编译和解释并存</h3><p>编译型：将源码全部一次性翻译成平台可识别的机器码<br>解释型：一行一行的将源码翻译后机器码</p>
+<p>Java编写程序需要先将Java文件编译成字节码文件，再由Java解释器来解释执行</p>
+<h3 id="Java语言的平台无关性"><a href="#Java语言的平台无关性" class="headerlink" title="Java语言的平台无关性"></a>Java语言的平台无关性</h3><p>Java编译器（javac.exe）生成字节码文件，JVM虚拟机负责运行字节码，把他交给解释器（java.exe）并操作解释器进行解释字节码文件为机器码。而JVM针对不同的系统会有特定的实现，能够保证相同的字节码都会得到相同的结果</p>
 
       
     </div>
@@ -640,7 +660,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -727,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-Java-Virtual-Machine-Java虚拟机组成"><span class="nav-number">1.</span> <span class="nav-text">JVM(Java Virtual Machine) Java虚拟机组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GC，Garbage-Collection垃圾收集"><span class="nav-number">2.</span> <span class="nav-text">GC，Garbage Collection垃圾收集</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-Java-Virtual-Machine-是运行Java字节码的虚拟机"><span class="nav-number">1.</span> <span class="nav-text">JVM(Java Virtual Machine) 是运行Java字节码的虚拟机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GC，Garbage-Collection垃圾收集"><span class="nav-number">2.</span> <span class="nav-text">GC，Garbage Collection垃圾收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节码"><span class="nav-number">3.</span> <span class="nav-text">字节码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HotSpot"><span class="nav-number">4.</span> <span class="nav-text">HotSpot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK和JRE"><span class="nav-number">5.</span> <span class="nav-text">JDK和JRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java语言是编译和解释并存"><span class="nav-number">6.</span> <span class="nav-text">Java语言是编译和解释并存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java语言的平台无关性"><span class="nav-number">7.</span> <span class="nav-text">Java语言的平台无关性</span></a></li></ol></div>
             
 
           </div>
@@ -759,7 +779,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">66k</span>
+    <span title="站点总字数">71k</span>
   
 
   
@@ -768,7 +788,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:01</span>
+    <span title="站点阅读时长">1:05</span>
   
 </div>
 

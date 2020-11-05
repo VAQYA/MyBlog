@@ -2,23 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E7%AE%97%E6%B3%95/</loc>
+    <loc>http://vaq.gitee.io/uncategorized/JVM/</loc>
     
-    <lastmod>2020-10-25T15:54:19.050Z</lastmod>
+    <lastmod>2020-11-05T14:45:28.929Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vaq.gitee.io/Java/JavaInterview/</loc>
+    
+    <lastmod>2020-11-05T14:45:28.920Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2020-11-05T14:45:28.881Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://vaq.gitee.io/uncategorized/%E6%B3%9B%E5%9E%8B/</loc>
     
-    <lastmod>2020-10-25T15:54:05.301Z</lastmod>
+    <lastmod>2020-11-05T14:45:28.879Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    
+    <lastmod>2020-11-05T14:45:28.878Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://vaq.gitee.io/uncategorized/%E5%8F%8D%E5%B0%84/</loc>
     
-    <lastmod>2020-10-25T15:53:53.467Z</lastmod>
+    <lastmod>2020-11-05T14:45:28.855Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vaq.gitee.io/uncategorized/IO/</loc>
+    
+    <lastmod>2020-11-05T14:45:28.853Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://vaq.gitee.io/uncategorized/%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2020-10-25T15:54:19.050Z</lastmod>
     
   </url>
   
@@ -65,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://vaq.gitee.io/uncategorized/IO/</loc>
-    
-    <lastmod>2020-10-25T15:51:57.294Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://vaq.gitee.io/uncategorized/git/</loc>
     
     <lastmod>2020-10-25T15:51:42.788Z</lastmod>
@@ -82,27 +110,6 @@
     <loc>http://vaq.gitee.io/uncategorized/dom4j/</loc>
     
     <lastmod>2020-10-25T15:51:31.737Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    
-    <lastmod>2020-10-25T15:46:57.740Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E9%9B%86%E5%90%88/</loc>
-    
-    <lastmod>2020-10-25T15:46:02.035Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://vaq.gitee.io/uncategorized/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    
-    <lastmod>2020-10-25T15:43:29.258Z</lastmod>
     
   </url>
   
@@ -121,23 +128,9 @@
   </url>
   
   <url>
-    <loc>http://vaq.gitee.io/uncategorized/JVM/</loc>
-    
-    <lastmod>2020-10-23T16:25:05.750Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://vaq.gitee.io/uncategorized/MySQL/</loc>
     
     <lastmod>2020-10-23T16:20:47.973Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://vaq.gitee.io/Java/JavaInterview/</loc>
-    
-    <lastmod>2019-06-25T17:56:38.696Z</lastmod>
     
   </url>
   
