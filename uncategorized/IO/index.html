@@ -124,17 +124,22 @@
     }
 </style>
 
-  <meta name="description" content="输入输出流StringReader extends ReaderStringWriter extends Writer 操作数据源为字符串的字符流 同步 VS 异步同步：两个任务要">
+  <meta name="description" content="IO 输入输出流StringReader extends ReaderStringWriter extends Writer 操作数据源为字符串的字符流 字符流Reader  InputStreamReader ， BufferedReaderWriter  OutputStreamWriter ， BuferedWrite 字节流InputStream OutputStream 区别：字符流单元">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO">
 <meta property="og:url" content="http://vaq.gitee.io/uncategorized/IO/index.html">
 <meta property="og:site_name" content="VAQ的博客">
-<meta property="og:description" content="输入输出流StringReader extends ReaderStringWriter extends Writer 操作数据源为字符串的字符流 同步 VS 异步同步：两个任务要">
+<meta property="og:description" content="IO 输入输出流StringReader extends ReaderStringWriter extends Writer 操作数据源为字符串的字符流 字符流Reader  InputStreamReader ， BufferedReaderWriter  OutputStreamWriter ， BuferedWrite 字节流InputStream OutputStream 区别：字符流单元">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-05T14:45:28.853Z">
+<meta property="og:image" content="http://vaq.gitee.io/uncategorized/image/IO/IO-操作对象分类.png">
+<meta property="og:image" content="http://vaq.gitee.io/uncategorized/image/IO/IO-操作方式分类.png">
+<meta property="og:image" content="http://vaq.gitee.io/uncategorized/image/IO/同步VS异步.jpg">
+<meta property="og:image" content="http://vaq.gitee.io/uncategorized/image/IO/阻塞VS非阻塞.jpg">
+<meta property="og:updated_time" content="2020-12-19T07:09:41.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IO">
-<meta name="twitter:description" content="输入输出流StringReader extends ReaderStringWriter extends Writer 操作数据源为字符串的字符流 同步 VS 异步同步：两个任务要">
+<meta name="twitter:description" content="IO 输入输出流StringReader extends ReaderStringWriter extends Writer 操作数据源为字符串的字符流 字符流Reader  InputStreamReader ， BufferedReaderWriter  OutputStreamWriter ， BuferedWrite 字节流InputStream OutputStream 区别：字符流单元">
+<meta name="twitter:image" content="http://vaq.gitee.io/uncategorized/image/IO/IO-操作对象分类.png">
 
 
 
@@ -427,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-11-05 22:45:28" itemprop="dateModified" datetime="2020-11-05T22:45:28+08:00">2020-11-05</time>
+                <time title="修改时间：2020-12-19 15:09:41" itemprop="dateModified" datetime="2020-12-19T15:09:41+08:00">2020-12-19</time>
               
             
           </span>
@@ -462,7 +467,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">91</span>
+                <span title="本文字数">3.5k</span>
               
 
               
@@ -476,7 +481,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -496,9 +501,71 @@
       
 
       
-        <h3 id="输入输出流"><a href="#输入输出流" class="headerlink" title="输入输出流"></a>输入输出流</h3><p>StringReader extends Reader<br>StringWriter extends Writer</p>
+        <h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p><img src="/uncategorized/IO/../image/IO/IO-操作对象分类.png" alt="IO-操作对象分类"><br><img src="/uncategorized/IO/../image/IO/IO-操作方式分类.png" alt="IO-操作方法分类"></p>
+<h3 id="输入输出流"><a href="#输入输出流" class="headerlink" title="输入输出流"></a>输入输出流</h3><p>StringReader extends Reader<br>StringWriter extends Writer</p>
 <p>操作数据源为字符串的字符流</p>
-<h3 id="同步-VS-异步"><a href="#同步-VS-异步" class="headerlink" title="同步 VS 异步"></a>同步 VS 异步</h3><p>同步：两个任务要</p>
+<h3 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h3><p>Reader  InputStreamReader ， BufferedReader<br>Writer  OutputStreamWriter ， BuferedWrite</p>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><p>InputStream OutputStream</p>
+<p>区别：字符流单元是两个字节的Unicode字符，字节流单元是一个字节；<br>字符流以字符或字符数组的形式读写数据，只能读写二进制文件，字节流能读写各种类型的数据。音频、图片最好用字节流，避免数据丢失，关系到中文最好用字符流。</p>
+<p>字节输入流转字符输入流：通过适配器模式，用InputStreamReader实现，该类构造器可以传入InputStream对象，字节输出流转字符输出流，用OutputStreamWriter。</p>
+<h3 id="同步VS异步"><a href="#同步VS异步" class="headerlink" title="同步VS异步"></a>同步VS异步</h3><p>同步I/O：每个请求串行执行，会造成阻塞，用户线程发起I/O请求后需要等待或轮询内核I/O操作完成后才能继续执行。 能够保证程序的可靠性<br>异步I/O：多个请求并发执行，用户线程发起I/O请求后可以继续执行，当内核I/O操作完成后会通知用户线程，或调用用户线程注册的回调函数。  能够提高程序的性能  </p>
+<p>着重于是否是否等待任务完成后再继续进行<br><img src="/uncategorized/IO/../image/IO/同步VS异步.jpg" alt="同步VS异步"></p>
+<h3 id="阻塞VS非阻塞"><a href="#阻塞VS非阻塞" class="headerlink" title="阻塞VS非阻塞"></a>阻塞VS非阻塞</h3><p>阻塞：请求发出后，所需要的操作条件不满足时，请求一直阻塞，不会返回，知道满足为止。<br>非阻塞：请求发出后，所需要的操作条件不满足时，立即返回一个标识信息告知条件不满足，而不会一直等待，一般需要循环判断请求条件是否满足来获取请求结果  </p>
+<p>着重于请求的条件不满足时是否等待<br><img src="/uncategorized/IO/../image/IO/阻塞VS非阻塞.jpg" alt="阻塞VS非阻塞"></p>
+<h3 id="Unix下五种I-O模型"><a href="#Unix下五种I-O模型" class="headerlink" title="Unix下五种I/O模型"></a>Unix下五种I/O模型</h3><ol>
+<li>阻塞I/O<br>分两个阶段：  </li>
+</ol>
+<ul>
+<li>等待数据就绪，网络IO是等待数据陆续到达，磁盘IO是等待磁盘数据从磁盘上读取到内核态内存  </li>
+<li>数据拷贝，出于安全，用户态程序无权限直接读取内核态内存，需要把内核态内存拷贝一份到用户态内存中  </li>
+</ul>
+<ol start="2">
+<li>非阻塞I/O<br>分三个阶段：  </li>
+</ol>
+<ul>
+<li>socket设为NONBLOCK(非阻塞)，则请求的I/O无法完成时，返回一个错误码(EWOULDBLOCK)，这样请求就不会阻塞了  </li>
+<li>I/O操作函数不断地测试操作数据是否已经准备好，知道数据准备好为止，虽然I/O请求后立即返回了，但是仍需要不断的轮询、重复请求，消耗了大量的CPU资源</li>
+<li>数据拷贝</li>
+</ul>
+<p>很少直接只用此模式，但给I/O多路复用提供了条件</p>
+<ol start="3">
+<li><p>I/O多路复用<br>用到了select或poll函数，这两个函数也会使线程阻塞，但可以同时阻塞多个I/O，实现了可以一个线程同时处理多个Channel的I/O请求</p>
+</li>
+<li><p>信号驱动I/O (Java不支持)<br>socket允许信号驱动I/O，并安装一个信号处理函数，数据准备好后线程会收到一个SIGIO信号，调用信号处理函数进行数据处理</p>
+</li>
+<li><p>异步I/O<br>前四个模型都是同步阻塞的。<br>用aio_read 函数，告诉内核描述字，缓冲区指针，缓冲区大小，文件偏移以及通知的方式，然后立即返回。当内核将数据拷贝到缓冲区后，再通知应用程序。<br>所以异步I/O模式下，阶段1和阶段2(数据拷贝)全部由内核完成，完成不需要用户线程的参与。</p>
+</li>
+</ol>
+<p>Java中，NIO是非阻塞I/O，通过NIO实现的reactor模式是I/O多路复用的实现，通过AIO实现的Proactor模式是异步I/O的实现</p>
+<h3 id="reactor模式"><a href="#reactor模式" class="headerlink" title="reactor模式"></a>reactor模式</h3><p>反应器模式（事件驱动模型），主要有两部分组成BOSS和WORK，BOSS就像老板，拉活、谈项目，然后下发到worker去处理。<br>处理并发请求，如果有内容进来会自动通知我们，不必开启多个线程死等了。  </p>
+<h3 id="IO和NIO的区别"><a href="#IO和NIO的区别" class="headerlink" title="IO和NIO的区别"></a>IO和NIO的区别</h3><p>IO是阻塞的，调用read(),write()方法<br>NIO是非阻塞，NIO中引入了缓冲区的概念，对数据的操作都是基于将数据移进、移出缓冲区  </p>
+<p>IO是面向流的，每次从流中(InputStream/OutputStream)读取一个或多个字节，直到取到所有字节<br>NIO是面向缓冲的，数据会被读到一个缓冲区，可以在缓冲区前后移动处理，增加了处理过程的灵活性</p>
+<p>NIO中有选择器，一个单独的线程监视多个通道，注册多个通道到一个选择器上<br>NIO可以零拷贝，FileChannel拥有transferFrom和transferTo两个方法，可以将FileChannel的数据拷贝到另一个Channel，或者直接把另一个Channel数据拷贝到FileChannel，避免了传输数据时将源数据从内核态拷贝到内存态，再从内存态拷贝到目标内核态这两次上下文切换</p>
+<h2 id="Java中的I-O"><a href="#Java中的I-O" class="headerlink" title="Java中的I/O"></a>Java中的I/O</h2><ol>
+<li>磁盘操作：file</li>
+<li>字节操作：InputStream、OutputStream</li>
+<li>字符操作：Reader、Writer</li>
+<li>对象操作：serializable</li>
+<li>网络操作：Socket</li>
+<li>新的IO：  NIO</li>
+</ol>
+<h3 id="磁盘操作"><a href="#磁盘操作" class="headerlink" title="磁盘操作"></a>磁盘操作</h3><h3 id="字节操作"><a href="#字节操作" class="headerlink" title="字节操作"></a>字节操作</h3><p>使用了装饰者模式，InputStream属于抽象组件，FileInputStream属于具体组件，FilterInputStream属于抽象装饰者，为组件提供额外的功能，如BufferedInputStream为FileInputStream提供缓存的功能</p>
+<h3 id="字符操作"><a href="#字符操作" class="headerlink" title="字符操作"></a>字符操作</h3><p>编码：字符–&gt;字节，byte bytes = str.getBytes(“UTF-8”);<br>解码：字节–&gt;字符，String str = new String(bytes,”UTF-8”);  </p>
+<p>OutputStreamWriter 字符流–&gt;字节流<br>InputStreamReader 实现从字节流解码成字符流  </p>
+<h3 id="对象操作"><a href="#对象操作" class="headerlink" title="对象操作"></a>对象操作</h3><p>序列化，即将对象转换成字节序列，方便存储和传输，ObjectOutputStream.writeObject();<br>反序列化，ObjectInputStream.readObject();  </p>
+<p>不会对静态变量进行序列化，因为序列化只是保存对象的状态，静态变量属于类状态</p>
+<p>transient关键字，表示不能被序列化</p>
+<h3 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h3><p>Java中的网络支持：<br>InetAddress：网络地址，即ip<br>URL：统一资源定位符<br>Socket：使用TCP协议实现网络通信。 通过InputStream和OutputStream进行输入输出<br>Datagram：使用UDP协议实现网络通信。 DatagramSocket通信类，DatagramPacket数据包类  </p>
+<h3 id="通道"><a href="#通道" class="headerlink" title="通道"></a>通道</h3><p>public interface Channel extends Closeable<br>常用实现类：<br>FileChannel：从文件中读写数据<br>SocketChannel：通过TCP读写网络中的数据<br>ServerSocketChannel：监听新进来的TCP连接，对每一个新进来的连接都会创建一个SocketChannel<br>DatagramChannel：通过UDP读写网络中的数据</p>
+<h3 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h3><p>不会对通道直接进行读写操作，而是依靠缓冲区<br>public abstract class Buffer<br>状态变量：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mark &lt;= position &lt;= limit &lt;= capacity</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> mark = <span class="number">-1</span>; </span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> <span class="built_in">position</span> = <span class="number">0</span>; <span class="comment">//当前已读的字节数</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> limit; <span class="comment">//还可以读的字节数</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> capacity; <span class="comment">//最大容量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> final Buffer flip() &#123; <span class="comment">//切换读写</span></span><br><span class="line">       limit = <span class="built_in">position</span>;</span><br><span class="line">       <span class="built_in">position</span> = <span class="number">0</span>;</span><br><span class="line">       mark = <span class="number">-1</span>;</span><br><span class="line">       <span class="built_in">return</span> <span class="keyword">this</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> final Buffer <span class="built_in">clear</span>() &#123; <span class="comment">//清空缓冲区</span></span><br><span class="line">       <span class="built_in">position</span> = <span class="number">0</span>;</span><br><span class="line">       limit = capacity;</span><br><span class="line">       mark = <span class="number">-1</span>;</span><br><span class="line">       <span class="built_in">return</span> <span class="keyword">this</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>实现类有：ByteBuffer，CharBuffer，ShortBuffer，IntBuffer，LongBuffer，DoubleBuffer，FloatBuffer</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ol>
+<li>创建选择器</li>
+<li>将通道注册到选择器上</li>
+<li>监听事件</li>
+<li>获取到达的事件</li>
+<li>事件循环</li>
+</ol>
 
       
     </div>
@@ -540,8 +607,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/uncategorized/git/" rel="next" title="git">
-                <i class="fa fa-chevron-left"></i> git
+              <a href="/uncategorized/知行合一/" rel="next" title="知行合一">
+                <i class="fa fa-chevron-left"></i> 知行合一
               </a>
             
           </div>
@@ -628,7 +695,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -715,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出流"><span class="nav-number">1.</span> <span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步-VS-异步"><span class="nav-number">2.</span> <span class="nav-text">同步 VS 异步</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IO"><span class="nav-number">1.</span> <span class="nav-text">IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出流"><span class="nav-number">1.0.1.</span> <span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符流"><span class="nav-number">1.0.2.</span> <span class="nav-text">字符流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节流"><span class="nav-number">1.0.3.</span> <span class="nav-text">字节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步VS异步"><span class="nav-number">1.0.4.</span> <span class="nav-text">同步VS异步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻塞VS非阻塞"><span class="nav-number">1.0.5.</span> <span class="nav-text">阻塞VS非阻塞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unix下五种I-O模型"><span class="nav-number">1.0.6.</span> <span class="nav-text">Unix下五种I/O模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reactor模式"><span class="nav-number">1.0.7.</span> <span class="nav-text">reactor模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO和NIO的区别"><span class="nav-number">1.0.8.</span> <span class="nav-text">IO和NIO的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的I-O"><span class="nav-number">1.1.</span> <span class="nav-text">Java中的I/O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘操作"><span class="nav-number">1.1.1.</span> <span class="nav-text">磁盘操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节操作"><span class="nav-number">1.1.2.</span> <span class="nav-text">字节操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">字符操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象操作"><span class="nav-number">1.1.4.</span> <span class="nav-text">对象操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络操作"><span class="nav-number">1.1.5.</span> <span class="nav-text">网络操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通道"><span class="nav-number">1.1.6.</span> <span class="nav-text">通道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲区"><span class="nav-number">1.1.7.</span> <span class="nav-text">缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number">1.1.8.</span> <span class="nav-text">选择器</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -747,7 +814,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">105k</span>
   
 
   
@@ -756,7 +823,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:36</span>
   
 </div>
 

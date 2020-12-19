@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <meta name="baidu-site-verification" content="qBOscFL9iV">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  <meta name="description" content="SpringEnglishdefinition 定义processor 处理器transactional 事务性propagation 传播isolation 隔离 事务-传播属性 propagation即多个事务同时存在时，Spring怎么处理这些行为  @Transactional(propagation = Propagation.REQUIRED)在B方法上声明  propagation.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring">
+<meta property="og:url" content="http://vaq.gitee.io/Java/Spring/index.html">
+<meta property="og:site_name" content="VAQ的博客">
+<meta property="og:description" content="SpringEnglishdefinition 定义processor 处理器transactional 事务性propagation 传播isolation 隔离 事务-传播属性 propagation即多个事务同时存在时，Spring怎么处理这些行为  @Transactional(propagation = Propagation.REQUIRED)在B方法上声明  propagation.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-12-19T09:23:58.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring">
+<meta name="twitter:description" content="SpringEnglishdefinition 定义processor 处理器transactional 事务性propagation 传播isolation 隔离 事务-传播属性 propagation即多个事务同时存在时，Spring怎么处理这些行为  @Transactional(propagation = Propagation.REQUIRED)在B方法上声明  propagation.">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://vaq.gitee.io/Java/Spring/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Spring | VAQ的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">VAQ的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">比一般人更努力一点，你就会变得不一般。</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vaq.gitee.io/Java/Spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VAQ">
+      <meta itemprop="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VAQ的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-09 00:17:45" itemprop="dateCreated datePublished" datetime="2019-04-09T00:17:45+08:00">2019-04-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-12-19 17:23:58" itemprop="dateModified" datetime="2020-12-19T17:23:58+08:00">2020-12-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="English"><a href="#English" class="headerlink" title="English"></a>English</h3><p>definition 定义<br>processor 处理器<br>transactional 事务性<br>propagation 传播<br>isolation 隔离</p>
+<h3 id="事务-传播属性-propagation"><a href="#事务-传播属性-propagation" class="headerlink" title="事务-传播属性 propagation"></a>事务-传播属性 propagation</h3><p>即多个事务同时存在时，Spring怎么处理这些行为</p>
+<p> @Transactional(propagation = Propagation.REQUIRED)在B方法上声明</p>
+<ol>
+<li><p>propagation.REQUIRED 默认<br>如果外层有事务，则当前事务加入到外层事务，如果没有，则创建一个外层事务，一起提交，一起回滚<br>A方法调用B方法，A、B任一出错，则一起回滚</p>
+</li>
+<li><p>propagation.REQUIRES_NEW<br>A方法调用B方法，A事务挂起，B新建一个事务，B出错不影响A，B出错只是B回滚，只有A内不包括B的代码出错A才回滚</p>
+</li>
+<li><p>propagation.SUPPORTS<br>A方法调用B方法，如果A声明了事务，则B按照事务执行，如果A没有声明事务，则B也按照非事务形式执行</p>
+</li>
+<li><p>propagation.NOT_SUPPORTED<br>不支持事务，无论是否异常都不回滚</p>
+</li>
+<li><p>propagation.MANDATORY<br>A方法调用B方法，A必须也声明了事务，否则就抛出异常</p>
+</li>
+<li><p>propagation.NEVER<br>A方法调用B方法，A必须不能声明事务，否则就抛出异常，与MANDATORY相反</p>
+</li>
+<li><p>propagation.NESTED<br>该传播机制的特点是可以保存状态保存点，当前事务回滚到某一个点，从而避免所有的嵌套事务都回滚，即各自回滚各自的，如果子事务没有把异常吃掉，基本还是会引起全部回滚的。<br>如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则按REQUIRED属性执行。</p>
+</li>
+</ol>
+<h3 id="事务-隔离级别"><a href="#事务-隔离级别" class="headerlink" title="事务-隔离级别"></a>事务-隔离级别</h3><p>@Transactional(isolation = Isolation.DEFAULT)在B方法上声明</p>
+<ol>
+<li><p>Isolation.DEFAULT 使用数据库的隔离级别</p>
+</li>
+<li><p>Isolation.READ_UNCOMMITTED 读未提交 最低的隔离级别，事务未提交前就可以被其他事务读取（会出现 幻读、脏读、不可重复读）</p>
+</li>
+<li><p>Isolation.READ_COMMITTED 读已提交 一个事务提交后才能被其他事务读取 （会出现 幻读、不可重复读） SQL Server的默认级别</p>
+</li>
+<li><p>Isolation.REPEATABLE_READ 可重复读 保证多次读取同一数据时，其值都和开始时的数据一致，禁止读取到别的事务未提交的数据 （会出现幻读） MySQL的默认级别</p>
+</li>
+<li><p>Isolation.SERIALIZABLE 序列化 代价最高最可靠。</p>
+</li>
+</ol>
+<h3 id="Spring由那些模块组成？"><a href="#Spring由那些模块组成？" class="headerlink" title="Spring由那些模块组成？"></a>Spring由那些模块组成？</h3><blockquote>
+</blockquote>
+<ul>
+<li>Core module </li>
+<li>bean module</li>
+<li>Context module</li>
+<li>Expression language module<blockquote>
+</blockquote>
+</li>
+<li>JDBC  module</li>
+<li>ORM module</li>
+<li>OXM module</li>
+<li>Java Message Service module</li>
+<li>Transaction module</li>
+<li>Web module</li>
+<li>Web-Servlet module</li>
+<li>Web-Struts module</li>
+<li>Web-Portlet module</li>
+</ul>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><blockquote>
+<p>BeanFactory，Spring中最底层的接口，只提供了最简单的容器功能，实例化对象和拿对象。启动时不会实例化，从容器中拿Bean时才会，占用资源较少<br>ApplicationContext，高级容器，间接实现了BeanFactory接口，具备了更多的功能，如资源的获取(URL或文件)。启动时就把所有Bean实例化了，运行速度较快</p>
+</blockquote>
+<h3 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h3><p>Inversion of Control,控制反转。负责创建对象、通过DI（依赖注入）管理对象、装配对象、配置对象，并管理这些对象的生命周期。<br>优点：把应用的代码量降到最低，更容易测试，最小的侵入性实现松散耦合。这里的解耦合指的是接口和实现类之间的解耦，在实现类中声明引用型属性，并添加它的setter方法，直接用引用型属性调用实现类。</p>
+<p>serviceimpl中添加引用型属性dao,用dao直接调用dao的A方法，就能实现daoImpl调用它的A方法（即service的实现类直接使用dao接口，不知道dao具体的实现类，Spring容器内部完成了这些）。<br>之前的方式：Dao dao = new DaoImpl( );<br>现在的Spring方式：Dao dao;  dao的setter方法，这两步。</p>
+<h3 id="DI依赖注入"><a href="#DI依赖注入" class="headerlink" title="DI依赖注入"></a>DI依赖注入</h3><p>Dependency Injection，IOC容器初始化bean的实例对象后，会对对象的属性进行初始化，这个过程就是依赖注入<br>两种方式：</p>
+<ol>
+<li>构造器注入<br>通过容器触发一个类的构造器来实现，构造器中有一系列参数，每个参数代表对其他类的依赖。建议用于强制依赖<br>缺点：代码多影响可读性不好维护</li>
+<li>setter方法注入<br>容器通过调用无参构造器或无参静态工厂方法实例化bean之后，调用该bean的setter方法实现属性的注入。建议用于可选依赖<br>缺点：不能将对象设为final</li>
+<li>属性注入<br>@Autowirde<br>缺点：可能会NPE、不能final修饰、不通过反射不能被实例化</li>
+</ol>
+<h3 id="AOP面向切面编程"><a href="#AOP面向切面编程" class="headerlink" title="AOP面向切面编程"></a>AOP面向切面编程</h3><p>把应用业务逻辑和系统服务（如日志、事务管理）分开，底层使用动态代理方式实现<br>Spring AOP仅支持方法级别的PointCut</p>
+<ul>
+<li>连接点(joinPoint)：类里面可以被增强的方法</li>
+<li>切入点(Pointcut)：类里面实际增强的方法</li>
+<li>通知/增强(Advice)：实际增强的逻辑功能<pre><code>1. 前置通知(before)：在方法前执行                                                   - - - - - - -@Before
+2. 后置通知(after)：在方法后执行，无论是方法正常退出还是异常返回，类似于finally      - - - - - - @After
+3. 最终通知(after-returning)：后置之后执行，方法正常返回后执行                      - - - - - - -@AfterReturning
+4. 异常通知(after-throwing)：方法抛出异常退出时执行                                   - - - - - -@AfterThrowing
+5. 环绕通知(aroud)：分别在方法执行之前和之后执行                                      - - - - -  @Around
+</code></pre></li>
+<li>切面(Aspect)：把增强应用到切入点的过程</li>
+<li>引入(Introduction)：引入新的接口以及一个对应的实现到任何被代理的对象</li>
+<li>目标对象(Target Object)：被一个或多个切面所通知的对象，又叫被通知对象</li>
+<li>织入(Weaving):把增强应用到目标对象，来创建新的代理对象的过程，是在运行时执行的。</li>
+</ul>
+<h3 id="如何理解Spring中的代理"><a href="#如何理解Spring中的代理" class="headerlink" title="如何理解Spring中的代理"></a>如何理解Spring中的代理</h3><p>将Advice应用在目标对象创建的对象称为代理<br>tagart + Advice = Proxy</p>
+<h3 id="Spring-beans"><a href="#Spring-beans" class="headerlink" title="Spring beans"></a>Spring beans</h3><p>是被Spring IOC容器中配置的元数据初始化并管理的对象，不是线程安全的。<br>一般来说很少在spring bean里放一些实例变量，一般都是多组件互相调用，最终访问数据库</p>
+<h3 id="如何给Spring提供配置元数据？"><a href="#如何给Spring提供配置元数据？" class="headerlink" title="如何给Spring提供配置元数据？"></a>如何给Spring提供配置元数据？</h3><ul>
+<li>XML配置文件</li>
+<li>基于注解</li>
+<li>基于Java的配置</li>
+</ul>
+<h3 id="bean的作用域"><a href="#bean的作用域" class="headerlink" title="bean的作用域"></a>bean的作用域</h3><ol>
+<li></li>
+</ol>
+<ul>
+<li>singleton 只有一个实例（默认）</li>
+<li>prototype 一个bean可以有多个实例</li>
+</ul>
+<ol start="2">
+<li>只在基于Web的Spring ApplicationContext情形下有效</li>
+</ol>
+<ul>
+<li>request 每个请求都会创建一个bean</li>
+<li>session 在一个Http Session中，一个bean定义对应一个实例</li>
+<li>global-session 在一个全局的Session中，一个bean定义对应一个实例</li>
+</ul>
+<h3 id="bean的生命周期"><a href="#bean的生命周期" class="headerlink" title="bean的生命周期"></a>bean的生命周期</h3><blockquote>
+<p>有两种：Bean工厂对bean的管理、上下文对bean的管理</p>
+</blockquote>
+<ol>
+<li>（由beanFactory读取bean的定义文件）实例化bean</li>
+<li>依赖注入bean的属性</li>
+<li>如果bean实现了org.springframework.beans.factory.BeanNameAware接口，则执行其setBeanName()方法</li>
+<li>如果bean实现了org.sprignframework.beans.factory.BeanFactoryAware接口，则执行其setBeanFactory()方法</li>
+<li>如果bean实现了ApplicationContextAware接口，则执行其setApplicationContext()方法。//线程只是帮我们去做一些事情，不要让线程去获取数据（例如applicationContext），最好是就这样在开启线程前就将数据给线程</li>
+<li>如果bean实现了org.springframework.beans.factory.BeanPostProcessors接口，<br>则Bean在初始化之前都会执行这个实例的postProcessBeforeInitialization(Object obj, String s)方法，即前置增强方法。</li>
+<li>如果bean实现了InitializingBean接口，Spring将调用它们的afterPropertiesSet()方法。<br>同样，如果在配置文件中声明了初始化方法，指定了bean的init-method，则调用它。</li>
+<li>如果bean实现了org.springframework.beans.factory.BeanPostProcessors接口，则Spring将调用它的postprocessAfterInitialization(Object obj, String s)方法</li>
+<li>此时bean已经准备就绪，可以被应用程序使用了，将一直驻留在应用上下文中，直到应用上下文被销毁</li>
+<li>如果bean实现了DisposableBean接口，Spring将调用它们的destroy()方法。同样，如果配置文件中声明了bean的销毁方法destroy-method，则调用它。</li>
+</ol>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><ul>
+<li>开启注解扫描：&lt;context: component-scan base-package=””&gt;&lt;/context: component-scan&gt;</li>
+<li>@Configuration 功能同@Component，但是所有带@bean的方法都会被动态代理，所以调用该方法返回的都是同一个实例</li>
+<li>@Component 用于类上，实例化bean，相当于配置文件中的<bean id=" " class=" "></bean></li>
+<li>@Bean 表示此方法会返回一个对象，作为一个bean注册进上下文</li>
+<li>@Required 用在setter方法上，表明当前bean的这个属性必须在配置的时候设置值，否则会报错</li>
+<li>@Autowrited  以类型方式依赖注入属性，可用在构造器、Setter方法及其他普通方法上，如果方法没有bean参数，将会抛出异常，如果有多个bean，则抛出异常没有表明指定哪个bean进行自动装配; 它替代了配置文件中的 <property>元素</property></li>
+<li>@PathVariable - 用于将动态值从URI映射到处理程序方法的参数</li>
+<li>@Autowirde 用于Spring bean自动装配依赖项</li>
+<li>@Qualifier value属性，指定bean的名称，避免用@Autowirde时存在多个bean实例出现混淆</li>
+<li>@Scope 配置bean的使用范围</li>
+<li>@Configuration 定义扫描的路径从中找出标识了需要装配的类自动装配到spring的bean容器中，默认扫描@Component, @Repository, @Service, @Controller注解的类，相对应XML配置的<a href="context:component-scan/" target="_blank" rel="noopener">context:component-scan/</a></li>
+<li>@Aspect，@Before，@After，@Around，@Pointcut - 用于切面编程（AOP）</li>
+<li>@RequestMapping 将HTTP请求的URL映射到对应控制器中的特定类/方法上，可用在类和方法上。</li>
+</ul>
+<blockquote>
+<p>@Autowired和@Resource</p>
+<blockquote>
+<p>都可以用来装配Bean，可用于属性或set方法上<br>@Autowired 按照类型装配。   required属性，默认true，不允许为null<br>@Resource 按照名称装配，找不到名称了就按照类型。 name属性指定bean的名称，type属性指定bean的类型</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>@Qualifier value属性，指定bean的名称<br>@Autowired + @Qualifier = @Resource</p>
+</blockquote>
+</blockquote>
+<h3 id="Component在接口上时会报错"><a href="#Component在接口上时会报错" class="headerlink" title="@Component在接口上时会报错"></a>@Component在接口上时会报错</h3><p>原因接口不能实例化</p>
+<h3 id="Component、-Controller、-Service、-Repository"><a href="#Component、-Controller、-Service、-Repository" class="headerlink" title="@Component、@Controller、@Service、@Repository"></a>@Component、@Controller、@Service、@Repository</h3><p>@Component 实例化Bean，将Bean注入到Spring容器进行管理。 其他三个是@Component的功能扩展，针对不同的场景用相应的注解</p>
+<p>@Controller 作用于表现层， 将请求进行转发、重定向。<br>@Service 作用于业务逻辑层， 处理业务逻辑。 接口实现类上<br>@Repository 作用于持久层， 作为DAO对象，可直接对数据库进行操作。 能够将数据库操作抛出的原生异常转化为Spring的数据访问异常。 </p>
+<h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><ul>
+<li><p>jdk动态代理<br>要求被代理的类必须实现接口，利用反射技术，调用了Proxy.newProxyInstance(ClassLoader loader,Class&lt;?&gt;[] interfaces,InvocationHandler h) 方法生成字节码，动态创建一个代理类。</p>
+</li>
+<li><p>cglib动态代理，可以在运行期扩展Java类和实现Java接口，底层实现是通过ASM字节码处理框架来转换字节码并生成新的class（被代理类的子类）；速度上比jdk动态代理要快。</p>
+</li>
+</ul>
+<p>Spring AOP 中的代理使用逻辑：<br>如果目标对象实现了接口，默认情况下会采用 JDK 的动态代理实现 AOP；<br>如果目标对象没有实现了接口，则采用 CGLIB 库；<br>Spring 会自动在 JDK 动态代理和 CGLIB 动态代理之间转换。</p>
+<h3 id="Spring都用到了哪些设计模式？"><a href="#Spring都用到了哪些设计模式？" class="headerlink" title="Spring都用到了哪些设计模式？"></a>Spring都用到了哪些设计模式？</h3><ul>
+<li>工厂模式：BeanFactory就是简单工厂模式，用来创建对象实例</li>
+<li>单例模式：Bean默认为单例模式</li>
+<li>代理模式：Spring的AOP功能用到了jdk动态代理模式和cglib字节码生成技术,实现了接口的类采用JDK动态代理否则采用cglib</li>
+<li>模板方法：用来解决代码重复的问题，如RestTemplate，JmsTemplate，JdbcTemplate</li>
+<li>观察者模式：定义对象一对多的依赖关系，当一个对象的状态发生改变时，其他对象都会得到通知被制动更新，在Spring中listener的实现，如ApplicationListener</li>
+</ul>
+<h2 id="springboot-validation-over-json"><a href="#springboot-validation-over-json" class="headerlink" title="springboot-validation-over-json"></a>springboot-validation-over-json</h2><h3 id="RestControllerAdvice"><a href="#RestControllerAdvice" class="headerlink" title="@RestControllerAdvice"></a>@RestControllerAdvice</h3><p>作用在类上，表示增强某个逻辑功能</p>
+<h3 id="ExceptionHandler-value-GlobalErrorInfoException-class"><a href="#ExceptionHandler-value-GlobalErrorInfoException-class" class="headerlink" title="@ExceptionHandler(value = GlobalErrorInfoException.class)"></a>@ExceptionHandler(value = GlobalErrorInfoException.class)</h3><p>作用在方法上，当创建一个GlobalErrorInfoException对象时，此方法会被调用</p>
+<h3 id="web-xml配置"><a href="#web-xml配置" class="headerlink" title="web.xml配置"></a>web.xml配置</h3><p>在web.xml中配置Spring的配置文件applicationContext.xml,需要为其配置ContextLoaderListener监听器<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Spring提供ServletContextListener的一个实现类ContextLoaderListener监听器，启动tomcat容器时，该类的作用就是自动装载ApplicationContext的配置信息，如果没有设置contextConfigLocation的初始参数，则会使用默认WEB_INF路径下的application.xml文件。</p>
+</blockquote>
+<blockquote>
+<p>ContextLoaderListener会读取这些xml文件产生的WebApplicationContext对象，然后将这些对象放置在ServletContext的属性里，这样我们只要可以得到Servlet就可以得到WebApplicationContext对象，并利用对象访问Spring容器管理的bean。</p>
+</blockquote>
+<p>ps: web.xml中元素的加载顺序：context-param–&gt;listeners–&gt;filters–&gt;servlets(load on startup)</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	
+	<div>
+    
+    <div>
+    
+		<br>
+        <div style="text-align:center;color: #ccc;font-size:20px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+    
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Java/Shiro/" rel="next" title="Shiro">
+                <i class="fa fa-chevron-left"></i> Shiro
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Java/注解/" rel="prev" title="注释">
+                注释 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzUwNi8yMDA0Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="VAQ">
+            
+              <p class="site-author-name" itemprop="name">VAQ</p>
+              <div class="site-description motion-element" itemprop="description">平庸，就是失去追求卓越信念的那个瞬间！</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="tencent://QQInterLive/?Cmd=2&Uin=863592923" title="QQ &rarr; tencent://QQInterLive/?Cmd=2&Uin=863592923" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:863592923@qq.com" title="邮箱 &rarr; mailto:863592923@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>邮箱</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">1.</span> <span class="nav-text">Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#English"><span class="nav-number">1.1.</span> <span class="nav-text">English</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务-传播属性-propagation"><span class="nav-number">1.2.</span> <span class="nav-text">事务-传播属性 propagation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务-隔离级别"><span class="nav-number">1.3.</span> <span class="nav-text">事务-隔离级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring由那些模块组成？"><span class="nav-number">1.4.</span> <span class="nav-text">Spring由那些模块组成？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器"><span class="nav-number">1.5.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC"><span class="nav-number">1.6.</span> <span class="nav-text">IOC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DI依赖注入"><span class="nav-number">1.7.</span> <span class="nav-text">DI依赖注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP面向切面编程"><span class="nav-number">1.8.</span> <span class="nav-text">AOP面向切面编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何理解Spring中的代理"><span class="nav-number">1.9.</span> <span class="nav-text">如何理解Spring中的代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-beans"><span class="nav-number">1.10.</span> <span class="nav-text">Spring beans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何给Spring提供配置元数据？"><span class="nav-number">1.11.</span> <span class="nav-text">如何给Spring提供配置元数据？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bean的作用域"><span class="nav-number">1.12.</span> <span class="nav-text">bean的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bean的生命周期"><span class="nav-number">1.13.</span> <span class="nav-text">bean的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">1.14.</span> <span class="nav-text">注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component在接口上时会报错"><span class="nav-number">1.15.</span> <span class="nav-text">@Component在接口上时会报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component、-Controller、-Service、-Repository"><span class="nav-number">1.16.</span> <span class="nav-text">@Component、@Controller、@Service、@Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态代理"><span class="nav-number">1.17.</span> <span class="nav-text">动态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring都用到了哪些设计模式？"><span class="nav-number">1.18.</span> <span class="nav-text">Spring都用到了哪些设计模式？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot-validation-over-json"><span class="nav-number">2.</span> <span class="nav-text">springboot-validation-over-json</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RestControllerAdvice"><span class="nav-number">2.1.</span> <span class="nav-text">@RestControllerAdvice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ExceptionHandler-value-GlobalErrorInfoException-class"><span class="nav-number">2.2.</span> <span class="nav-text">@ExceptionHandler(value = GlobalErrorInfoException.class)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-xml配置"><span class="nav-number">2.3.</span> <span class="nav-text">web.xml配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user">&nbsp;VAQ</i>
+  </span>
+  
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">105k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">1:36</span>
+  
+</div>
+
+
+ 
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'Java/Spring/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+ 
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 动态背景 -->
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>

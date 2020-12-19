@@ -124,17 +124,20 @@
     }
 </style>
 
-  <meta name="description" content="Rediskey-value型数据库 Redis的持久化 RDB默认方式按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期 AOF将每一个收到的写命令通过write函数追加到文件最后，重">
+  <meta name="description" content="Redis默认端口号6379  丰富的数据类型Redis是key-value型数据库，key是字符串格式，value可以是String,Hash,List,Set,Sorted Set一个键能存512M的值   String使用场景；  用户访问次数、商品浏览次数、缓存频繁读取但不常修改的信息(值用json格式)、限定某个ip特定时间的访问次数、分布式session(session是以文件形式存在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="http://vaq.gitee.io/uncategorized/Redis/index.html">
 <meta property="og:site_name" content="VAQ的博客">
-<meta property="og:description" content="Rediskey-value型数据库 Redis的持久化 RDB默认方式按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期 AOF将每一个收到的写命令通过write函数追加到文件最后，重">
+<meta property="og:description" content="Redis默认端口号6379  丰富的数据类型Redis是key-value型数据库，key是字符串格式，value可以是String,Hash,List,Set,Sorted Set一个键能存512M的值   String使用场景；  用户访问次数、商品浏览次数、缓存频繁读取但不常修改的信息(值用json格式)、限定某个ip特定时间的访问次数、分布式session(session是以文件形式存在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-25T15:52:42.346Z">
+<meta property="og:image" content="http://vaq.gitee.io/uncategorized/image/Redis/Sentinel.png">
+<meta property="og:image" content="http://vaq.gitee.io/uncategorized/image/Redis/Cluster.png">
+<meta property="og:updated_time" content="2020-12-13T15:55:36.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="Rediskey-value型数据库 Redis的持久化 RDB默认方式按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期 AOF将每一个收到的写命令通过write函数追加到文件最后，重">
+<meta name="twitter:description" content="Redis默认端口号6379  丰富的数据类型Redis是key-value型数据库，key是字符串格式，value可以是String,Hash,List,Set,Sorted Set一个键能存512M的值   String使用场景；  用户访问次数、商品浏览次数、缓存频繁读取但不常修改的信息(值用json格式)、限定某个ip特定时间的访问次数、分布式session(session是以文件形式存在">
+<meta name="twitter:image" content="http://vaq.gitee.io/uncategorized/image/Redis/Sentinel.png">
 
 
 
@@ -427,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-10-25 23:52:42" itemprop="dateModified" datetime="2020-10-25T23:52:42+08:00">2020-10-25</time>
+                <time title="修改时间：2020-12-13 23:55:36" itemprop="dateModified" datetime="2020-12-13T23:55:36+08:00">2020-12-13</time>
               
             
           </span>
@@ -462,7 +465,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.3k</span>
+                <span title="本文字数">4.4k</span>
               
 
               
@@ -476,7 +479,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -496,27 +499,78 @@
       
 
       
-        <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>key-value型数据库</p>
-<h3 id="Redis的持久化"><a href="#Redis的持久化" class="headerlink" title="Redis的持久化"></a>Redis的持久化</h3><ol>
-<li>RDB默认方式<br>按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）<br>对应产生的数据文件为dump.rdb，可通过配置文件中的save参数来定义保存周期</li>
-<li>AOF<br>将每一个收到的写命令通过write函数追加到文件最后，重启Redis后会根据内存的写命令在内存中重建整个数据库的内容</li>
+        <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>默认端口号6379</p>
+<ol>
+<li>丰富的数据类型<br>Redis是key-value型数据库，key是字符串格式，value可以是String,Hash,List,Set,Sorted Set<br>一个键能存512M的值</li>
 </ol>
-<p>两种方式同时开启时，优先执行AOF方式</p>
-<h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>原因：设置的缓存采用了相同的过期时间，同一时刻出现原有缓存过期。</p>
-<p>结果：新缓存还没存入期间，访问缓存的请求都直接去访问数据库了，对数据库的CPU和内存造成压力</p>
+<ul>
+<li><p>String使用场景；</p>
+<blockquote>
+<p>用户访问次数、商品浏览次数、<br>缓存频繁读取但不常修改的信息(值用json格式)、<br>限定某个ip特定时间的访问次数、<br>分布式session(session是以文件形式存在服务器中，用户在服务器A登录，下次却访问了服务器B，解决方式可以把session存在Redis中，Redis可以独立于所有负载均衡服务器，也可以放在一台服务器上)</p>
+</blockquote>
+</li>
+<li><p>Hash使用场景：</p>
+<blockquote>
+<p>某个属性需要频繁修改时。如购物车的商品信息，商品价格、销量等变化</p>
+</blockquote>
+</li>
+<li><p>List使用场景：</p>
+<blockquote>
+<p>定时排行榜<br>Lrange  返回列表中指定区间内的元素，相当于分页查找<br>lrange key_name start end  0表示第一个元素，-1表示倒数第1个，-2表示倒数第2个  [start,end] </p>
+</blockquote>
+</li>
+<li><p>Set使用场景：</p>
+<blockquote>
+<p>音乐收藏夹列表</p>
+</blockquote>
+</li>
+<li><p>Sorted Set,即zSet，元素不允许重复，每个元素都关联了一个double类型的分数(score)，根据分数从小到大排序，分数可以重复，使用场景：</p>
+<blockquote>
+<p>新歌榜、飙升榜 点击量作为score</p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li>内存存储<blockquote>
+<p>传统数据库是索引存下内存中，数据存在硬盘，<br>数据是直接存在内存中的，是基于内存的而不是硬盘，读写速度非常快，所以被广泛应用于缓存方向</p>
+</blockquote>
+</li>
+<li>可持久化<blockquote>
+<p>把内存的数据保存在硬盘中，方便进行数据的备份和恢复</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Redis的持久化"><a href="#Redis的持久化" class="headerlink" title="Redis的持久化"></a>Redis的持久化</h3><p>将内存中的数据(如对象)保存到存储设备中(如磁盘)</p>
+<ol>
+<li>RDB默认方式(可自动触发bgsave和手动触发)<br>按照一定的时间周期把内存的数据以快照的形式保存到硬盘的二进制文件。（二进制文件和文本文件都是按照二进制存储的，文本文件是把一个个字节解读成字符，二进制文件的输入输出省去了转换的过程）<br>对应产生的数据文件为dump.rdb，可通过配置文件redis.conf中的save参数来定义保存周期，save 900 1 表示如果900秒内有1个key发生了变化(增、修、删)，则重写rdb文件，save””表示关闭自动触发</li>
+<li><p>AOF 需要配置appendonly yes，默认不开启。默认文件名appendonly.aof<br>将每一个收到的写命令通过write函数追加到文件最后，重启Redis后会根据内存的写命令在内存中重建整个数据库的内容。Redis还会对AOF文件进行后台重写，是的AOF文件不至于过大</p>
+</li>
+<li><p>两种方式同时开启时，优先执行AOF方式，因为AOF保存的要比RDB保存的完整</p>
+</li>
+</ol>
+<p>RDB优点：是紧凑的二进制文件，比较适合备份和全量复制，速度远快于AOF<br>   缺点：无法实现实时或毫秒级持久化，新老版本无法兼容rdb文件<br>AOF优点: 更好的保护数据不丢失，最多丢失一秒的数据，appen-only模式写入性能比较高，适合做灾难性的误删除紧急恢复<br>   缺点：文件占用空间大，开启后会对QPS有影响，数据恢复比较慢不适合做冷备份(离线备份)</p>
+<h3 id="单线程的模型"><a href="#单线程的模型" class="headerlink" title="单线程的模型"></a>单线程的模型</h3><p>采用IO多路复用机制同时监听多个socket，根据socket上的事件来选择对应的事件处理器进行处理</p>
+<h3 id="单线程的Redis为什么那么快"><a href="#单线程的Redis为什么那么快" class="headerlink" title="单线程的Redis为什么那么快"></a>单线程的Redis为什么那么快</h3><ol>
+<li>纯内存操作</li>
+<li>单线程避免了频繁的上下文切换</li>
+<li>采用了非阻塞IO，多路I/O复用机制</li>
+</ol>
+<h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>原因：设置的缓存采用了相同的过期时间，同一时刻出现原有缓存过期；或缓存服务突然宕机了。</p>
+<p>结果：（新缓存还没存入期间，）访问缓存的请求都直接去访问数据库了，对数据库的CPU和内存造成压力</p>
 <p>解决办法：</p>
 <ol>
-<li>加锁</li>
+<li>加锁 ， 同缓存击穿</li>
 <li>队列<br>保证不会有大量的线程对数据库一次性进行读写</li>
-<li>将缓存失效时间分散开</li>
+<li>将缓存失效时间分散开，过期时间加上一个随机值</li>
 </ol>
 <h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><p>原因：数据库中不存在，缓存中也肯定不存在，但每次访问都会先访问缓存再访问数据库</p>
 <p>结果：造成里两次无用的查询</p>
-<p>解决办法：采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的bitmap中，一个不存在的数据会被这个bitmap拦截，从而避免了对数据库查询的压力</p>
+<p>解决办法：<br>A. 采用布隆过滤器BloomFilter，将所有可能存在的数据哈希到一个足够大的bitmap中，一个不存在的数据会被这个bitmap拦截，从而避免了对数据库查询的压力<br>B. 缓存空值，数据库中不存在的值，则在缓存中设为null，有查询当前key的请求时直接返回null（注意设置过期时间）</p>
 <p>布隆过滤器：n个相互独立的哈希函数，解决哈希冲突，一个函数在bitmap中查询不到就说明不存在，只有全部函数都查到了才说明存在这个数据 </p>
+<p>两种方案可同时使用，先A过滤，再B缓存null</p>
 <h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>原因：一个key非常热点，这个key失效的瞬间，大并发穿破缓存直接访问数据库</p>
 <p>结果：请求都直接去访问数据库了，对数据库的CPU和内存造成压力</p>
-<p>解决办法：在访问key之前，采用SETNX（set if not exist），设置另一个短期key来锁住当前key的访问，访问结束后再删除该短期key</p>
+<p>解决办法：在访问key之前，采用SETNX（set if not exist），设置另一个短期key来锁住当前key的访问，访问结束后再删除该短期key，即在第一个查询数据的请求上采用一个互斥锁，没有查询到数据时锁住当前key，查询到以后，做缓存，再解锁</p>
 <h3 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h3><p>在系统上线后将相关的缓存数据直接加载到缓存系统。这样可以直接查询事先被预热的缓存数据，避免用户在请求时先查询数据库再讲数据进行缓存。</p>
 <h3 id="缓存更新"><a href="#缓存更新" class="headerlink" title="缓存更新"></a>缓存更新</h3><p>Redis有6中自带的缓存失效策略。 </p>
 <ul>
@@ -524,20 +578,47 @@
 <li>当有用户请求过来时再判断请求的缓存是否过期了，过期的话就从数据库中得到新数据并更新缓存  缺点：每次请求都要判断缓存是否失效，逻辑比较复杂</li>
 </ul>
 <h3 id="缓存降级"><a href="#缓存降级" class="headerlink" title="缓存降级"></a>缓存降级</h3><p>非核心业务影响到核心性能，对其降级，目的是保证核心服务可用，即使是有损的</p>
-<h3 id="热点数据、冷数据"><a href="#热点数据、冷数据" class="headerlink" title="热点数据、冷数据"></a>热点数据、冷数据</h3><p>缓存在失效前至少被访问了两次，这样缓存才有意义。为访问频率比较高的热点数据建立缓存</p>
-<h3 id="单线程的Redis为什么那么快"><a href="#单线程的Redis为什么那么快" class="headerlink" title="单线程的Redis为什么那么快"></a>单线程的Redis为什么那么快</h3><ol>
-<li>纯内存操作</li>
-<li>单线程避免了频繁的上下文切换</li>
-<li>采用了非阻塞I/O多路复用机制</li>
-</ol>
-<h1 id="Redis-1"><a href="#Redis-1" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redisson"><a href="#Redisson" class="headerlink" title="Redisson"></a>Redisson</h2><p>是Redis官方Java版客户端</p>
+<h3 id="热点数据、冷数据"><a href="#热点数据、冷数据" class="headerlink" title="热点数据、冷数据"></a>热点数据、冷数据</h3><p>缓存在失效前至少被访问了两次，这样缓存才有意义。要为访问频率比较高的热点数据建立缓存</p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p> 开启事务：MULTI 总是返回 OK<br> 命令入队列：每次操作的命令都会加入到一个队列中，但此时命令不会执行<br> 提交事务：EXEC 开始顺序执行队列中的命令</p>
+<p> DISCARD清空事务队列并退出事务<br> WATCH监控一至多个key，一旦其中一个键被修改(删除)，之后的事务就不会执行了<br> UNWATCH取消对key的监视，执行DISCARD就不用执行这个了</p>
+<ul>
+<li>发生命令执行错误Redis不会停止执行然后回滚数据的，所以不是Redis的事务不是原子性，为什么? 为了保证功能简化 ，运行速度更快 </li>
+</ul>
+<h3 id="Redis的主从复制"><a href="#Redis的主从复制" class="headerlink" title="Redis的主从复制"></a>Redis的主从复制</h3><p>将一台redis服务器(主节点master)的数据复制到其他节点redis服务器中(从节点slave)</p>
+<p>作用：数据冗余、故障恢复、负载均衡(读写分离、只由主节点负责写)、高可用基石(是哨兵和集群的基础)</p>
+<p>实现原理： </p>
 <ol>
-<li>key：value存储系统</li>
+<li>连接建立阶段 ：<ul>
+<li>保存主节点信息: 从节点执行slaveof命令(异步)，维护masterhost、masterport两个字段，存储主节点的ip和port信息</li>
+<li>建立socket连接：从节点每秒一次调用复制定时函数replicationCron(),创建socket连接，主节点accept后，为该socket创建相应的客户端状态</li>
+<li>发送ping命令：  从节点发送ping命令检查socket是否可用，主节点是否能够处理请求，只有返回pong才说明正常</li>
+<li>身份验证： 如果从节点设置里masterauth选项，则通过向主节点发送auth命令进行身份验证</li>
+<li>发送从节点端口信息 ：从节点向主节点发送其监听的端口信息，主节点将该信息保存到从节点对应的客户端的slave_listening_port字段中</li>
+</ul>
+</li>
+<li>数据同步阶段： 从节点的数据初始化，从节点向主节点发送psync命令进行同步数据</li>
+<li>命令传播阶段： 主节点将自己执行的写命令发送给从节点，从节点接收命令并执行，保证主从数据一致性。是异步过程，所以延迟在所难免</li>
 </ol>
-<h3 id="五种类型"><a href="#五种类型" class="headerlink" title="五种类型"></a>五种类型</h3><p>String、list、set、sorted set（或zset，因为有序集合相关的操作指令都是以z开头的，比如zrange、zadd、zrevrange、zrangebyscore等等)、hash</p>
+<h3 id="Sentinel-哨兵模式"><a href="#Sentinel-哨兵模式" class="headerlink" title="Sentinel(哨兵模式)"></a>Sentinel(哨兵模式)</h3><p>主从复制模式下，主节点发生问题需要手动将从节点晋升为主节点，还要通知客户端更新主节点地址<br>Sentinel是一个管理多个Redis实例的工具，可实现对Redis的监控、通知、自动故障转移<br>Sentinel创建时会从主节点上获取所有从节点的信息</p>
+<p>心跳机制：</p>
+<ol>
+<li>Sentinel与Redis Node之间，Sentinel定时向主节点和从节点发送info命令获得其拓扑结构和状态信息</li>
+<li>Sentinel与Sentinel之间，基于Redis的订阅发布功能，每个Sentinel节点会向主节点的Sentinel发送本节点对于主节点的判断以及当前Sentinel节点的信息</li>
+</ol>
+<p>故障转移：Sentinel节点发现Redis主结点出现心跳检测超时时，判定为主观下线，数量达quorum个节点判定为主观下线则为客观下线(quorum = Sentinel节点总数量/2 + 1)，就会基于Raft算法选出一个领导者Sentinel进行故障转移<br>故障转移步骤：</p>
+<p>（1）在从节点列表中选出一个节点作为新的主节点<br>    过滤不健康或者不满足要求的节点；<br>    选择 slave-priority（优先级）最高的从节点， 如果存在则返回， 不存在则继续；<br>    选择复制偏移量最大的从节点 ， 如果存在则返回， 不存在则继续；<br>    选择 runid 最小的从节点。<br>（2）Sentinel 领导者节点会对选出来的从节点执行 slaveof no one 命令让其成为主节点。</p>
+<p>（3）Sentinel 领导者节点会向剩余的从节点发送命令，让他们从新的主节点上复制数据。</p>
+<p>（4）Sentinel 领导者会将原来的主节点更新为从节点， 并对其进行监控， 当其恢复后命令它去复制新的主节点。<br><img src="/uncategorized/Redis/../image/Redis/Sentinel.png" alt="Sentinel哨兵"></p>
+<h3 id="Cluster-集群"><a href="#Cluster-集群" class="headerlink" title="Cluster(集群)"></a>Cluster(集群)</h3><p>实现了多节点同时写数据，采用无中心结构，每个节点都保存数据，节点之间相互连接从而知道整个集群状态</p>
+<p><img src="/uncategorized/Redis/../image/Redis/Cluster.png" alt="Cluster集群"></p>
+<h3 id="获取所有某个固定Pre前缀开头的key列表"><a href="#获取所有某个固定Pre前缀开头的key列表" class="headerlink" title="获取所有某个固定Pre前缀开头的key列表"></a>获取所有某个固定Pre前缀开头的key列表</h3><p>keys pre*<br>执行此命令时会导致线程阻塞一段时间</p>
+<p>scan命令可以无阻塞提取，但数据会有重复问题，可在客户端进行去重，而且整体所花费的时间会较长</p>
+<h2 id="Redisson"><a href="#Redisson" class="headerlink" title="Redisson"></a>Redisson</h2><p>是Redis官方Java版客户端</p>
 <h3 id="值是否带有双引号问题"><a href="#值是否带有双引号问题" class="headerlink" title="值是否带有双引号问题"></a>值是否带有双引号问题</h3><p>@Autowired<br>private RedisTemplate&lt;String,String&gt; redisTemplate;</p>
 <p>set和get的redisTemplate中应该用泛型保持一致</p>
-<p>### </p>
+<p> 你说你用了Redis，那就会进一步问你，你哪个业务用了Redis？那个业务的流程请你叙述一下？</p>
+<p>● 在Redis里你们具体是选用了哪种数据结构存放什么数据？数据的过期时间是什么？如果缓存过期了，你的数据兜底方案是什么，到哪儿去回查？</p>
+<p>● 你的key如何设计的，为什么要这么设计？你的这个业务把数据放在了Redis里，是其他哪个业务来查Redis？为什么要这样子做？如果不用Redis会怎么样？</p>
 
       
     </div>
@@ -667,7 +748,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -754,7 +835,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis的持久化"><span class="nav-number">1.1.</span> <span class="nav-text">Redis的持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存雪崩"><span class="nav-number">1.2.</span> <span class="nav-text">缓存雪崩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存穿透"><span class="nav-number">1.3.</span> <span class="nav-text">缓存穿透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存击穿"><span class="nav-number">1.4.</span> <span class="nav-text">缓存击穿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存预热"><span class="nav-number">1.5.</span> <span class="nav-text">缓存预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存更新"><span class="nav-number">1.6.</span> <span class="nav-text">缓存更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存降级"><span class="nav-number">1.7.</span> <span class="nav-text">缓存降级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热点数据、冷数据"><span class="nav-number">1.8.</span> <span class="nav-text">热点数据、冷数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程的Redis为什么那么快"><span class="nav-number">1.9.</span> <span class="nav-text">单线程的Redis为什么那么快</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-1"><span class="nav-number"></span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redisson"><span class="nav-number">1.</span> <span class="nav-text">Redisson</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#五种类型"><span class="nav-number">1.1.</span> <span class="nav-text">五种类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值是否带有双引号问题"><span class="nav-number">1.2.</span> <span class="nav-text">值是否带有双引号问题</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis的持久化"><span class="nav-number">1.1.</span> <span class="nav-text">Redis的持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程的模型"><span class="nav-number">1.2.</span> <span class="nav-text">单线程的模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程的Redis为什么那么快"><span class="nav-number">1.3.</span> <span class="nav-text">单线程的Redis为什么那么快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存雪崩"><span class="nav-number">1.4.</span> <span class="nav-text">缓存雪崩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存穿透"><span class="nav-number">1.5.</span> <span class="nav-text">缓存穿透</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存击穿"><span class="nav-number">1.6.</span> <span class="nav-text">缓存击穿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存预热"><span class="nav-number">1.7.</span> <span class="nav-text">缓存预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存更新"><span class="nav-number">1.8.</span> <span class="nav-text">缓存更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存降级"><span class="nav-number">1.9.</span> <span class="nav-text">缓存降级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热点数据、冷数据"><span class="nav-number">1.10.</span> <span class="nav-text">热点数据、冷数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.11.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis的主从复制"><span class="nav-number">1.12.</span> <span class="nav-text">Redis的主从复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sentinel-哨兵模式"><span class="nav-number">1.13.</span> <span class="nav-text">Sentinel(哨兵模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cluster-集群"><span class="nav-number">1.14.</span> <span class="nav-text">Cluster(集群)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取所有某个固定Pre前缀开头的key列表"><span class="nav-number">1.15.</span> <span class="nav-text">获取所有某个固定Pre前缀开头的key列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redisson"><span class="nav-number">2.</span> <span class="nav-text">Redisson</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值是否带有双引号问题"><span class="nav-number">2.1.</span> <span class="nav-text">值是否带有双引号问题</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -786,7 +867,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">105k</span>
   
 
   
@@ -795,7 +876,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:36</span>
   
 </div>
 
