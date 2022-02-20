@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: VAQ的博客
-tagline: 平庸，就是失去追求卓越信念的那个瞬间！
+tagline: 平庸，就是失去追求卓越信念的那个瞬间
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',

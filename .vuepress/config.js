@@ -1,5 +1,5 @@
 module.exports = {
-  "base": "/my-blog/",
+  "base": "/MyBlog/",
   "title": "VAQ的博客",
   "description": "平庸，就是失去追求卓越信念的那个瞬间！",
   "dest": "public", // 博客部署时输出的文件夹
@@ -156,12 +156,6 @@ module.exports = {
     [
       //插件广场的流程图插件 先安装在配置 npm install vuepress-plugin-flowchart --save
       "flowchart"
-    ],
-    [
-      //插件广场的sitemap插件 先安装在配置 npm install vuepress-plugin-sitemap --save
-      "sitemap", {
-        hostname: 'https://www.glassysky.site'
-      }
     ],
     ["vuepress-plugin-nuggets-style-copy", {
       copyText: "复制代码", //vuepress复制粘贴提示插件P 先安装在配置 npm install vuepress-plugin-nuggets-style-copy --save
