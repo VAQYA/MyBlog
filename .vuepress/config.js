@@ -1,5 +1,5 @@
 module.exports = {
-  "base": "/MyBlog/",
+  "base": "/MyBlog/public/",
   "title": "VAQ的博客",
   "description": "平庸，就是失去追求卓越信念的那个瞬间！",
   "dest": "public", // 博客部署时输出的文件夹
