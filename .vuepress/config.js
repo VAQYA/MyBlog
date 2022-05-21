@@ -68,24 +68,25 @@ module.exports = {
         "title": "午后南杂",
         "desc": "Enjoy when you can, and endure when you must.",
         "email": "1156743527@qq.com",
+        "logo": "https://gitee.com/vaq/image/raw/master/avatar/reco_luan.png",
         "link": "https://www.recoluan.com"
       },
       {
         "title": "vuepress-theme-reco",
         "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-        "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+        "logo": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
         "link": "https://vuepress-theme-reco.recoluan.com"
       },
       {
         "title": "被删的前端游乐场",
         "desc": "一个极度热爱前端的开发者",
-        "avatar": "https://gitee.com/vaq/image/raw/master/avatar/godbasin.jpg",
+        "logo": "https://gitee.com/vaq/image/raw/master/avatar/godbasin.jpg",
         "link": "http://www.godbasin.com"
       },
       {
         "title": "程序羊",
         "desc": "良心Up主，行业领头羊",
-        "avatar": "https://gitee.com/vaq/image/raw/master/avatar/codeSheep.jpg",
+        "logo": "https://gitee.com/vaq/image/raw/master/avatar/codeSheep.jpg",
         "link": "https://www.r2coding.com"
       },
     ],
@@ -96,7 +97,7 @@ module.exports = {
     "subSidebar": 'auto',
     "lastUpdated": "Last Updated",
     "author": "VAQ",
-    "authorAvatar": "/avatar.png",
+    "authorAvatar": "/avatar.png", // 首页右侧信息栏头像
     "record": "", // 备案号
     "startYear": "2017",
     /**
