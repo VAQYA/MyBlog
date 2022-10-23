@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mybatis | VAQ的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.4e19a8e2.css" as="style"><link rel="preload" href="/assets/js/app.ce46e7ce.js" as="script"><link rel="preload" href="/assets/js/4.5f7030b9.js" as="script"><link rel="preload" href="/assets/js/1.2bbf19aa.js" as="script"><link rel="preload" href="/assets/js/42.f047fb73.js" as="script"><link rel="prefetch" href="/assets/js/10.8b2daafe.js"><link rel="prefetch" href="/assets/js/11.ec62d542.js"><link rel="prefetch" href="/assets/js/12.6044fb72.js"><link rel="prefetch" href="/assets/js/13.42292fd3.js"><link rel="prefetch" href="/assets/js/14.d3180fef.js"><link rel="prefetch" href="/assets/js/15.aa480b44.js"><link rel="prefetch" href="/assets/js/16.7aa21e10.js"><link rel="prefetch" href="/assets/js/17.54c36480.js"><link rel="prefetch" href="/assets/js/18.8203c0b1.js"><link rel="prefetch" href="/assets/js/19.d95aa542.js"><link rel="prefetch" href="/assets/js/20.67239d21.js"><link rel="prefetch" href="/assets/js/21.8640bea4.js"><link rel="prefetch" href="/assets/js/22.ea2d5586.js"><link rel="prefetch" href="/assets/js/23.a090cb89.js"><link rel="prefetch" href="/assets/js/24.f82f25dc.js"><link rel="prefetch" href="/assets/js/25.902f44aa.js"><link rel="prefetch" href="/assets/js/26.a021bf69.js"><link rel="prefetch" href="/assets/js/27.e04d8311.js"><link rel="prefetch" href="/assets/js/28.6fbf89f1.js"><link rel="prefetch" href="/assets/js/29.b0ff0e5b.js"><link rel="prefetch" href="/assets/js/30.8ce375f9.js"><link rel="prefetch" href="/assets/js/31.3a52e362.js"><link rel="prefetch" href="/assets/js/32.1988e2ee.js"><link rel="prefetch" href="/assets/js/33.1b08f7b1.js"><link rel="prefetch" href="/assets/js/34.1c2d86be.js"><link rel="prefetch" href="/assets/js/35.cddf18bf.js"><link rel="prefetch" href="/assets/js/36.d63e3425.js"><link rel="prefetch" href="/assets/js/37.afa60ad4.js"><link rel="prefetch" href="/assets/js/38.cebcdb1a.js"><link rel="prefetch" href="/assets/js/39.44db393f.js"><link rel="prefetch" href="/assets/js/40.9a9ca75f.js"><link rel="prefetch" href="/assets/js/41.067f6c2f.js"><link rel="prefetch" href="/assets/js/43.09f54305.js"><link rel="prefetch" href="/assets/js/44.1ed1ae3a.js"><link rel="prefetch" href="/assets/js/45.cac6d076.js"><link rel="prefetch" href="/assets/js/46.4e6188bb.js"><link rel="prefetch" href="/assets/js/47.c5ad5f66.js"><link rel="prefetch" href="/assets/js/48.1ae62092.js"><link rel="prefetch" href="/assets/js/49.d658fae6.js"><link rel="prefetch" href="/assets/js/5.5566f999.js"><link rel="prefetch" href="/assets/js/50.e90dbf18.js"><link rel="prefetch" href="/assets/js/51.0d23b0ab.js"><link rel="prefetch" href="/assets/js/52.c46dc487.js"><link rel="prefetch" href="/assets/js/53.1ea66fa0.js"><link rel="prefetch" href="/assets/js/54.973790fc.js"><link rel="prefetch" href="/assets/js/55.8c50b439.js"><link rel="prefetch" href="/assets/js/56.b0935d4f.js"><link rel="prefetch" href="/assets/js/57.a1f806a4.js"><link rel="prefetch" href="/assets/js/58.28ba8163.js"><link rel="prefetch" href="/assets/js/59.bf4a3597.js"><link rel="prefetch" href="/assets/js/6.c517cf12.js"><link rel="prefetch" href="/assets/js/60.a50c3a50.js"><link rel="prefetch" href="/assets/js/61.e343cebb.js"><link rel="prefetch" href="/assets/js/62.acf432d3.js"><link rel="prefetch" href="/assets/js/63.8a4d70eb.js"><link rel="prefetch" href="/assets/js/64.f181b9fd.js"><link rel="prefetch" href="/assets/js/65.2a17594a.js"><link rel="prefetch" href="/assets/js/66.b1cfc178.js"><link rel="prefetch" href="/assets/js/67.e39e4544.js"><link rel="prefetch" href="/assets/js/68.9378dd6c.js"><link rel="prefetch" href="/assets/js/69.5b9a1ec4.js"><link rel="prefetch" href="/assets/js/7.2980b227.js"><link rel="prefetch" href="/assets/js/70.c4b2d398.js"><link rel="prefetch" href="/assets/js/71.5996542a.js"><link rel="prefetch" href="/assets/js/8.2e5e126d.js"><link rel="prefetch" href="/assets/js/9.6aa89a26.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.8679066c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4e19a8e2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>VAQ的博客</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>平庸，就是失去追求卓越信念的那个瞬间！</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>VAQ</span>
+            
+          <span data-v-25ba6db2>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="VAQ的博客" class="logo"> <span class="site-name">VAQ的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git1/" class="nav-link"><i class="undefined"></i>
+  Git1
+</a></li><li class="dropdown-item"><!----> <a href="/categories/KafKa/" class="nav-link"><i class="undefined"></i>
+  KafKa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/LeetCode/" class="nav-link"><i class="undefined"></i>
+  LeetCode
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软件工具/" class="nav-link"><i class="undefined"></i>
+  软件工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作流/" class="nav-link"><i class="undefined"></i>
+  工作流
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/blogs/contact/" class="nav-link"><i class="iconfont reco-message"></i>
+  联系我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    VAQ
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>60</h3> <h6 data-v-39576ba9>文章</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>4</h3> <h6 data-v-39576ba9>标签</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git1/" class="nav-link"><i class="undefined"></i>
+  Git1
+</a></li><li class="dropdown-item"><!----> <a href="/categories/KafKa/" class="nav-link"><i class="undefined"></i>
+  KafKa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/LeetCode/" class="nav-link"><i class="undefined"></i>
+  LeetCode
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软件工具/" class="nav-link"><i class="undefined"></i>
+  软件工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作流/" class="nav-link"><i class="undefined"></i>
+  工作流
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/blogs/contact/" class="nav-link"><i class="iconfont reco-message"></i>
+  联系我
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Mybatis</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>VAQ</span>
+            
+          <span data-v-25ba6db2>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page"><section><div class="page-title"><h1 class="title">Mybatis</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>VAQ</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>2019/4/9</span></i> <i class="iconfont reco-eye" data-v-f875f3fc><span id="/blogs/java/Mybatis.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-f875f3fc><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="mybatis"><a href="#mybatis" class="header-anchor">#</a> Mybatis</h1> <h3 id="foreach标签"><a href="#foreach标签" class="header-anchor">#</a> foreach标签</h3> <if test="query.employeeList != null  and query.employeeList.size()&gt;0"><div class="language- extra-class"><pre><code>		and eil.account_id not in
+        &lt;foreach collection=&quot;query.employeeList&quot; item=&quot;id&quot; index=&quot;index&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;
+</code></pre></div></if>
+not in ()会报错，所以要对queryemployeeList判空
+<p>collection 传入的集合，list、array、自定义的参数（@Param(&quot;query&quot;) ）
+item 集合中迭代元素的别名
+index list和数组中，index表示元素的序号，map中表示key 。 可选
+open 代码的开始符号
+close 代码的结束符号
+separator 分隔符</p> <h3 id="in和exist"><a href="#in和exist" class="header-anchor">#</a> in和exist</h3> <p>in没有用到索引</p> <p>select *
+from A
+where 1=1
+and exist （select 1 from B where 。。。） exist检测行的存在，返回的是true或false</p> <p>exist用于B表比A表数据大的情况</p> <h3 id="if-else"><a href="#if-else" class="header-anchor">#</a> if else</h3> <div class="language- extra-class"><pre><code>    &lt;choose&gt;
+        &lt;when test=&quot;pushMethod != null and pushMethod !='' &quot;&gt;
+            and push_method = #{pushMethod}
+        &lt;/when&gt;
+        &lt;otherwise&gt;
+            and (push_method ='xmpp' or push_method = 'jpush')
+        &lt;/otherwise&gt;
+    &lt;/choose&gt;
+</code></pre></div><h3 id="left"><a href="#left" class="header-anchor">#</a> left</h3> <p>select CONCAT(LEFT(a.user_phone,3), '5个*' , right(a.user_phone,3))  as userPhone</p> <h3 id="collection标签"><a href="#collection标签" class="header-anchor">#</a> collection标签</h3> <div class="language- extra-class"><pre><code>&lt;resultMap id=&quot;userInfoForCall&quot; type=&quot;cn.kinglian.phoneportal.model.vo.UserInfoForCallVo&quot;&gt;
+    &lt;result column=&quot;audit_diseases&quot; property=&quot;auditDiseases&quot;/&gt;
+    &lt;collection property=&quot;tagsList&quot; column=&quot;{userId=id}&quot; ofType=&quot;list&quot; select=&quot;getTags&quot;&gt;
+
+    &lt;/collection&gt;
+&lt;/resultMap&gt;
+
+	&lt;select id=&quot;getTags&quot; resultType=&quot;string&quot;&gt;
+    select name
+    from user_tags ut
+    left join tags t on t.id = ut.tags_id
+    where ut.user_id = #{userId}
+	&lt;/select&gt;
+
+ &lt;select id=&quot;getUserInfoForCall&quot; resultMap=&quot;userInfoForCall&quot; parameterType=&quot;string&quot;&gt;
+	SELECT u.id, u.avatar, u.account, u.real_name, u.gender, u.age, u.create_time, u.sfzh
+	FROM USER u
+	WHERE
+	u.deleted != 1
+	AND u.account_id = #{value}
+ &lt;/select&gt;
+</code></pre></div><h3 id="延迟加载-vs-立即加载"><a href="#延迟加载-vs-立即加载" class="header-anchor">#</a> 延迟加载 VS 立即加载</h3> <p>延迟加载：在真正需要数据时才发起查询，不用时不查询关联的数据，又叫做按需查询(懒加载)。多用于一对多、多对多，lazyLoadingEnabled属性设置，默认false<br>
+立即加载：不管需不需要，只要调用方法，立即加载所有数据。多用于多对一、一对一，lazyLoadingEnabled属性设置，默认false</p> <h3 id="一级缓存、二级缓存"><a href="#一级缓存、二级缓存" class="header-anchor">#</a> 一级缓存、二级缓存</h3> <p>一级缓存：是SQLSession级别的缓存，缓存的是对象，当SqlSession提交、关闭等其他更新数据库的操作后，一级缓存就会失效。默认开启
+二级缓存：是SQLSessionFactory级别的缓存，缓存中存储的是数据，命中二级缓存时，通过存储的数据构造成对象再返回。默认关闭
+查询顺序： 二级缓存-&gt;一级缓存-&gt;数据库数据</p> <h2 id="querywrapper是链式调用的"><a href="#querywrapper是链式调用的" class="header-anchor">#</a> queryWrapper是链式调用的</h2> <h3 id="and里用or"><a href="#and里用or" class="header-anchor">#</a> and里用or</h3> <div class="language- extra-class"><pre class="language-text"><code>//且不能忘了and
+queryWrapper.and(wrapper -&gt; wrapper.like(&quot;patient_name&quot;,query.getKeyword()).or().like(&quot;employee_phone&quot;,query.getKeyword()));  
+
+</code></pre></div><h3 id="大于小于"><a href="#大于小于" class="header-anchor">#</a> 大于小于</h3> <div class="language- extra-class"><pre class="language-text"><code>gt 大于，     .gt(&quot;create_time&quot;, startTime); 
+ge 大于等于， .ge(&quot;create_time&quot;, startTime);
+lt 小于，     .lt(&quot;create_time&quot;,endTime);
+le 小于等于   .le(&quot;create_time&quot;,endTime);
+
+查询条件： beginTime &lt; create_time &lt; endTime
+
+</code></pre></div> <h3 id="like"><a href="#like" class="header-anchor">#</a> like</h3> <p>and nuclide like concat('%',${search.nuclide},'%')</p> <h3 id="mybatis-plus-updatebyid"><a href="#mybatis-plus-updatebyid" class="header-anchor">#</a> Mybatis-plus updateById</h3> <p><a href="https://blog.csdn.net/l848168/article/details/92829930" target="_blank" rel="noopener noreferrer">更新null或空字符串<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="更新某个字段"><a href="#更新某个字段" class="header-anchor">#</a> 更新某个字段</h3> <p>可以直接更新，没必要先查出再判空；没有则更新失败，有就会更新成功</p> <h3 id=""><a href="#" class="header-anchor">#</a></h3> <p>public class RealDataServiceImpl extends ServiceImpl&lt;RealDataMapper, RealData&gt; implements IRealDataService
+不需要重复引用RealDataMapper（@Autowired RealDataMapper realDataMapper）,<br>
+直接用baseMapper即可</p> <h3 id="and、or常用"><a href="#and、or常用" class="header-anchor">#</a> and、or常用</h3> <div class="language- extra-class"><pre class="language-text"><code>// A and B
+.eq(&quot;a&quot;, &quot;A&quot;).eq(&quot;b&quot;,B);
+
+// A or B
+.eq(&quot;a&quot;, &quot;A&quot;).or().eq(&quot;b&quot;,B);
+
+// A or (B and C)
+.eq(&quot;a&quot;, &quot;A&quot;).or(i -&gt; i.eq(&quot;b&quot;, &quot;B&quot;).eq(&quot;c&quot;, &quot;C&quot;));
+
+// A or (B or C)
+.eq(&quot;a&quot;, &quot;A&quot;).or(i -&gt; i.eq(&quot;b&quot;, &quot;B&quot;).or().eq(&quot;c&quot;, &quot;C&quot;));
+
+// A and (B and C)
+.eq(&quot;a&quot;, &quot;A&quot;).and(i -&gt; i.eq(&quot;b&quot;, &quot;B&quot;).eq(&quot;c&quot;, &quot;C&quot;));
+
+// A and (B or C)
+.eq(&quot;a&quot;, &quot;A&quot;).and(i -&gt; i.eq(&quot;b&quot;, &quot;B&quot;).or().eq(&quot;c&quot;, &quot;C&quot;));
+
+</code></pre></div><h3 id="查询一条数据"><a href="#查询一条数据" class="header-anchor">#</a> 查询一条数据</h3> <div class="language- extra-class"><pre class="language-text"><code>*ServiceImpl.java
+
+	return this.lambdaQuery().eq(MonitoringObject::getSyncId, syncId).one();
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#foreach标签" class="sidebar-link reco-side-foreach标签" data-v-cb1513f6>foreach标签</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#in和exist" class="sidebar-link reco-side-in和exist" data-v-cb1513f6>in和exist</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#if-else" class="sidebar-link reco-side-if-else" data-v-cb1513f6>if else</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#left" class="sidebar-link reco-side-left" data-v-cb1513f6>left</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#collection标签" class="sidebar-link reco-side-collection标签" data-v-cb1513f6>collection标签</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#延迟加载-vs-立即加载" class="sidebar-link reco-side-延迟加载-vs-立即加载" data-v-cb1513f6>延迟加载 VS 立即加载</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#一级缓存、二级缓存" class="sidebar-link reco-side-一级缓存、二级缓存" data-v-cb1513f6>一级缓存、二级缓存</a></li><li class="level-2" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#querywrapper是链式调用的" class="sidebar-link reco-side-querywrapper是链式调用的" data-v-cb1513f6>queryWrapper是链式调用的</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#and里用or" class="sidebar-link reco-side-and里用or" data-v-cb1513f6>and里用or</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#大于小于" class="sidebar-link reco-side-大于小于" data-v-cb1513f6>大于小于</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#like" class="sidebar-link reco-side-like" data-v-cb1513f6>like</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#mybatis-plus-updatebyid" class="sidebar-link reco-side-mybatis-plus-updatebyid" data-v-cb1513f6>Mybatis-plus updateById</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#更新某个字段" class="sidebar-link reco-side-更新某个字段" data-v-cb1513f6>更新某个字段</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#" class="sidebar-link reco-side-" data-v-cb1513f6></a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#and、or常用" class="sidebar-link reco-side-and、or常用" data-v-cb1513f6>and、or常用</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/java/Mybatis.html#查询一条数据" class="sidebar-link reco-side-查询一条数据" data-v-cb1513f6>查询一条数据</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是lookroot欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="120" height="176" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.ce46e7ce.js" defer></script><script src="/assets/js/4.5f7030b9.js" defer></script><script src="/assets/js/1.2bbf19aa.js" defer></script><script src="/assets/js/42.f047fb73.js" defer></script>
+  </body>
+</html>

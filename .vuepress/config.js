@@ -183,5 +183,11 @@ module.exports = {
     //   closeOnce: false
     // }]
 
-  ]
+  ],
+  markdown: {
+    // ......
+    extendMarkdown: md => {
+      md.use(require("markdown-it-disable-url-encode"));
+    }
+  }
 }
