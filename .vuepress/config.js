@@ -68,7 +68,7 @@ module.exports = {
         "title": "午后南杂",
         "desc": "Enjoy when you can, and endure when you must.",
         "email": "1156743527@qq.com",
-        "logo": "https://gitee.com/vaq/image/raw/master/avatar/reco_luan.png",
+        "logo": "reco_luan.png",
         "link": "https://www.recoluan.com"
       },
       {
@@ -80,13 +80,13 @@ module.exports = {
       {
         "title": "被删的前端游乐场",
         "desc": "一个极度热爱前端的开发者",
-        "logo": "https://gitee.com/vaq/image/raw/master/avatar/godbasin.jpg",
+        "logo": "/godbasin.jpg",
         "link": "http://www.godbasin.com"
       },
       {
         "title": "程序羊",
         "desc": "良心Up主，行业领头羊",
-        "logo": "https://gitee.com/vaq/image/raw/master/avatar/codeSheep.jpg",
+        "logo": "/codeSheep.jpg",
         "link": "https://www.r2coding.com"
       },
     ],
@@ -94,7 +94,7 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     // "sidebar": "auto", // 自动形成侧边导航
-    "subSidebar": 'auto',
+    "subSidebar": 'auto', // 自动形成侧边导航
     "lastUpdated": "Last Updated",
     "author": "VAQ",
     "authorAvatar": "/avatar.png", // 首页右侧信息栏头像

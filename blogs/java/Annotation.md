@@ -15,7 +15,7 @@ categories: Java
  RetentionPolicy.SOURCE ,只在源码阶段保留，在编译器编译时将被丢弃忽视。
  Retention.CLASS , 注解只被保留在编译进行的时候，不会被加载到JVM
  Retention.RUNTIME , 可以保留在程序运行的时候，会被加载到JVM，所以程序运行时可以获取到它们。
- 
+
 2. @Documented 将注解中的元素包含到javadoc中
 3. @Target 用于指定注解可以运用的地方
 取值：
@@ -94,8 +94,9 @@ condition = SqlCondition.LIKE ，where条件自定义规则
 exist = false ，表示该属性不是数据库表存在的字段
 fill = FieldFill.INSERT ，插入
 fill = FieldFill.INSERT_UPDATE 插入或更新
-```
-使用fill自动填充时配置填充数据
+
+```java
+//使用fill自动填充时配置填充数据
 @Component
 public class MybatisPlusAutoFillConfig implements MetaObjectHandler {
 

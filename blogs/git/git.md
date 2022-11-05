@@ -2,7 +2,7 @@
 title: Git
 date: 2020-10-01
 tags: tag1
-categories: Git1
+categories: Git
 ---
 
 
@@ -14,16 +14,19 @@ categories: Git1
 对应nfys.kinglian.cn
 
 ### develop分支
+
 上游：master
 feature分支和hotfix分支合并到develop
 永存、无误、不可直接commit
 
 ### feature分支
+
 上游：develop
 命名：feature/业务功能名称
 业务完成功能（测试无bug,产品要发布改业务）后，合并到develop
 
 ### test分支
+
 1. 全功能测试分支test/all：
 
 上游：develop
@@ -33,9 +36,10 @@ feature分支合并到test分支
 直接使用feature/业务功能名称，部署该分支代码，运维对应不同的端口号
 
 ### release分支
-上游：develop
+上游：develop 
 
 ### hotfix分支
+
 上游：master
 命名：hotfix/修复名称
 完成修复后，merge 到develop，然后merge到master并打tag
@@ -43,6 +47,7 @@ feature分支合并到test分支
 
 
 ### push 被远程拒绝
+
 git pull
 
 git pull origin feature/placeMall_V1.0.08
@@ -61,14 +66,14 @@ git pull：
 功能上相当于git fetch + git merge  
 但是，会将本地仓库的commitID更新成远程仓库最新的代码版本  
 
-建议：用git fetch + git merge 
+==建议：用git fetch + git merge==
 
 
 
 ## clone人事项目
+
 项目地址：https://github.com/lenve/vhr 
 git clone https://github.com/lenve/vhr.git
-
 
 
 
