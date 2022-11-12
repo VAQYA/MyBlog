@@ -99,7 +99,7 @@ module.exports = {
     "author": "VAQ",
     "authorAvatar": "/avatar.png", // 首页右侧信息栏头像
     "record": "", // 备案号
-    "startYear": "2017",
+    "startYear": "2019",
     /**
      *评论
      */

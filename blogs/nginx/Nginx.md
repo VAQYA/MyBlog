@@ -11,6 +11,8 @@ categories: Nginx
 
 支持热部署  
 
+{官方下载}(https://nginx.org/download/)
+
 ## 反向代理
 正向代理：代理客户端，在客户端或者浏览器中配置代理，服务端不知道实际发起请求的客户端   
 反向代理：代理服务端，客户端访问反向代理服务器，反向代理服务器将请求转发到实际的tomcat服务器，客户端不知道实际提供服务的服务器    
@@ -30,6 +32,7 @@ categories: Nginx
 ./nginx -s reload  热加载nginx（重新加载配置文件）
 
 ## 配置文件
+
 位置：/usr/local/nginx/conf/nginx.conf  
 
 * 全局块 *
@@ -40,9 +43,9 @@ worker_processess 1;  Nginx可处理的并发量
 worker_connections 1024;  支持的最大连接数  
 
 * http块 * 
-配置最频繁的部分，包含了http全局块、server块
-** http全局块 **
- 
-** server块 **
+配置最频繁的部分，包含了http全局块、server块  
+==http全局块== 
+
+​		==server块== 
 listen 80;  监听的端口
 server_name localhost;  服务名

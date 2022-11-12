@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RabbitMQ | VAQ的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="平庸，就是失去追求卓越信念的那个瞬间！">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a6ecb3d0.css" as="style"><link rel="preload" href="/assets/js/app.83a3305b.js" as="script"><link rel="preload" href="/assets/js/4.884640b1.js" as="script"><link rel="preload" href="/assets/js/1.2bbf19aa.js" as="script"><link rel="preload" href="/assets/js/90.bac07ea0.js" as="script"><link rel="prefetch" href="/assets/js/10.5542ae52.js"><link rel="prefetch" href="/assets/js/100.b0f40c61.js"><link rel="prefetch" href="/assets/js/11.56eaf9dd.js"><link rel="prefetch" href="/assets/js/12.8a4a6df4.js"><link rel="prefetch" href="/assets/js/13.fd64c86b.js"><link rel="prefetch" href="/assets/js/14.61b69567.js"><link rel="prefetch" href="/assets/js/15.720e5200.js"><link rel="prefetch" href="/assets/js/16.a74c46d5.js"><link rel="prefetch" href="/assets/js/17.43045179.js"><link rel="prefetch" href="/assets/js/18.748b0834.js"><link rel="prefetch" href="/assets/js/19.0522a1da.js"><link rel="prefetch" href="/assets/js/20.3a60a756.js"><link rel="prefetch" href="/assets/js/21.aacccc9f.js"><link rel="prefetch" href="/assets/js/22.90e2904d.js"><link rel="prefetch" href="/assets/js/23.7e3411e7.js"><link rel="prefetch" href="/assets/js/24.9ff13c23.js"><link rel="prefetch" href="/assets/js/25.c1cbff68.js"><link rel="prefetch" href="/assets/js/26.17ff945e.js"><link rel="prefetch" href="/assets/js/27.ddb90289.js"><link rel="prefetch" href="/assets/js/28.d0155b5c.js"><link rel="prefetch" href="/assets/js/29.c7961284.js"><link rel="prefetch" href="/assets/js/30.af6d83e3.js"><link rel="prefetch" href="/assets/js/31.185f1628.js"><link rel="prefetch" href="/assets/js/32.34281ad0.js"><link rel="prefetch" href="/assets/js/33.cd5115c3.js"><link rel="prefetch" href="/assets/js/34.5128e1ac.js"><link rel="prefetch" href="/assets/js/35.9c4a3912.js"><link rel="prefetch" href="/assets/js/36.8b5c92c7.js"><link rel="prefetch" href="/assets/js/37.6b5bf40b.js"><link rel="prefetch" href="/assets/js/38.2bbeec25.js"><link rel="prefetch" href="/assets/js/39.90a69377.js"><link rel="prefetch" href="/assets/js/40.0d0728bd.js"><link rel="prefetch" href="/assets/js/41.031502c0.js"><link rel="prefetch" href="/assets/js/42.27cdfa5b.js"><link rel="prefetch" href="/assets/js/43.ebdcab1f.js"><link rel="prefetch" href="/assets/js/44.f044bb74.js"><link rel="prefetch" href="/assets/js/45.8cfc6a80.js"><link rel="prefetch" href="/assets/js/46.279b80d1.js"><link rel="prefetch" href="/assets/js/47.1afbd98a.js"><link rel="prefetch" href="/assets/js/48.475d82f4.js"><link rel="prefetch" href="/assets/js/49.bf8ca4a5.js"><link rel="prefetch" href="/assets/js/5.273388fe.js"><link rel="prefetch" href="/assets/js/50.20bb1e0b.js"><link rel="prefetch" href="/assets/js/51.2ce965ba.js"><link rel="prefetch" href="/assets/js/52.a2f9ec56.js"><link rel="prefetch" href="/assets/js/53.76974898.js"><link rel="prefetch" href="/assets/js/54.2c0bd13d.js"><link rel="prefetch" href="/assets/js/55.f81279d6.js"><link rel="prefetch" href="/assets/js/56.065b28f4.js"><link rel="prefetch" href="/assets/js/57.22229852.js"><link rel="prefetch" href="/assets/js/58.f23c66b5.js"><link rel="prefetch" href="/assets/js/59.3e5e3e85.js"><link rel="prefetch" href="/assets/js/6.74ee8819.js"><link rel="prefetch" href="/assets/js/60.f7a666eb.js"><link rel="prefetch" href="/assets/js/61.86a70f42.js"><link rel="prefetch" href="/assets/js/62.38d2a8c7.js"><link rel="prefetch" href="/assets/js/63.5dc1e366.js"><link rel="prefetch" href="/assets/js/64.5082b7e9.js"><link rel="prefetch" href="/assets/js/65.8fda06f1.js"><link rel="prefetch" href="/assets/js/66.15842147.js"><link rel="prefetch" href="/assets/js/67.ba4dd7c6.js"><link rel="prefetch" href="/assets/js/68.5fdee0d2.js"><link rel="prefetch" href="/assets/js/69.1c0a725b.js"><link rel="prefetch" href="/assets/js/7.44c22757.js"><link rel="prefetch" href="/assets/js/70.d91c4381.js"><link rel="prefetch" href="/assets/js/71.c5b0c557.js"><link rel="prefetch" href="/assets/js/72.64acbe0f.js"><link rel="prefetch" href="/assets/js/73.0665e643.js"><link rel="prefetch" href="/assets/js/74.f2a3e293.js"><link rel="prefetch" href="/assets/js/75.cf414029.js"><link rel="prefetch" href="/assets/js/76.2b5d3d6c.js"><link rel="prefetch" href="/assets/js/77.0179ed24.js"><link rel="prefetch" href="/assets/js/78.1686f702.js"><link rel="prefetch" href="/assets/js/79.6bfc1e5e.js"><link rel="prefetch" href="/assets/js/8.0b40b228.js"><link rel="prefetch" href="/assets/js/80.7a163234.js"><link rel="prefetch" href="/assets/js/81.e3419316.js"><link rel="prefetch" href="/assets/js/82.a430f31b.js"><link rel="prefetch" href="/assets/js/83.f6ce8cd6.js"><link rel="prefetch" href="/assets/js/84.22fec838.js"><link rel="prefetch" href="/assets/js/85.e92f704c.js"><link rel="prefetch" href="/assets/js/86.63cbd9f0.js"><link rel="prefetch" href="/assets/js/87.f8f32bf2.js"><link rel="prefetch" href="/assets/js/88.dee362f6.js"><link rel="prefetch" href="/assets/js/89.84b1ca7a.js"><link rel="prefetch" href="/assets/js/9.05fd10ba.js"><link rel="prefetch" href="/assets/js/91.58d98cb9.js"><link rel="prefetch" href="/assets/js/92.3bd96203.js"><link rel="prefetch" href="/assets/js/93.3fd81ce0.js"><link rel="prefetch" href="/assets/js/94.f1ac07bc.js"><link rel="prefetch" href="/assets/js/95.930531c7.js"><link rel="prefetch" href="/assets/js/96.d16a62c9.js"><link rel="prefetch" href="/assets/js/97.dca51c5c.js"><link rel="prefetch" href="/assets/js/98.afebb48e.js"><link rel="prefetch" href="/assets/js/99.edbe202e.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.42825b5f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a6ecb3d0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>VAQ的博客</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>平庸，就是失去追求卓越信念的那个瞬间！</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>VAQ</span>
+            
+          <span data-v-25ba6db2>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="VAQ的博客" class="logo"> <span class="site-name">VAQ的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/报错/" class="nav-link"><i class="undefined"></i>
+  报错
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端相关/" class="nav-link"><i class="undefined"></i>
+  前端相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/KafKa/" class="nav-link"><i class="undefined"></i>
+  KafKa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/LeetCode/" class="nav-link"><i class="undefined"></i>
+  LeetCode
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算相关/" class="nav-link"><i class="undefined"></i>
+  计算相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/消息中间件/" class="nav-link"><i class="undefined"></i>
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/支付相关/" class="nav-link"><i class="undefined"></i>
+  支付相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软件工具/" class="nav-link"><i class="undefined"></i>
+  软件工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作流/" class="nav-link"><i class="undefined"></i>
+  工作流
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方/" class="nav-link"><i class="undefined"></i>
+  第三方
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/blogs/contact/" class="nav-link"><i class="iconfont reco-message"></i>
+  联系我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    VAQ
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>89</h3> <h6 data-v-39576ba9>文章</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>8</h3> <h6 data-v-39576ba9>标签</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据结构/" class="nav-link"><i class="undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/分布式/" class="nav-link"><i class="undefined"></i>
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/报错/" class="nav-link"><i class="undefined"></i>
+  报错
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端相关/" class="nav-link"><i class="undefined"></i>
+  前端相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/KafKa/" class="nav-link"><i class="undefined"></i>
+  KafKa
+</a></li><li class="dropdown-item"><!----> <a href="/categories/LeetCode/" class="nav-link"><i class="undefined"></i>
+  LeetCode
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算相关/" class="nav-link"><i class="undefined"></i>
+  计算相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Linux/" class="nav-link"><i class="undefined"></i>
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/消息中间件/" class="nav-link"><i class="undefined"></i>
+  消息中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/支付相关/" class="nav-link"><i class="undefined"></i>
+  支付相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软件工具/" class="nav-link"><i class="undefined"></i>
+  软件工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工作流/" class="nav-link"><i class="undefined"></i>
+  工作流
+</a></li><li class="dropdown-item"><!----> <a href="/categories/第三方/" class="nav-link"><i class="undefined"></i>
+  第三方
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/blogs/contact/" class="nav-link"><i class="iconfont reco-message"></i>
+  联系我
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>RabbitMQ</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>VAQ</span>
+            
+          <span data-v-25ba6db2>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page"><section><div class="page-title"><h1 class="title">RabbitMQ</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>VAQ</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>2020/10/1</span></i> <i class="iconfont reco-eye" data-v-f875f3fc><span id="/blogs/middleware/RabbitMQ.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-f875f3fc><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>t</span><span class="tag-item" data-v-f875f3fc>a</span><span class="tag-item" data-v-f875f3fc>g</span><span class="tag-item" data-v-f875f3fc>1</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="rabbitmq"><a href="#rabbitmq" class="header-anchor">#</a> RabbitMQ</h2> <h3 id="默认端口号"><a href="#默认端口号" class="header-anchor">#</a> 默认端口号</h3> <p>client端通信口5672
+管理口15672
+server间内部通信口25672</p> <p>delivery Mode 发送方式
+durable 持久的
+persistent 持久的
+confirm 确认</p> <h3 id="优点"><a href="#优点" class="header-anchor">#</a> 优点</h3> <ol><li>系统解耦</li> <li>异步调用</li> <li>流量削峰</li></ol> <h3 id="流程-动态路由为例"><a href="#流程-动态路由为例" class="header-anchor">#</a> 流程 （动态路由为例）</h3> <p>生产者</p> <ol><li>创建连接工厂</li> <li>连接工厂对象创建连接</li> <li>连接对象创建通道</li> <li>通道对象声明交换器</li> <li>通道对象发布消息（传入交换器名称、路由key、消息内容）
+消费者</li> <li>创建连接工厂</li> <li>连接工厂对象创建连接</li> <li>连接对象创建通道</li> <li>通道对象声明交换器</li> <li>声明队列（传入队列名称、是否持久化、是否独占模式、消费者断开连接时是否删除、其他参数）</li> <li>通道对象绑定队列到交换器（传入队列名、交换器名、路由键）</li> <li>创建消费者对象（传入通道对象）并重写处理方法handleDelivery（）对消息进行处理确认等</li> <li>渠道对象消费消息并向服务器进行应答 分为以下两种</li></ol> <p>/* autoAck为true时应答服务器，消息就会从队列中立即删除，不再往其他Consumer转发,如果不设置ack确认，RabbitMQ会认为消息没有被正常消费，消息会重新进入队列中。</p> <ol><li>被动消费模式 channel.basicConsume(String queueName, Boolean autoAck,Consumer callback);</li> <li>主动消费模式 GetResponse response = channel.basicGet(Sring queueName,Boolean true);</li></ol> <h3 id="消息队列"><a href="#消息队列" class="header-anchor">#</a> 消息队列</h3> <p>是一种应用间的异步协作机制</p> <h3 id="消息message"><a href="#消息message" class="header-anchor">#</a> 消息Message</h3> <p>由消息头和消息体组成，消息头包括：路由键、优先权、持久性存储等属性。</p> <h3 id="网络连接connection"><a href="#网络连接connection" class="header-anchor">#</a> 网络连接Connection</h3> <p>网络连接，比如TCP连接</p> <h3 id="信道channel"><a href="#信道channel" class="header-anchor">#</a> 信道Channel</h3> <p>是进行路由工作的实体，负责按照routing_key将message传输给queue，
+建立和销毁TCP连接都是很昂贵的开销，所以引入信道，它是独立的双向数据流通道，一个连接中可有多个信道，发送消息、接收消息、订阅队列都是通过信道完成的，
+每条TCP连接上可以有无数条信道，每个channel都有唯一对应的ID，一个channel只能单独由一个线程使用，在channel上的message是有序的</p> <p>channel.getNextPublishSeqNo();  在确认模式下，返回要发布的下一条消息的序列号</p> <h3 id="交换机exchange"><a href="#交换机exchange" class="header-anchor">#</a> 交换机Exchange</h3> <p>用来接收生产者发送的消息并且路由给服务器中的队列，
+内部实现为保存binding关系的查找表</p> <h3 id="消息队列queue"><a href="#消息队列queue" class="header-anchor">#</a> 消息队列Queue</h3> <p>用来保存消息，直到被消费者消费掉，
+具有自己的Erlang进程</p> <h3 id="生产者producer"><a href="#生产者producer" class="header-anchor">#</a> 生产者producer</h3> <p>向交换机发布消息的应用程序</p> <h3 id="消费者consumer"><a href="#消费者consumer" class="header-anchor">#</a> 消费者Consumer</h3> <p>从一个消息队列中取得消息的应用程序</p> <h2 id="应答确认ack机制-acknowledged-确认"><a href="#应答确认ack机制-acknowledged-确认" class="header-anchor">#</a> 应答确认Ack机制（acknowledged 确认）</h2> <p>应答后，队列就把这条消息删除了，释放队列的内存空间</p> <h3 id="手动确认"><a href="#手动确认" class="header-anchor">#</a> 手动确认</h3> <p>channel.basicQos(1); // 限制发送给当前消费者消息的数量为1，默认为0表示不限制
+在接收到Consumer的ack前，服务器不会将新的Message分发给它 ，
+不设置的话服务器会均匀分配给每个消费者一些消息，设置了的话则每次分给一个消费者一条消息，
+这样所有消费者运行完后，运行快的消费者会比运行慢的消费者多消费消息，达到能者多劳。</p> <p>channel.basicAck(deliveryTag,false);
+参数2：如果为true，则确认所有消息（包括提供的传递标记）；如果为false，则仅确认提供的传递标记。</p> <h3 id="重新放入队列消费-long-deliverytag-boolean-multiple-boolean-requeue"><a href="#重新放入队列消费-long-deliverytag-boolean-multiple-boolean-requeue" class="header-anchor">#</a> 重新放入队列消费（long deliveryTag, boolean multiple, boolean requeue）</h3> <p>channel.basicNack(deliveryTag,false,true);  multiple为true时，拒绝标记之前的所有消息，为false时只拒绝当前标记的消息</p> <p>channel.basicReject(deliveryTag,true); 相对于basicNack只少了multiple</p> <h3 id="抛弃此条消息"><a href="#抛弃此条消息" class="header-anchor">#</a> 抛弃此条消息</h3> <p>channel.basicNack(deliveryTag,false,false);</p> <p>生产者把消息发给虚拟主机</p> <h3 id="交换机的features"><a href="#交换机的features" class="header-anchor">#</a> 交换机的features</h3> <p>D  durable: true
+译为耐用的表示存储在磁盘
+I  internal: true</p> <h3 id=""><a href="#" class="header-anchor">#</a></h3> <p>@RabbitListener(queuesToDeclare = &quot;smsQueue&quot;)
+相当于
+@RabbitListener (queueToDeclare = @Queue(value = &quot;smsQueue&quot;, durable = &quot;true&quot;, exclusive = &quot;false&quot;, autoDelete = &quot;false&quot;)) //默认为 持久化、非独占、非自动删除</p> <h3 id="topic订阅模式-动态路由"><a href="#topic订阅模式-动态路由" class="header-anchor">#</a> topic订阅模式/动态路由</h3> <p>routingKey中*代表一个单词，#代表一个或多个单词</p> <p>方法上写上监听注解</p> <div class="language- extra-class"><pre class="language-text"><code>@RabbitListener( bindings = { 
+							@QueueBinding( 
+									value = @Queue,   //此时不声明队列的value则会创建一个临时队列
+									key = {&quot;user.#&quot;,&quot;order.*&quot;}, 
+									exchange = @Exchange(
+													type = &quot;topic&quot;, 
+													name = &quot;topicTest1&quot;
+													)
+										) 
+							} 
+				) 
+
+</code></pre></div><h3 id="rabbitmq的集群"><a href="#rabbitmq的集群" class="header-anchor">#</a> RabbitMQ的集群</h3> <h4 id="普通集群"><a href="#普通集群" class="header-anchor">#</a> 普通集群</h4> <p>队列只保存在master结点，其他结点存了MQ的Exchange所有信息（除队列外），消费者可以在任意结点获取队列信息进行消费</p> <h4 id="镜像集群"><a href="#镜像集群" class="header-anchor">#</a> 镜像集群</h4> <h3 id="负载均衡器lvs"><a href="#负载均衡器lvs" class="header-anchor">#</a> 负载均衡器LVS</h3> <h3 id="interview相关"><a href="#interview相关" class="header-anchor">#</a> interview相关</h3> <h3 id="使用rabbitmq有什么好处"><a href="#使用rabbitmq有什么好处" class="header-anchor">#</a> 使用RabbitMQ有什么好处</h3> <ol><li>解耦 A调用系统B和C，如果加入系统D，还需要修改A的代码，用上消息队列A作为生产者发送消息给队列，B、C、D等消费者直接消费即可</li> <li>异步 非必要的业务异步进行，加快响应速度</li> <li>削峰 并发量大时所有请求直接访问数据库，可能会造成数据库异常</li></ol> <h3 id="broker、cluster"><a href="#broker、cluster" class="header-anchor">#</a> broker、cluster？</h3> <p>broker
+cluster</p> <h3 id="消息如何分发的"><a href="#消息如何分发的" class="header-anchor">#</a> 消息如何分发的？</h3> <p>队列的消息轮询(round-robin)发送给消费者，每条消息只会分发给一个订阅的消费者(前提是消费者正确处理消息并确认)</p> <h3 id="消息是怎么路由的"><a href="#消息是怎么路由的" class="header-anchor">#</a> 消息是怎么路由的？</h3> <p>生产者将消息发布到交换器上，消息创建时会获得一个路由键
+通过路由键可以把队列绑定到交换器上，
+消息到达交换器后，RabbitMQ会将消息的路由键和队列的路由键相匹配，消息会投递到相应队列中。</p> <h3 id="交换器类型"><a href="#交换器类型" class="header-anchor">#</a> 交换器类型</h3> <p>direct：路由键完全匹配，消息就投递到相应队列
+fanout: 交换器收到消息广播到所有绑定的队列上
+topic：可用通配符匹配相应的路由键</p> <h3 id="channel-basicqos-0-1-false"><a href="#channel-basicqos-0-1-false" class="header-anchor">#</a> channel.BasicQos(0, 1, false);</h3> <p>在接收到Consumer的ack前，RabbitMQ不会将新的Message分发给它</p> <h3 id="如何保证消息最大程度的不丢失并且被正确消费"><a href="#如何保证消息最大程度的不丢失并且被正确消费" class="header-anchor">#</a> 如何保证消息最大程度的不丢失并且被正确消费？</h3> <ol><li><p>生产者确认</p> <p>将信道设置为确认模式，则信道上发布的消息就会指派一个唯一的ID（从1开始），消息被发送到RabbitMQ服务器后，
+服务器就会发送一个确认（Basic.Ack）给生产者，包括消息的唯一ID，
+消息丢失的话会发送一个（Basic.Nack），生产者可以在回调方法中处理Nack指令</p> <ul><li><p>事务
+channel.txSelect(); //将当前信道设置为事务模式
+channel.txCommit(); //事务提交
+channel.Rollback(); //事务回滚
+影响性能，不建议使用</p></li> <li><p>发送方确认</p></li></ul> <ol><li><p>单条消息确认
+channel.confirmSelect(); 将信道设置成确认模式
+channel.waitForconfirms(); 等待发送消息的确认，消息发送成功则返回true，否则返回false</p></li> <li><p>多条消息确认
+将消息放在缓存中，发送批量消息后调用waitforconfirms方法，返回为false则清空缓存重写发送所有消息</p></li> <li><p>异步确认 （性能最好）
+渠道对象调用addConfirmListener方法传入ConfirmListener接口重写handleAck和handleNack方法</p></li></ol></li> <li><p>持久化   将队列标识为持久化，durable设为true; 将消息Message标识为持久化deliveryMode=2</p></li> <li><p>消费者确认   自动确认改为在执行完业务之后在finally中手动确认，只有确认了，RabbitMQ才会把消息从队列中删除</p></li></ol> <h3 id="如何避免消息重复投递或重复消费"><a href="#如何避免消息重复投递或重复消费" class="header-anchor">#</a> 如何避免消息重复投递或重复消费？</h3> <p>RabbitMQ会对生产者发送的每条消息生成一个messageId，作为去重和幂等的依据</p> <ol><li>消费者消费后将messageId作为主键插入数据库中，消费前先判断数据库中有没有存在这条数据</li> <li>将message存入redis作为消费记录，消费前先判断redis中有么有消费记录</li></ol> <h3 id="死信队列"><a href="#死信队列" class="header-anchor">#</a> 死信队列</h3> <h3 id="哪种情况下会进入死信队列"><a href="#哪种情况下会进入死信队列" class="header-anchor">#</a> 哪种情况下会进入死信队列？</h3> <ol><li>消息被否定，并且requeue为false</li> <li>消息在队列的存活时间超过设置的TTL时间</li> <li>消息数量超过最大队列长度</li></ol> <p>如果配置了死信队列，则上面的消息会进入死信队列，否则被丢弃</p> <h3 id="如何配置死信队列"><a href="#如何配置死信队列" class="header-anchor">#</a> 如何配置死信队列？</h3> <ol><li><p>声明业务交换器、
+声明死信交换器 DEAD_LETTER_EXCHANGE</p></li> <li><p>声明业务队列, 同时设置上业务队列的死信交换器和死信队列路由键参数, argument.put(&quot;x-dead-letter-exchange&quot;, DEAD_LETTER_EXCHANGE); argument.put(&quot;x-dead-letter-routing-key&quot;,DEAD_LETTER_QUEUEA_ROUTING_KEY);<br>
+声明死信队列</p></li> <li><p>将业务队列绑定到业务交换器上、
+将死信队列绑定到死信交换器上（同时设置上路由键DEAD_LETTER_QUEUEA_ROUTING_KEY）</p></li></ol> <p>Map&lt;String, Object&gt; argument = new HashMap&lt;String, Object&gt;();
+// 统一设置队列中的所有消息的过期时间
+argument.put(&quot;x-message-ttl&quot;, 30000);
+// 设置超过多少毫秒没有消费者来访问队列，就删除队列的时间
+argument.put(&quot;x-expires&quot;, 20000);
+// 设置队列的最新的N条消息，如果超过N条，前面的消息将从队列中移除掉
+argument.put(&quot;x-max-length&quot;, 4);
+// 设置队列的内容的最大空间，超过该阈值就删除之前的消息
+argument.put(&quot;x-max-length-bytes&quot;, 1024);
+// 将删除的消息推送到指定的交换机，一般x-dead-letter-exchange和x-dead-letter-routing-key需要同时设置
+argument.put(&quot;x-dead-letter-exchange&quot;, &quot;exchange.dead&quot;);
+// 将删除的消息推送到指定的交换机对应的路由键
+argument.put(&quot;x-dead-letter-routing-key&quot;, &quot;routingkey.dead&quot;);
+// 设置消息的优先级，优先级大的优先被消费
+argument.put(&quot;x-max-priority&quot;, 10);
+channel.queueDeclare(QUEUE_NAME, false, false, false, argument);</p> <p>​</p> <h4 id="幂等"><a href="#幂等" class="header-anchor">#</a> 幂等</h4> <p>任意多次执行所产生的影响与执行一次的影响相同例如redis的set操作</p> <h3 id="rabbitmq的底层架构原理-逻辑架构、物理架构以及数据持久化机制"><a href="#rabbitmq的底层架构原理-逻辑架构、物理架构以及数据持久化机制" class="header-anchor">#</a> RabbitMQ的底层架构原理，逻辑架构、物理架构以及数据持久化机制？</h3> <h2 id="你们rabbitmq的最高峰qps每秒是多少-线上如何部署的-部署了多少台机器-机器的配置如何"><a href="#你们rabbitmq的最高峰qps每秒是多少-线上如何部署的-部署了多少台机器-机器的配置如何" class="header-anchor">#</a> 你们RabbitMQ的最高峰QPS每秒是多少？线上如何部署的，部署了多少台机器，机器的配置如何？</h2> <p>订单超时时、支付状态等，都要再查询数据库，双重判断保证消息准确性</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#rabbitmq" class="sidebar-link reco-side-rabbitmq" data-v-cb1513f6>RabbitMQ</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#默认端口号" class="sidebar-link reco-side-默认端口号" data-v-cb1513f6>默认端口号</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#优点" class="sidebar-link reco-side-优点" data-v-cb1513f6>优点</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#流程-动态路由为例" class="sidebar-link reco-side-流程-动态路由为例" data-v-cb1513f6>流程 （动态路由为例）</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#消息队列" class="sidebar-link reco-side-消息队列" data-v-cb1513f6>消息队列</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#消息message" class="sidebar-link reco-side-消息message" data-v-cb1513f6>消息Message</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#网络连接connection" class="sidebar-link reco-side-网络连接connection" data-v-cb1513f6>网络连接Connection</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#信道channel" class="sidebar-link reco-side-信道channel" data-v-cb1513f6>信道Channel</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#交换机exchange" class="sidebar-link reco-side-交换机exchange" data-v-cb1513f6>交换机Exchange</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#消息队列queue" class="sidebar-link reco-side-消息队列queue" data-v-cb1513f6>消息队列Queue</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#生产者producer" class="sidebar-link reco-side-生产者producer" data-v-cb1513f6>生产者producer</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#消费者consumer" class="sidebar-link reco-side-消费者consumer" data-v-cb1513f6>消费者Consumer</a></li><li class="level-2" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#应答确认ack机制-acknowledged-确认" class="sidebar-link reco-side-应答确认ack机制-acknowledged-确认" data-v-cb1513f6>应答确认Ack机制（acknowledged 确认）</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#手动确认" class="sidebar-link reco-side-手动确认" data-v-cb1513f6>手动确认</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#重新放入队列消费-long-deliverytag-boolean-multiple-boolean-requeue" class="sidebar-link reco-side-重新放入队列消费-long-deliverytag-boolean-multiple-boolean-requeue" data-v-cb1513f6>重新放入队列消费（long deliveryTag, boolean multiple, boolean requeue）</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#抛弃此条消息" class="sidebar-link reco-side-抛弃此条消息" data-v-cb1513f6>抛弃此条消息</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#交换机的features" class="sidebar-link reco-side-交换机的features" data-v-cb1513f6>交换机的features</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#" class="sidebar-link reco-side-" data-v-cb1513f6></a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#topic订阅模式-动态路由" class="sidebar-link reco-side-topic订阅模式-动态路由" data-v-cb1513f6>topic订阅模式/动态路由</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#rabbitmq的集群" class="sidebar-link reco-side-rabbitmq的集群" data-v-cb1513f6>RabbitMQ的集群</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#负载均衡器lvs" class="sidebar-link reco-side-负载均衡器lvs" data-v-cb1513f6>负载均衡器LVS</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#interview相关" class="sidebar-link reco-side-interview相关" data-v-cb1513f6>interview相关</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#使用rabbitmq有什么好处" class="sidebar-link reco-side-使用rabbitmq有什么好处" data-v-cb1513f6>使用RabbitMQ有什么好处</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#broker、cluster" class="sidebar-link reco-side-broker、cluster" data-v-cb1513f6>broker、cluster？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#消息如何分发的" class="sidebar-link reco-side-消息如何分发的" data-v-cb1513f6>消息如何分发的？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#消息是怎么路由的" class="sidebar-link reco-side-消息是怎么路由的" data-v-cb1513f6>消息是怎么路由的？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#交换器类型" class="sidebar-link reco-side-交换器类型" data-v-cb1513f6>交换器类型</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#channel-basicqos-0-1-false" class="sidebar-link reco-side-channel-basicqos-0-1-false" data-v-cb1513f6>channel.BasicQos(0, 1, false);</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#如何保证消息最大程度的不丢失并且被正确消费" class="sidebar-link reco-side-如何保证消息最大程度的不丢失并且被正确消费" data-v-cb1513f6>如何保证消息最大程度的不丢失并且被正确消费？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#如何避免消息重复投递或重复消费" class="sidebar-link reco-side-如何避免消息重复投递或重复消费" data-v-cb1513f6>如何避免消息重复投递或重复消费？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#死信队列" class="sidebar-link reco-side-死信队列" data-v-cb1513f6>死信队列</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#哪种情况下会进入死信队列" class="sidebar-link reco-side-哪种情况下会进入死信队列" data-v-cb1513f6>哪种情况下会进入死信队列？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#如何配置死信队列" class="sidebar-link reco-side-如何配置死信队列" data-v-cb1513f6>如何配置死信队列？</a></li><li class="level-3" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#rabbitmq的底层架构原理-逻辑架构、物理架构以及数据持久化机制" class="sidebar-link reco-side-rabbitmq的底层架构原理-逻辑架构、物理架构以及数据持久化机制" data-v-cb1513f6>RabbitMQ的底层架构原理，逻辑架构、物理架构以及数据持久化机制？</a></li><li class="level-2" data-v-cb1513f6><a href="/blogs/middleware/RabbitMQ.html#你们rabbitmq的最高峰qps每秒是多少-线上如何部署的-部署了多少台机器-机器的配置如何" class="sidebar-link reco-side-你们rabbitmq的最高峰qps每秒是多少-线上如何部署的-部署了多少台机器-机器的配置如何" data-v-cb1513f6>你们RabbitMQ的最高峰QPS每秒是多少？线上如何部署的，部署了多少台机器，机器的配置如何？</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      我是lookroot欢迎你的关注 
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="120" height="176" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.83a3305b.js" defer></script><script src="/assets/js/4.884640b1.js" defer></script><script src="/assets/js/1.2bbf19aa.js" defer></script><script src="/assets/js/90.bac07ea0.js" defer></script>
+  </body>
+</html>

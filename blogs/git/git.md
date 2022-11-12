@@ -5,8 +5,16 @@ tags: tag1
 categories: Git
 ---
 
+[官方下载](https://www.git-scm.com/download/)
+
+解压
+
+```
+tar -zxvf nginx-1.9.9.tar.gz
+```
 
 ### 上游分支
+
 当前分支是从上游分支开出的新分支
 
 ### master分支
@@ -75,11 +83,13 @@ git pull：
 项目地址：https://github.com/lenve/vhr 
 git clone https://github.com/lenve/vhr.git
 
+![image-20221106142010098](../image/git/image-20221106142010098.png)
 
 
 
 
 
+![image-20221106142703350](../image/Git/Snipaste_2022-11-06_14-30-38.png)
 
 
 

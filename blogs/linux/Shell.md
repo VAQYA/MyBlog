@@ -183,7 +183,7 @@ dmidecode -s processor-version
 
 ### 查看端口占用
 netstat -ano|findstr 8080  
-  
+
 显示的最后一列数为pid:23412  
 
 ### 停止端口占用  
@@ -245,7 +245,7 @@ centos下
 
 
 
-
+chown gituser test_blog.git -R //将test_blog.git文件夹下的所有文件的拥有者改为gituser用户
 
 
 
