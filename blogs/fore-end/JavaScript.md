@@ -1,7 +1,7 @@
 ---
 title: JavaScript
 date: 2020-10-01
-tags: tag1
+tags: tag1  
 categories: 前端相关
 ---
 
@@ -559,6 +559,11 @@ if(!obj){
 ```
 ### 获取json数据
 ```js
-params:{'age':39,'name':'VAQ'}
+params:{'age':18,'name':'VAQ'}
 var age = params['age']
 ```
+
+
+
+
+

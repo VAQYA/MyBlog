@@ -4,22 +4,26 @@ date: 2020-10-01
 tags: tag1
 categories: Linux
 ---
+### 删除用户
+`userdel -r username`
+提示有进程1187在占用，先强制停止此进程，再删除即可
+`kill -9 1187`
 
 
 ### 查看CPU型号信息
-cat /proc/cpuinfo | grep name | cut -f2 -d: |uniq -c
+`cat /proc/cpuinfo | grep name | cut -f2 -d: |uniq -c`
 
 16  Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz
 
 ### 查看内存信息
-cat /proc/meminfo | grep MemTotal
+`cat /proc/meminfo | grep MemTotal`
 
 MemTotal:       32778080 kB
 
 ### 查看磁盘大小
-fdisk -l | grep Disk
+`fdisk -l | grep Disk`
 
-df -h
+`df -h`
 
 ### centos重启命令: 
 	1.reboot   普通重启 
@@ -36,19 +40,18 @@ df -h
 
 
 ### 查看当前文件夹下文件的内存占用情况
-du -sh *
+`du -sh *`
 
 ### 查看总内存占用情况
-
-free -h
+`free -h`
 
 ### 查看排名前8的内存占用情况
 ps aux | head -1;ps aux |grep -v PID |sort -rn -k +4 | head -8
 
 ### 查看某个端口占用情况
-netstat -lnp|grep 9901
+`netstat -lnp|grep 9901`
 得到进程号12953
-`ll /proc/12953/cwd`命令得到当前进程的文件目录
+`ll /proc/12953/cwd` 命令得到当前进程的文件目录
 
 
 ### 磁盘、存储、分区
@@ -58,5 +61,4 @@ fdisk -l //查看磁盘情况
 df -hk   //查看存储情况
 lsblk    //查看分区和磁盘
 ```
-
 

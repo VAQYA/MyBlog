@@ -443,10 +443,26 @@ data: {
 设置元素的属性（eg: src、title、class）
 
 v-bind:属性名=表达式
-`<img v-bind:src="imgSrc">`
-也可简写`<img :src="imgSrc">`
+`<img v-bind:src="***">`
+也可简写`<img :src="***">`
 
-imgSrc是data里的属性
+#### 属性前加`:`和不加的区别
+加了`:`,表示双引号里是个动态变量；没加则表示是字符串
+```vue
+<template>
+
+<img :src="imgSrc">   //imgSrc是data里的属性
+<img src="https://123456.png">
+<template>
+
+<script>
+	data(){
+		return {
+			imgSrc:"https://123456.png"
+		}
+	}
+</script>
+```
 
 ### v-for
 根据数据生成列表结构，即遍历数据(数组或对象)
@@ -502,8 +518,10 @@ imgSrc是data里的属性
 ## Vue修饰符
 用由点开头的指令后缀来表示
 
-### .trim
+### v-model修饰符
+==.trim== 
 自动过滤首位空白字符
+
 ```vue
 <template>
 	<div>
@@ -513,7 +531,14 @@ imgSrc是data里的属性
 	</div>
 </template>
 ```
-### .stop
+==.number==
+
+只能输入数值类型
+
+### 事件修饰符
+
+==.stop==
+
 阻止冒泡事件的发生
 ```vue
 <template>

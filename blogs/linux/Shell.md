@@ -211,6 +211,8 @@ taskkill /pid 23412 /f
 
 ## QM
 
+### 开启防火墙
+systemctl start firewalld
 ### 添加防火墙端口号
 firewall-cmd --zone=public --add-port=9876/tcp --permanent
 ### 使添加的端口号生效

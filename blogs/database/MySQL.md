@@ -131,6 +131,9 @@ delete from user where id = "2"
 
 如果要删除所有数据，truncate user （更快，因为不是逐条删除，实际是删除了此表又重新创建了）
 
+### 删除表
+drop table [IF EXISTS] <表名1> [ , <表名2> , <表名3> …];
+
 ### in和exist
 in没有用到索引
 

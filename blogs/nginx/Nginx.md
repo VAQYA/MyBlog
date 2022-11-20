@@ -43,9 +43,6 @@ worker_processess 1;  Nginx可处理的并发量
 worker_connections 1024;  支持的最大连接数  
 
 * http块 * 
-配置最频繁的部分，包含了http全局块、server块  
-==http全局块== 
-
-​		==server块== 
-listen 80;  监听的端口
-server_name localhost;  服务名
+  配置最频繁的部分，包含了http全局块、server块  
+  listen 80;  监听的端口
+  server_name localhost;  服务名
