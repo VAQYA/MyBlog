@@ -31,6 +31,12 @@ categories: Nginx
 ./nginx -s stop  关闭nginx  
 ./nginx -s reload  热加载nginx（重新加载配置文件）
 
+### CentOS查看安装目录
+
+ps -ef|grep nginx    //获取进程id
+
+ls -l /proc/进程id/exe  
+
 ## 配置文件
 
 位置：/usr/local/nginx/conf/nginx.conf  

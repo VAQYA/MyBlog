@@ -174,9 +174,9 @@ var obj = {
 ```
 
 调用属性：
-```
-1. obj.name
-2. obj['name']  
+```js
+obj.name // 方式一
+obj['name'] // 方式二  
 ```
 调用方法：
 `obj.sayHi( )`
@@ -192,7 +192,7 @@ var obj = {
 ```
 
 3. 构造函数创建
-```
+```js
 function Star(name, age ){
 	this.name = name;
 	this.age = age;

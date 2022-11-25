@@ -562,9 +562,7 @@ methods: {
 </script>
 ```
 
-### async 和 await
-async关键字放在函数前面，表示异步执行；  
-await后面跟一个表达式，表示等待改表达式执行完后再往下执行，await只能用在async里面。
+
 
 ## Template模板
 用于设置组件的结构，最终被引入根实例或其他组件中,vue的template标签内部只能有一个根元素（html的template标签可以有多个），eg:`<template> <div>....</div></template>`   

@@ -5,13 +5,6 @@ tags: tag1
 categories: 前端相关
 ---
 
-## export default  
-export导出  
-用于对外输出当前文件中的变量、函数；  
-一个文件中export可以有多个，export相当于导出一个属性，可以在import中直接使用(name)；export default必须只有一个，相当于一个对象，在import中用对象.属性/函数的方式使用(obj.name)      
-import导入  
-对声明了export的文件导入进行使用；通过export方式导出的，需要加{}，export default方式导出的不需要加{}
-
 ## let 和 const
 
 > let与var相比，只在当前代码块有效，且同一个代码块中(块级作用域也是ES6新增的)不能被重复声明，必须先声明、再使用
@@ -31,6 +24,7 @@ let x = do {
 ## 顶层对象
 顶层对象在浏览器环境中指的是window对象，在node环境中指的是global对象。  
 ES6之前，顶层对象的属性与全局变量的属性是等价的
+
 ```js
 window.a = 1;
 console.log(a); // 1
@@ -48,7 +42,7 @@ console.log(window.c); // undefined
 
 数组、对象、字符串、数值、布尔值、函数的参数都可以进行解构赋值  
 
-使用场景：
+使用场景：  
   // 交换变量的值
 ``` js
   let x = 1;
@@ -271,7 +265,7 @@ Object.is方法和===的区别
 ==对象的属性可枚举、可遍历==
 
 >遍历对象属性的5种方法
->1. for..in
+>1. for..in  // 专门为遍历对象设计的，遍历的键是字符串"0","1","2"...
 >2. Object.keys(obj)
 >3. Object.getOwnPropertyNames (obj)
 >4. Object.getOwnPropertySymbols (obj)
@@ -512,6 +506,8 @@ Proxy 可以理解成在目标对象前架设 个“拦截”层 ，外界对该
 状态一旦改变就不能再变；  
 一旦执行就无法取消  
 
+fetch的返回值就是一个Promise对象
+
 ```js
 var promise= new Promise(function(resolve,reject) { 
                         // ... some code 
@@ -531,7 +527,7 @@ var promise= new Promise(function(resolve,reject) {
 then(a,b)方法第一个参数是Resolved状态的回调函数（即当前promise实例状态改为Resolved后会调用该函数），第二个参数(可选)是Rejected的回调函数
 then()方法返回的是个新的Promise实例，可采用链式写法，then后面再继续调用then
 
-### Promise.prototype.catch()
+### Promise.prototype.catch()	
 相当于.then(null,rejection)，用于指定发生错误时的回调函数，还能捕捉到前面.then抛出的错误，建议用.catch而不是.then(null,rejection);  
 .catch方法返回的还是一个Promise对象，因此后面还可以继续调用.then方法
 
@@ -544,16 +540,22 @@ try()里面是个函数，函数里可以调用其他函数，try代码块里调
 ### Promise.all(p1,p2,p3)
 将多个Promise实例包装成一个新的Promise实例
 
+## Iterator
 
+遍历器为所有的数据结构提供一种统一的访问机制，即用for...of   
 
-## & async / await 异步编程
+for...of用于遍历同步的Iterator接口；for await ...of用于遍历异步的Iterator接口  
 
-fetch的返回值是一个Promise对象
+数组、Set的解构赋值、扩展运算符(...)内部都会调用iterator接口  
+
+对象的遍历不能用for...of，for...of是可以和break、continue、return配合使用的
 
 ## Generator 函数异步编程
 
-Generator函数相对于普通函数多了两个特征：1.function关键字和函数名之间多了个*，2.内部使用了yield表达式，用于定义Generator函数的每个状态。  
-普通函数在被调用时会立即执行，而Generator函数不会立即执行，而是会返回遍历器对象（Iterator对象），通过遍历器对象的next()方法来遍历内部的yield表达式定义的每个状态
+Generator函数相对于普通函数多了两个特征：  
+1. function关键字和函数名之间多了个*  
+2. 内部使用了yield表达式，用于定义Generator函数的每个状态。   
+>普通函数在被调用时会立即执行，而Generator函数不会立即执行，而是会返回遍历器对象（Iterator对象），通过遍历器对象的next()方法来遍历内部的yield表达式定义的每个状态
 ```js
 function *ge1() {
 	yield 'Hello'
@@ -570,20 +572,114 @@ MG.next() // {value:'undefined',done:true}
 MG.next() // {value:'undefined',done:true}
 ```
 第一次调用Generator函数开始执行，直到遇到第一个yield表达式为止，next方法返回一个对象，value是yield的当前的值，done为false表示遍历还没结束；第二次调用Generator函数会从上次调用停止的地方继续运行，直到下一个yield或者return或者到函数结束。
+next方法可以传参，参数表示上一条yield语句的返回值，但是在第一次调用next方法传参是无效的，第二次调用才有效。第一次调用next方法是用来启动遍历器对象，所以不用带参数。
 
-## find方法
+==next传参使得Generator函数能够和外界进行数据交换==
+
+==for...of循环可以自动遍历Generator函数生成的Iterator对象，并且此时不用再调用next方法==
+
+yield后面跟遍历器对象时，需要加上*，yield* 遍历器对象  
+yield后只能是Thunk函数或Promise对象  
+任何数据结构，只要有Iterator接口，就能被yield*遍历  
+
+## async、await 异步编程
+async函数就是Generator函数的语法糖，相当于对Generator函数的改进，用法 将Generato 函数的星号（*替换成 async ，将 yield替换成 await）  
+async表示函数里有异步操作，返回值是个Promise对象；await表示需要等待结果，await后跟Promise对象（也可以跟原始类型的值，就等同于同步操作了）  
+**async函数内部return返回的值，会成为.then回调函数的参数；内部抛出错误，也会作为参数被.catch回调函数接收到**
+
+### async 函数的多种使用形式
 
 ```js
-theDataList.find((item) => {
-          if(item.name == "m3"){
-            this.models.model.sampleVolumeUnit = item.itemId;
-          }
-        });
-// find会遍历theDataList数据，返回第一个符合条件的值，没有则返回undefined
+// 函数声明
+async functioηfoo () {} 
+
+// 函数表达式
+con st foo = a sync function () {}; 
+
+//对象的方法
+let obj = { async foo () {} } ; 
+obj.foo().then( ... ) 
+
+// Class 的方法
+class Storage { 
+constructor () { 
+    this.cachePromise = caches.open ('avatars'); 
+    async getAvatar(name) { 
+        const cache = await this.cachePromise; 
+    	return cache .match(`/avatars/${name}.jpg`);
+    }
+}
+const storage= new Storage(); 
+storage.getAvatar('jake').then(...); 
+
+//箭头函数
+const foo = async() => {} ;
+```
+### async函数的注意点
+1. await命令最好放在try...catch代码块中
+```js
+try{
+	await fun();
+}catch(err){
+	console.log(err);
+}
+// 或
+await fun().catch(err){console.log(err);}
+```
+2. 多个await命令的同时触发问题
+```js
+await getFoo(); 
+await getBar();
+// 这样会依次执行，不能同时触发
+// 优化一
+await Promise.all([getFoo(), getBar()]) ;
+// 优化二
+let fooPromise = getFoo(); 
+let barPromise = getBar(); 
+await fooPromise; 
+await barPromise;
 ```
 
+## class的用法
+
+`prototype `、`_proto_`、`Object.setPrototypeOf()`、`Object.getPrototypeOf()`
+
+### `_proto_`
+
+```
+Point p1 = new Point();
+Point p2 = new Point();
+```
+
+p1、p2是Point的实例，他们的原型是`Point.prototype`，他们的原型对象是`p._proto_`
+两个实例的原型对象一样的，说明可以通过`_proto_`为类添加属性、方法，但这是厂商私自添加的属性，不建议使用，可使用`Object.getPrototypeOf`来获取实例的原型，再为原型添加属性、方法
 
 
+一般方法或属性前面有下划线`_`，表示这是仅限于内部使用的
 
-## ES6声明变量的6种方法
+## export default
+
+export导出  
+用于对外输出当前文件中的变量、函数；  
+一个文件中export可以有多个，export相当于导出一个属性，可以在import中直接使用(name)；export default必须只有一个，相当于一个对象，在import中用对象.属性/函数的方式使用(obj.name)      
+import导入  
+对声明了export的文件导入进行使用；通过export方式导出的，需要加{}，export default方式导出的不需要加{}
+
+## 编程风格
+不用var，用let替代  
+全局环境中，let和const，优先使用const  
+字符串使用单引号，不使用双引号  
+优先使用解构赋值  
+单行定义的对象不以逗号结尾，多行定义的对象以逗号结尾  
+使用扩展运算符复制数组，使用Array.from()将类似数组的对象转为数组  
+使用import取代require
+
+## Other
+
+### ES6声明变量的6种方法
 ES6之前，var、function声明；ES6又新增了let、const、import、class
+
+### forEach方法
+无法中途跳出， break 命令或 return 命令都不能奏效。
+
+
