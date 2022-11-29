@@ -14,7 +14,7 @@ RestTemplate：是Spring-webmvc包下的，满足RestFul原则，代码简单，
 HttpClient:是apache httpClient包下的，代码复杂，需要资源回收
 
 
-```
+```java
 public interface MultiValueMap<K, V> extends Map<K, List<V>>  //一个key可以存多个value
 public class HttpHeaders implements MultiValueMap<String, String>, Serializable //请求头
 public class RequestEntity<T> extends HttpEntity<T>  //请求实体
@@ -26,7 +26,7 @@ public class ResponseEntity<T> extends HttpEntity<T> //返回实体
 
 ```
 ### GET请求
-```
+```java
 1. 参数name、age在urlString路径上，用占位符依次表示{1}、{2}、、、
 
 	String urlString1 = "https://nfys-test.kinglian.cn/serviceResourc/User/page?name={1}&age={2}";  
@@ -110,7 +110,7 @@ ResponseEntity<String> responseEntity1 = restTemplate.exchange(requestEntity,Str
 ### PUT请求
 
 ### 通用方法请求exchange,可用于封装类
-```
+```js
 //相对于有请求头的Post请求，需指定方法类型
 ResponseEntity<User> responseEntity = restTemplate.exchange("url",HttpMethod.GET,httpEntity,User.class);
 User result = responseEntity.getBody();
@@ -132,7 +132,7 @@ map.put("url ","https://www.baidu.com");
 当有自定义的序列化和反序列话的类时候要通过RestTemplateBuilder.build()来注册RestTemplate，替代new RestTemplate();
 
 ### RestTemplate配置类实例
-```
+```java
 @Configuration
 public class RestTemplateConfig {
     @Autowired
@@ -249,7 +249,6 @@ public class IRetryServiceImpl implements IRetryService {
         return responseEntity;
     }
 ```
-
 
 
 

@@ -21,7 +21,7 @@ categories: Java
 2. 防止指令重排
 3. 双重检查优化
 
-```
+```java
 //声明对象的引用
 private static volatile Singleton object;
 //私有化构造器
@@ -42,7 +42,8 @@ public static Singleton getInstance(){
 
 ```
 ### 饿汉模式 ：线程安全
-```
+
+```java
 //声明对象的引用
 private static Singleton object = new Singleton();
 //私有化构造器，不允许外部类构建本类的实例
@@ -56,7 +57,7 @@ private static Singleton getInstance(){
 ```
 
 ### 基于静态内部类的单例模式
-```
+```java
 public class Singleton7{
        // 构造器私有化       
 	   private Singleton7(){}    
@@ -76,14 +77,10 @@ public class Singleton7{
 
 ### 模板方法模式
 定义一个操作中的算法的骨架，而将一些步骤延迟到子类中，如JdbcTemplate  
-  
+
 1. 抽象类中有基本方法和模板方法，模板方法中调用了一至多个基本方法，模板方法一般由final修饰
 2. 继承了该抽象类的子类实现其基本方法
 
-
-```
- 
-```
 
 ### 代理模式
 扩展目标对象的功能，可以在目标对象的某个方法执行前后增加一些自定义的操作
@@ -93,7 +90,7 @@ public class Singleton7{
 2. 定义一个代理类同样实现这个接口 SmsProxy
 
 3. 将目标对象注入进代理类 
-```
+```java
 SmsService smsService = new SmsServiceImpl();
 SmsProxy smsProxy = new SmsProxy(smsService);
 ```
@@ -104,7 +101,7 @@ SmsProxy smsProxy = new SmsProxy(smsService);
 2. 创建JDK动态代理类，实现InvocationHandler接口并重写invoke方法，在invoke方法实现其他自定义操作逻辑
 3. 通过Proxy.newProxyInstance(ClassLoader loader,Class<?>[] interfaces,InvocationHandler h);创建代理对象
 
-```
+```java
 //接口
 public interface SmsService {
     String send(String message);
