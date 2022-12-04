@@ -1,10 +1,12 @@
 ---
 title: 多线程
-date: 2020-10-24 00:23:59
+date: 2020-10-26 00:23:59
+categories: Java
 tags:
 ---
 
-## Java并发包 java.util.concurrent
+## Java并发包  
+`java.util.concurrent`
 
 ### 接口
 BlockingQueue<E>、Interface Callable<V>、Interface ConcurrentMap<K,V>、ExecutorService、Future<V>、RunnableFuture<V>、FutureTask<V>、RejectedExecutionHandler、ThreadFactory
@@ -309,7 +311,8 @@ synchronized(this){ //实例对象
 	//do something;
 }
 
-## JUC java.util.concurrent 并发工具包
+## JUC 
+`java.util.concurrent` 并发工具包
 包含两个子包： atomic、locks
 还有BlockingQueue、Executor、Future、Callable等
 ![juc包](../image/多线程/juc.png)
@@ -408,7 +411,7 @@ public class PrintAB  {
 
 ```
 
-### java.util.concurrent
+###  
 public enum TimeUnit.SECONDS.sleep(1L);  //线程暂停1秒钟
 
 

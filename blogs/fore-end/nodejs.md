@@ -73,6 +73,7 @@ npm install
 
 
 # 依赖更新
+
 1. 安装全局插件 npm-check-updates
     ```shell script
     cnpm install -g npm-check-updates
@@ -297,3 +298,5 @@ devDependencies：开发时的依赖，开发时测试环境下使用，发布�
 ### npm audit fix 
 检测项目依赖中的漏洞并自动安装需要更新的有漏洞的依赖，而不必再自己进行跟踪和修复
 
+### 全局安装的位置
+`C:\Users\VAQ\AppData\Roaming\npm\node_modules\cnpm\node_modules`

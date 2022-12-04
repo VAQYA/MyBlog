@@ -682,3 +682,6 @@ ES6之前，var、function声明；ES6又新增了let、const、import、class
 ### forEach方法
 无法中途跳出， break 命令或 return 命令都不能奏效。
 
+
+
+

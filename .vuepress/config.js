@@ -46,12 +46,12 @@ module.exports = {
       }
     ],
     "sidebar": {
-      "/docs/theme-reco/": [
-        "",
-        "theme",
-        "plugin",
-        "api"
-      ]
+      // "/": [
+      //   "",
+      //   "theme",
+      //   "plugin",
+      //   "api"
+      // ]
     },
     "type": "blog",
     "blogConfig": {

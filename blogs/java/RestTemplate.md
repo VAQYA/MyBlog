@@ -26,53 +26,50 @@ public class ResponseEntity<T> extends HttpEntity<T> //返回实体
 
 ```
 ### GET请求
-```java
-1. 参数name、age在urlString路径上，用占位符依次表示{1}、{2}、、、
 
+1. 参数name、age在urlString路径上，用占位符依次表示{1}、{2}、、、
+```java
 	String urlString1 = "https://nfys-test.kinglian.cn/serviceResourc/User/page?name={1}&age={2}";  
 	name = "vaq", age = "18";
 	ResponseEntity<User> responseEntity = restTemplate.getForEntity(urlString1, User.class, name, age); 
-
+```
 2. 参数map的key和占位符的key相对应
-
+```java
     String urlString2 = "https://nfys-test.kinglian.cn/serviceResourc/User/page?name={name}&age={age}";
 	Map map = new HashMap();
 	map.put("name","vaq");
 	map.put("age","18");
 	ResponseEntity<User> responseEntity = restTemplate.getForEntity(urlString2, User.class, map); 
-
+```
 3. 使用URI对象，参数可直接拼在地址上，但对中文参数要进行编码
-
+```java
 	String name = "vaq", age = "18"; 
     String urlString3 = "https://nfys-test.kinglian.cn/serviceResourc/User/page?name="+URLEncoder.encode(name, "UTF-8")+"&age="+age;
 	URI uri = URI.create(urlString3);
 	ResponseEntity<User> responseEntity = restTemplate.getForEntity(urlString, User.class); 
 
 User user = responseEntity.getBody();
-
-
-### getForEntity和getForObject
-getForEntity可以获取响应头、状态码等
-getForObject只有响应体，相当于getForEntity().getBody();
 ```
+
 ### POST请求
-```
+
 地址URLString或者URI对象都可以
 
-* 不要请求头时
 1. 参数map对象，地址中参数占位符可有可无
-
+```java
 MultiValueMap map = new LinkedMultiValueMap();
 map.add("name","vaq");
-restTemplate.postForEntity(urlString,map,User.class);
+restTemplate.postForEntity(urlString,map,User.class);//不要请求头时
+```
 
 2. 传递JOSN数据或类对象
+```java
 User user = new User();
 user.setName("age");
-restTemplate.postForEntity(urlString,user,User.class);
+restTemplate.postForEntity(urlString,user,User.class);//不要请求头时
+```
 
-* 需要请求头时
-
+```java
 //请求头
 HttpHeaders httpHeaders = new HttpHeaders();
         MediaType mediaType = MediaType.APPLICATION_JSON_UTF8;
@@ -86,22 +83,22 @@ Map<String,Object> map = new HashMap<>();
         map.put("body",body);
 //创建请求实体并调用
 HttpEntity<Map> httpEntity = new HttpEntity<>(map,httpHeaders);
-ResponseEntity<String> responseEntity = restTemplate.postForEntity(urlString,httpEntity,String.class);
-
+ResponseEntity<String> responseEntity = restTemplate.postForEntity(urlString,httpEntity,String.class);//需要请求头时
+```
 或者
-
+```java
 RequestEntity requestEntity = RequestEntity.post(uri).header("Accept",MediaType.APPLICATION_JSON_VALUE).contentType(MediaType.APPLICATION_JSON_UTF8).body(map);
-ResponseEntity<String> responseEntity1 = restTemplate.exchange(requestEntity,String.class);
+ResponseEntity<String> responseEntity1 = restTemplate.exchange(requestEntity,String.class);//需要请求头时
 ```
 3. form-data表单传值
-```
+```java
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
         MultiValueMap map = new LinkedMultiValueMap();
         map.add("pollutantCode",pollutantCode);
         HttpEntity requestBody = new HttpEntity(map, headers);
 
-        ResponseEntity<String> responseEntity = restTemplate.postForEntity(urlString, requestBody, String.class);
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(urlString, requestBody, String.class);//需要请求头时
         
 ```
 
@@ -110,11 +107,14 @@ ResponseEntity<String> responseEntity1 = restTemplate.exchange(requestEntity,Str
 ### PUT请求
 
 ### 通用方法请求exchange,可用于封装类
-```js
+```java
 //相对于有请求头的Post请求，需指定方法类型
 ResponseEntity<User> responseEntity = restTemplate.exchange("url",HttpMethod.GET,httpEntity,User.class);
 User result = responseEntity.getBody();
 ```
+### getForEntity和getForObject
+getForEntity可以获取响应头、状态码等
+getForObject只有响应体，相当于getForEntity().getBody();
 
 ### MediaType
 
@@ -207,7 +207,7 @@ multiplier：指定延迟的倍数，比如设置delay=5000，multiplier=2时，
 
 
 1. pom引入依赖包
-```
+```xml
         <dependency>
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
@@ -222,12 +222,12 @@ multiplier：指定延迟的倍数，比如设置delay=5000，multiplier=2时，
 在项目启动类或配置类上添加@EnabelRetry
 
 3. 服务类
-```
+```java
 public interface IRetryService {
     String getPostHttpString(String urlString, HttpEntity<String> httpEntity);
 }
 ```
-```
+```java
 @Slf4j
 @Service
 public class IRetryServiceImpl implements IRetryService {

@@ -421,6 +421,7 @@ v-on:monseenter  鼠标移入
 v-on:dblclick  双击
 
 ### v-show
+
 根据表达式的真假，切换元素的显示和隐藏，操纵的是样式，为false时，样式相当于样式添加了display:none。可以是表达式；  
 不能用在`<template>`上
 
