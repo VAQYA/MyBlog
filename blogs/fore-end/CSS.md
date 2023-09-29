@@ -10,6 +10,8 @@ Cascading Style Sheets层叠样式表
 
 注释方式`/*注释*/`
 
+- 将css放在head里，可避免浏览器渲染的重复计算。
+
 ### 字体
 
 font-size: 16px  字号大小；  单位px、em、in、cm、mm、pt

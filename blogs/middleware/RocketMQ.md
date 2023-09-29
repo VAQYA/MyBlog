@@ -150,3 +150,5 @@ PS:
 
 ## 启动状态
 nohup.out中有The Name Server boot success. serializeType=JSON说明是启动成功状态
+
+## 启动

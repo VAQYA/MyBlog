@@ -14,7 +14,10 @@ categories: 软件工具
 
 * 背景颜色  灰黑：#2B2B2B
 
+* 控制台背景颜色 黑：#1B1B1B
+
 ## 插件
+[官网](https://plugins.jetbrains.com/)
 
 ### Alibaba Java Code Guidelines
 - 阿里巴巴代码规范检测优化
@@ -37,6 +40,7 @@ categories: 软件工具
 - Mapper.java 和 Mapper.xml之间来回切换
 
 ### GsonFormat
+
 - Alt+Insert Json数据转实体类
 
 ### Lombok
@@ -46,7 +50,8 @@ categories: 软件工具
 - Java流式调用步骤可视化
 
 ### JRebel
-- 热加载插件
+- 热加载插件 
+- 修改代码保存后，在设置的自动部署时间内不改动代码，则触发自动热更新或手动执行Ctrl+F9 立即热加载
 
 ### Maven Helper
 - 查看Maven依赖关系，将重复的依赖exclusion掉
@@ -68,26 +73,46 @@ categories: 软件工具
 ### VisualVM Launcher
 性能监控测试器
 
-### Free MyBatis plugin
-快速从mapper接口跳转到xml文件
+### Alibaba Cloud AI Coding Assistant
+阿里巴巴的代码补全工具
+
+### Mybatis Log Free
+打印mybatis日志
+
+### Grep Console
+控制台的日志用不同颜色标识
+
 
 ## 快捷键
 
 按着鼠标滚轮上下选择多行，同时修改
 
-* Ctrl+Alt+S   呼出Settings窗口  
 
-* Ctrl+Alt+U 查看类关系图
 
 * Alt+8 快速唤出运行控制台 Services
-
+* 在一行代码后面加.if，可快速生成if语句
+* 在集合或数组后面加.for，可快速生成for循环语句
+* fori  快速生成索引形式的for循环
+* 在一个变量后面加.var，可快速定义新变量
+* 在一行代码后面加.return，可快速生成return
+* Ctrl+Alt+S   呼出Settings窗口  
+* Ctrl+Alt+U 查看类关系图
 * Ctrl+Shift+F9 热加载
-
 * Ctrl+O 重写基类的方法
-
 * Ctrl+I 实现/继承 接口/抽象类的方法
-
 * Ctrl+Alt+U 生成UML类图
+* Ctrl+U 跳转到父类
+* Shift+Shift 全局搜索
+* Ctrl+E 展示最近打开的文件
+* Ctrl+【 光标回到当前大括号的开头
+* Ctrl+ 】 光标回到当前大括号的结尾
+* Ctrl+F12，显示当前文件的结构（eg:方法列表）
+* Ctrl+Alt+T，把代码包在一个块内，例如：try/catch、if
+* Ctrl+Enter，导入包
+* Ctrl+Alt+L，格式化代码
+* Ctrl+J，代码提示
+* psvm 快速生成main方法
+* 
 
 
 
@@ -122,4 +147,34 @@ Debug过程中，想在当前立马结束，不让它继续执行后面的代码
 展示图太小  Actual Size  
 红色实现表示项目中有冲突的Jar包，  
 红色虚线表示被多次引用的。
+
+
+
+
+
+### JRebel LS client not configured解决方案
+
+核心思想是降级使用老版。
+
+> TEAM URL整理：
+
+https://[jrebel](https://jrebel..qekang.com/{GUID}
+http://jrebel-license.jiweichengzhu.com/{GUID}
+
+> 解决步骤：
+
+1. 卸载jrebel
+2. 删除了c盘用户下面的.jrebel文件，
+3. 下载jrebel【地址：[JRebel and XRebel - IntelliJ IDEs Plugin | Marketplace](https://plugins.jetbrains.com/plugin/4441-jrebel-and-xrebel/versions)】
+4. 备注：JREBEL 2022.2.2 XREBEL2021.3.1 
+5. 解压到idea安装目录里面的pulgins的文件夹
+6. 重启idea
+7. 配置TEAM URL、email随意
+8. 完成激活
+
+
+
+## SVN
+当前项目是SVN项目的话，已在idea中打开了，添加SVN关联
+`VCS -> Enable Version Control Integration...`
 

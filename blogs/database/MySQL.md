@@ -4,9 +4,7 @@ date: 2020-10-01
 tags: tag1
 categories: 数据库
 ---
-### 本地MySQL
-root
-mysql863592
+
 
 ### 默认端口号
 3306
@@ -17,7 +15,10 @@ mysql863592
 2. 每张表只描述一件事情  
 3. 不存在对非主键列的传递依赖
 
-### 类似于java中的if、else语句
+### if
+if(a.status = #{status},1,0) 
+
+### if、else语句
 
 case 字段 when 值 then 结果 else 其他情况 end
 case when 表达式（字段=值） then 结果 else 其他情况 end
@@ -479,7 +480,7 @@ end
 1. char(n)固定长度、占用内存多但效率更高一点; varchar(n)可变的字符类型;   
    都表示n个字符，注意是字符
 
-2. char最大长度255个字符，varchar最大长度65535个字节
+2. char最大长度255个字符；varchar最大长度65535个字节，当UTF-8 字符集下，一个字符串最多需要三个字节，此时varchar(n)的n最大是65532/3 = 21844
 3. 实际存储的是实际字符串+记录字符串长度的字节
 
 ### TIMESTAMP和DATETIME
@@ -661,7 +662,7 @@ explain select SQL_NO_CACHE
 
 
 
-### SQL
+## SQL
 
 ### 获取明天一整天的数据
 select  *
@@ -670,7 +671,8 @@ where data_type = 0
 and get_time >= DATE_FORMAT(DATE_ADD(now() ,INTERVAL 1 day),'%Y-%m-%d') 
 and get_time < DATE_FORMAT(DATE_ADD(now() ,INTERVAL 2 day),'%Y-%m-%d')
 
-
+### 排序
+ORDER BY FIELD( r.onlineStatus , 0 , 2 )  , FIELD(r.title, "医师", "副主任医师", "主任医师" ) DESC
 
 
 
@@ -684,6 +686,8 @@ and get_time < DATE_FORMAT(DATE_ADD(now() ,INTERVAL 2 day),'%Y-%m-%d')
 
 
 ## 报错
+
+### 启动MySQL服务时
 ```
 service mysqld start --user=root 启动MySQL服务时，
 /var/log/mysqld.log中打印的错误日志
@@ -699,17 +703,165 @@ service mysqld restart --user=root
 
 ```
 
+### tinyint(1)
+
+数据库的字段类型Bool和Boolean是tinyint(1)的别名，0是false，其他都是true
 
 
 
+|  返回的数值   | Java字段类型   |MySQL字段类型 | MySQL保存的数值 |
+| ---- | ----- | ---- | ---- |
+| true、false | Boolean | bit(1) | 只能存1、0 |
+| 1、0 | Integer | bit(1) | 只能存1、0 |
+|  -128~127    | Integer | tinyint、tinyint(1)、tinyint(4) | -128~127 |
+| 好乱 | Boolean | tinyint(1)、tinyint(4) | -128~127 |
+|      | Data、LocalDate | date | 2022-03-10 |
+|      |       | time |      |
+|      |       | datetime |      |
+|      |       | timestamp |      |
+
+### Date<--->date
+
+```
+入参和Java注解中的格式要对应一致，或者比注解中格式多，不然会报错
+
+1.
+入参：testDate：2022-03-10
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd")
+private Date testDate;
+MySQL：2022-03-10
+
+2.
+入参：testDate：2022-03-10 06:03
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
+private Date testDate;
+MySQL：2022-03-10
+
+3. 
+入参：testDate：2022-03-10 06:03:25
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+private Date testDate;
+MySQL：2022-03-10
+
+
+4.
+返回："testDate": "2022-03-09T16:00:00.000+00:00"
+Java：private Date testDate;
+MySQL：2022-03-10
+
+5.
+返回："testDate": "2022-03-09"
+Java：@JsonFormat(pattern = "yyyy-MM-dd")
+    private Date testDate;
+MySQL：2022-03-10
+
+6. 
+返回："testDate": "2022-03-09 16:00"
+Java：@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private Date testDate;
+MySQL：2022-03-10
+
+7. 
+返回："testDate": "2022-03-09 16:00:00"
+Java：@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date testDate;
+MySQL：2022-03-10
+
+```
+
+
+### LocalDate<--->date
+```
+入参只能这一种方式，其他会报错
+1. 
+入参：testDate：2022-03-11
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd")
+private LocalDate testDate;
+MySQL：2022-03-11
+
+
+4.
+返回："testDate": "2022-03-11"
+Java：private LocalDate testDate;
+MySQL：2022-03-11
+
+5.
+返回："testDate": "2022-03-11"
+Java：@JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate testDate;
+MySQL：2022-03-11
+
+```
+
+### LocalDateTime<--->date
+
+```
+入参和Java注解中的格式要对应一致，或者比注解中格式多，不然会报错
+1.
+入参：testDate：2022-03-12
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd")
+private LocalDateTime testDate;
+MySQL：2022-03-12
+
+2.
+入参：testDate：2022-03-12 06:03
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
+private LocalDateTime testDate;
+MySQL：2022-03-12
+
+3. 
+入参：testDate：2022-03-12 06:03:25
+Java：
+@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+private LocalDateTime testDate;
+MySQL：2022-03-12
+
+
+4.
+返回："testDate": "2022-03-12T00:00:00"
+Java：private LocalDateTime testDate;
+MySQL：2022-03-12
+
+5.
+返回："testDate": "2022-03-12"
+Java：@JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime testDate;
+MySQL：2022-03-12
+
+6. 
+返回："testDate": "2022-03-12 16:00"
+Java：@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime testDate;
+MySQL：2022-03-12
+
+7. 
+返回："testDate": "2022-03-12 16:00:00"
+Java：@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime testDate;
+MySQL：2022-03-12
+
+```
+
+datetime相比于date只是在数据库中存储了时分秒，和Java中类型对应关系是一样的
 
 
 
+# Others
+SELECT * FROM information_schema.innodb_trx
 
+## 查看正在锁的事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
+## 查看等待锁的事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS;
+## 首先查询是否锁表
+SHOW OPEN TABLES WHERE In_use > 0;
+## 查询进程
+SHOW PROCESSLIST;
 
-
-
-
-
-
-
+kill 45760

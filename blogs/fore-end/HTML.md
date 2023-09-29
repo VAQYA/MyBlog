@@ -8,10 +8,13 @@ categories: 前端相关
 超文本标记语言  
 注释方式：`<!--注释-->`
 
+
+HTML最终在浏览器中会生成一堆DOM节点树
+
 ### 标签
 
 * html文件最上方加上<!doctryp html>表示是HTML5.0，去掉表示是HTML4.0  
-*  <html>  告知浏览器这是一个HTML文档，是HTML文档的最外层标签  
+*  `<html>`  告知浏览器这是一个HTML文档，是HTML文档的最外层标签  
 属性有：xmlns，是规定文档xml的命名空间  (XML namespaces)  
 *  HTML不区分大小写
 

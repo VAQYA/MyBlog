@@ -51,9 +51,13 @@ setScale(1,BigDecimal.ROUND_HALF_DOWN)四舍五入，2.35变成2.3，如果是5�
 new BigDecimal("3").subtract(new BigDecimal("2")).pow(2);  //结果为1
 new BigDecimal("3").multiply(new BigDecimal("2")).pow(2);  //结果为36
 
-## toPlainString()
+## 去掉小数点后面的0
+.stripTrailingZeros()
+
+
+## 防止数字自动转化成科学计数法形式
 BigDecimal数据大于9999999时，就会自动转换为科学计数法。
-防止数字自动转化成科学计数法形式
+toPlainString()
 
 ## 保留有效位数和小数点位数
 BigDecimal a = new BigDecimal("0.01234");
@@ -61,7 +65,7 @@ BigDecimal b = a.setScale(3,RoundingMode.HALF_EVEN);// 0.012 设置保留小数�
 BigDecimal c = a.round(new MathContext(3, RoundingMode.HALF_EVEN)); // 0.0123 保留3位有效位数
 
 BigDecimal d = new BigDecimal("1234");
-BigDecimal e = a.round(new MathContext(3, RoundingMode.HALF_EVEN)); // 1.23E+3 保留3位有效位数
+BigDecimal e = d.round(new MathContext(3, RoundingMode.HALF_EVEN)); // 1.23E+3 保留3位有效位数
 
 ## 保留2位有效位数，并且后面补0
         DecimalFormat decimalFormat = new DecimalFormat("0.000");
@@ -75,3 +79,19 @@ new BigDecimal("123").ulp(); // 1
 new BigDecimal("1.2").ulp(); // 0.1
 new BigDecimal("1.20").ulp(); // 0.01
 
+## 绝对值
+new BigDeciaml("-1").abs(); // 1
+
+## 判断字符串是否可转换成数值
+如果可以解析为数字，则返回true，否则返回false
+``` java
+NumberUtils.isParsable(a);  
+```
+
+缺点：不能识别指数方式（不建议用）
+```
+String b = "4.25E-2";
+BigDecimal c =  new BigDecimal(b);
+System.out.println(c);  // 0.0425
+System.out.println(NumberUtils.isParsable(b)); // false
+```

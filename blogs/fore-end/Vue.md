@@ -20,7 +20,7 @@ data和method的数据和方法已经被创建好了
 模板已经在内存中编译完成了，但是尚未把数据模板渲染到页面上，还不能获取dom元素
 
 #### 4. mounted();  //挂载完成
-内存的模板已经挂载到页面中了，用户可以看到渲染好的页面
+内存的模板已经挂载到页面中了（已通过虚拟DOM生成真正的DOM插入到页面中），用户可以看到渲染好的页面
 
 #### 5. beforeUpdate();  
 执行当前方法时，页面显示的数据是旧的，data中的数据是最新的，即页面尚未和最新数据保持同步
@@ -34,6 +34,7 @@ data和method的数据和方法已经被创建好了
 #### 8. destroy();  
 销毁了
 
+![生命周期](../image/Vue/LifeCycle.png)
 
 #### 4.5 activated();
 只有被包含在`<keep-alive>`中创建的组件，才会有activated()方法；
@@ -420,12 +421,13 @@ v-on:click="functionName"  点击事件，可简写为@click，方法中传入$e
 v-on:monseenter  鼠标移入
 v-on:dblclick  双击
 
-### v-show
+### v-show 
 
 根据表达式的真假，切换元素的显示和隐藏，操纵的是样式，为false时，样式相当于样式添加了display:none。可以是表达式；  
 不能用在`<template>`上
 
 ### v-if
+
 根据表达式的真假，切换元素的显示和隐藏，操纵的是DOM元素，为false时，整个元素都没有了。
 ```vue
 <template>
@@ -520,7 +522,7 @@ v-bind:属性名=表达式
 用由点开头的指令后缀来表示
 
 ### v-model修饰符
-==.trim== 
+**.trim**  
 自动过滤首位空白字符
 
 ```vue
@@ -532,13 +534,13 @@ v-bind:属性名=表达式
 	</div>
 </template>
 ```
-==.number==
+**.number**  
 
 只能输入数值类型
 
 ### 事件修饰符
 
-==.stop==
+**.stop**  
 
 阻止冒泡事件的发生
 ```vue
@@ -603,7 +605,15 @@ type为x-template
 
 ## 组件
 是可复用的Vue实例，且带有一个名字，是自定义的标签  
+```
+一个Vue组件中:  
+data: 维护自身的数据和状态
+methods、生命周期钩子：维护自身的事件  
+props: 通过提供配置的方式，来控制展示或控制执行逻辑  
+$emit、$on: 通过一定的方式（事件监听/触发、api提供），提供与外界（如父组件）进行通信的方式  
 
+
+```
 ### 组件注册
 * 全局注册   
 即使是全局组件，也要放在vue作用域中才行
@@ -638,7 +648,9 @@ Vue.component('vaq',{  // vaq是组件名
 ```
 * 构造器外部写局部注册组件 
 * 
-### 组件通信  
+
+### 组件通信
+
 props  设置或获取标签上的属性值，用于属性的传递
 ```html
 <template>
@@ -765,7 +777,7 @@ props  设置或获取标签上的属性值，用于属性的传递
 ```
 2. 在组件模板中将数据放在插槽供app.vue使用
 ```vue
-vaq.vue
+// vaq.vue
 
 <slot :youxi={{games}} :yinyue={{music}}><slot>
 ```
@@ -775,27 +787,61 @@ vaq.vue
 Vue.directive //自定义指令 v-vaq
 Vue.extend //扩展实例构造器  
 Vue.set //在构造器外部操作构造器内部的数据、属性、方法
-Vue.set(VAQ,'age',18); //将VAQ对象的age属性设置为18
+Vue.set(VAQ,'age',18); //将VAQ对象的age属性设置为18（VAQ是data中的一个对象）
 Vue.set(arr,1,A); //将arr数组的下标为1的值设置为A  
+Vue.delete(VAQ, age); //删除VAQ的age属性值
+Vue.filter( id, [definition] ); 用于注册或获取全局过滤器。
+Vue.component( id, [definition] ); 注册或获取全局组件。
+Vue.mixin( mixin ); 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例。
 ```
 
-## 构造器里的选项Option  
+## Vue构造器里的选项Option  
+Option包括5类属性
+1. 数据： data()、pros、propData、computed、methods、watch
+2. DOM：el、template、render、renderError
+3. 生命周期钩子：beforeCreate()、created()、beforeMount()、mounted()、beforeUpdate()、update()、beforeDestroy()、destroy()
+4. 资源：directives、filters、components
+5. 组合：parent、mixins、extends、provide、inject
 
 el 
-data 
-component   
-template   
+```
+new Vue({
+  el:'#app',
+  render:h=>h(Demo)
+})
+//等价于
+new Vue({
+  render:h=>h(Demo)
+}).$mount('#app')
+
+```
+data Vue实例也代理了data对象上所有的property，因此访问 vm.a 等价于访问 vm.$data.a
+component 组件最好用大写，以避免与HTML重名  
+template: ``
+
 methods  
 	方法中传递参数 $event，都是关于点击鼠标的一些事件和属性。
 	引入其他组件，在其里面调用当前methods内的方法，则需要用到.native `<div><vaq @click.native="add(3)"></vaq></div>`
-watch 
-computed  
 mixins  混入，可以放数组或对象，需要添加临时的方法或公用方法时使用，它会优先于构造器的方法调用，当声明了钩子函数，并且和钩子函数同名时它就会失效
 extends  扩展选项，和mixins很相似，但它只能有一个对象，它会优先于构造器的方法调用，当声明了钩子函数，并且和钩子函数同名时它就会失效
 delimiters  可以修改插值表达式的方式 `delimiters:['${','}']` 这样就变成了${}
+render  
+```
+import Demo from './Demo.vue'
+new Vue({
+components:{Demo},
+template:`
+ <Demo/>
+`
+//等价于
+render: h=>h(Demo)
+})
 
-propsData  
-
+```
+**三个不常用的构造函数**  
+activated() 在组件第一次渲染时会被调用，之后在每次缓存组件被激活时调用。  
+deactivated() 组件被停用(离开路由)时调用，使用了keep-alive就不会调用beforeDestroy(组件销毁前钩子)和destroyed(组件销毁)，因为组件没被销毁，被缓存起来了；这个钩子可以看作beforeDestroy的替代，如果你缓存了组件，要在组件销毁的的时候做一些事情，你可以放在这个钩子里  
+errorCaptured() 当子孙组件出错时，会调用这个钩子函数 
 
 ## 实例
 可以在构造器外部操作构造器内部的属性选项或方法
@@ -860,7 +906,7 @@ vaq.funName();//调用方法
 * $forceUpdate，强制更新
 `vaq2.$forceUpdate();  //强制更新当前组件的方法`
 
-* $nextTick()，数据修改方法
+* $nextTick()，对未来更新后的视图进行操作，进行数据修改，页面渲染完后才会执行
 ```js
 function tick(){
     vm.message="update message info ";
@@ -879,14 +925,13 @@ vaq.$on('reduce',function(){
     console.log('执行了reduce()');
     this.num--;
 });
-
+```
 vaq.$once 执行一次的事件  
 vaq.$off 关闭事件  
 app.$emit('reduce');外部调用内部事件
 $on 接收数据 
 $emit 发送数据
 $bus 事件总线，可用于非关联组件之间的通信  
-```
 
 ```js
 // main.js
@@ -908,6 +953,7 @@ this.$bus.$emit('foo')  //子组件通过$emit触发事件
 * 前端路由：key为页面路径，value是component展示页面内容  
 * 后端路由：key为接口路径，value是function处理客户端提交的请求   
 
+在main.js中引用
 ```js
 import VueRouter from 'vue-router' 
 Vue.use(VueRouter)  
@@ -917,7 +963,15 @@ Vue.use(VueRouter)
 
 
 ## vue-cli
+vue脚手架，内部使用工具Webpack来构建的。  
+我们在代码中会使用到很多的资源，图片、样式、代码，还有各式各样的依赖包，而打包的时候怎么实现按需分块、处理依赖关系、不包含多余的文件或内容，同时提供开发和生产环境，包括本地调试自动更新到浏览器这些能力，都是由 Webpack 整合起来的。
 
+```
+// 安装脚手架
+npm install -g @vue/cli
+// 脚手架生成 vue 项目，同时会自动安装依赖
+vue create vue-cli-demo
+```
 ## vuex
 在vue实现的集中式状态（数据）管理的Vue插件，实现多组件之间共享数据   
 是个插件，所以这样用Vue.use(vuex)
@@ -993,9 +1047,39 @@ v-slot:form="{ model }"
 this.$emit('input', false) 
 
 ## .env.development
-配置文件中的属性必须是以(VUE_APP_)开头
+
+配置文件中的属性必须是以(VUE_APP_)开头，在Vue文件中使用`process.env.VUE_APP_XXX`
 
 ## 网络请求
 this.$http.get
 this.$http.post
 {emulateJSON: true}作用：请求会以application/x-www-form-urlencoded作为Content-Type进行发送 就像普通的HTML表单一样；若为false，说明发送的是JSON数据，则后台接收时参数要加上@RequestBody注解
+
+
+
+# Other
+v-slot 有对应的简写 #，因此 `<template v-slot:header>` 可以简写为 `<template #header>`
+
+## Vue中的data为什么被定义为一个函数?
+保证了每个组件实例都有独立的数据，避免了多个组件实例之间数据的混乱和共享问题。
+
+# 被删的前端游乐场
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

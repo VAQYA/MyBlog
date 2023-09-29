@@ -86,6 +86,11 @@ Spring boot actuator 是 spring 启动框架中的重要功能之一 ，对项�
 ### Swagger
 Swagger 是用于生成 RESTful Web 服务的可视化表示的工具，它使文档能够以与服务器相同的速度更新。
 
+### Spring Boot打包成war和jar
+可打包成war(web应用归档)和jar(Java应用归档)这两种方式
+war通常包含了web应用的所有资源，包括前端文件，HTML、CSS、JavaScript、jsp等，可以部署在支持java EE的web服务器上（tomcat、jetty等）；缺点：需要Web服务器的支持才能运行；每次都是全部文件，较大较臃肿  
+jar不需要依赖web服务器就可以直接运行，缺点：一些特定的Java EE功能可能需要手动添加和配置
+
 ### Spring Boot打包成的jar和普通的jar
 Spring Boot打包成的jar可以直接运行，java -jar xxx.jar，不能作为普通的jar被其他项目依赖  
 普通jar解压后就是包名，Spring Boot的jar解压后/BOOT-INF/classess目录下才是我们的代码

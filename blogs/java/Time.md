@@ -6,6 +6,9 @@ categories: Java
 ---
 # 时间相关
 
+@JsonFormat主要是后台到前台的时间格式的转换
+@DateTimeFormat主要是前端到后台的时间格式的转换
+
 ## LocalDateTime 与 String 相互转换
 
 ```
@@ -23,6 +26,19 @@ categories: Java
 	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	Date date = format.parse("2018-01-12 17:07:05");
 	System.out.println("String类型的时间转成Date："+date);
+	
+	SimpleDateFormat sdf = new SimpleDateFormat(“yyyy-MM-dd”);
+	String s = sdf.format(date)
+	System.out.println("Date类型的时间转成String："+s);
+```
+
+## Date 与 LocalDateTime 相互转换 
+```
+LocalDateTime createTime = LocalDateTime.now();
+ZoneId zoneId = ZoneId.systemDefault();
+ZonedDateTime zdt = createTime.atZone(zoneId);
+Date date = Date.from(zdt.toInstant());
+
 ```
 
 ## 两个时间相差的天数

@@ -5,11 +5,26 @@ tags: tag1
 categories: 数据库
 ---
 
-### DBeaver连接
+## 常用
+```
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+
+
+alter table "FSJCZX"."sample_detect_plan" add create_time datetime;
+alter table "FSJCZX"."sample_detect_plan" add create_user_id varchar(50);
+alter table "FSJCZX"."sample_detect_plan" add create_user_name varchar(100);
+alter table "FSJCZX"."sample_detect_plan" add update_time datetime;
+alter table "FSJCZX"."sample_detect_plan" add update_user_id varchar(50);
+alter table "FSJCZX"."sample_detect_plan" add update_user_name varchar(100);
+```
+
+## DBeaver连接
 
 达梦连接
 类名dm.jdbc.driver.DmDriver
-URL模板jdbc:dm://172.26.2.24:5236/QMGXJ
+URL模板jdbc:dm://{host}[:{port}]/[{database}]
 
 ## DM DB的启动过程
 
@@ -37,3 +52,106 @@ nohup ./dmserver /home/user/dmdba/dmdata/DAMENG/dm.ini &
 4，查询服务启动情况
 
 netstat -lntp |grep dm
+
+
+## 注：
+1. 使用达梦的迁移工具时，连mysql要像我们在代码里连数据库一样，指定编码，否则中文会乱码
+2. 达梦表查询转换为实体，实体存在枚举字段，查询会报错
+3. 达梦的Date类型字段，在实体用LocalDate会报错，要改成LocalDateTime
+4. 达梦双引号包着的英文区分大小写
+5. 查询中存在同名字段时，达梦默认取最后一个，MySQL默认取第一个
+
+## 本地达梦
+密码：dm863592923
+
+
+
+# 与MySQL的区别
+
+## 分组查询GROUP_CONCAT和WM_CONCAT
+mysql用法  GROUP_CONCAT(c_remark SEPARATOR '!')  as remark    // 默认是,这里是将,改为！
+达梦用法  REPLACE(WM_CONCAT("c_remark") ,',','!') as remark  
+
+```
+select
+    CAST( concat_ws('=',td.spot_name,td.object_name,ifnull(td.sample_deadline,'')) AS VARCHAR) as uniqueKey,
+    td.task_id,
+    td.task_detail_id,
+    td.spot_id,
+    td.spot_name ,
+    td.object_id,
+    td.object_name,
+    td.sample_deadline sampleDeadline,
+    REPLACE( WM_CONCAT( DISTINCT td.project_id) , ',' , '、') as projectIds,
+    REPLACE(WM_CONCAT(DISTINCT td.project_name) , ',' , '、')as projectNames    
+from task_detail td
+WHERE 1=1
+AND task_id = 1588363669413154818
+AND td.sample_deadline  >= '2023-01-01 00:00:00'
+and td.is_deleted = 0 
+group by DBMS_LOB.SUBSTR(uniqueKey)
+
+```
+
+## DATE_ADD、DATE_SUB和DATEADD
+MySQL用法：DATE_ADD(a, INTERVAL b DAY)等同于DATE_SUB(a, INTERVAL -b DAY)  
+达梦用法：DATEADD( DAY , b, a )  
+
+## `和“
+MySQL用法：a.`name`
+达梦用法：a."name"
+
+
+## 递归查询
+```
+
+SELECT id,parent_id,department_name,
+	LEVEL, -- 层级
+	SYS_CONNECT_BY_PATH(department_name, ''), --全名
+	CONNECT_BY_ROOT department_name, --根节点名称
+	CONNECT_BY_ISLEAF, --是否叶子节点
+FROM sys_department d
+where 1=1
+AND CONNECT_BY_ROOT department_name like '广东省环境辐射监测中心' 
+CONNECT BY PRIOR(id) = parent_id
+        
+```
+
+## 将查询的字段转换成字符串返回
+`SELECT CAST(field_name AS VARCHAR) FROM table_name;`
+
+## 增
+```
+alter table "FSJCZX"."table_test" add column("operate" VARCHAR(50));
+comment on column "FSJCZX"."table_test"."operate" is '操作：锁定、申请解锁';
+```
+## 删
+alter table "FSJCZX"."table_test" drop column "abc";
+
+## 改（字段名）abc改成bcd
+
+`alter table "FSJCZX"."table_test" alter column "abc" rename to "bcd";`
+
+## 改（字段类型）改成INTEGER
+
+`alter table "FSJCZX"."table_test" modify "abc" INTEGER;`
+
+## 取消id自增
+`alter table "SPOT_MONITORING_EXPAND" drop identity;`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

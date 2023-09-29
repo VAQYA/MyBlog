@@ -23,3 +23,22 @@ Disconnected from the target VM, address: '127.0.0.1:57338', transport: 'socket'
 
 Process finished with exit code 1
 ```
+
+
+### mybatis-plus的依赖引入不正确
+```
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)........selectList
+
+		将
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		改为
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+```

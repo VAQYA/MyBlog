@@ -239,9 +239,9 @@ idea64.exe.vmoptions
 -javaagent:C:\Users\Public\.BetterIntelliJ\BetterIntelliJ-1.16.jar
 
 ```
-Xms：初始堆大小，默认物理内存的1/64  
-MinHeapFreeRatio：默认40%，空余堆内存小于40%时，就会一直增大堆直到Xmx的最大限制，空余堆内存大于70%时，会一直减小到Xms的最小限制    
-Xmx：最大堆大小，默认物理内存的1/4  
+-Xms：初始堆大小，默认物理内存的1/64  
+-MinHeapFreeRatio：默认40%，空余堆内存小于40%时，就会一直增大堆直到Xmx的最大限制，空余堆内存大于70%时，会一直减小到Xms的最小限制    
+-Xmx：最大堆大小，默认物理内存的1/4  
 -XX:MaxNewSize，设置新生代的最大内存；  
 -XX:MaxTenuringThreshold，设置新生代对象经过一定的次数晋升到老生代；  
 -XX:PretrnureSizeThreshold，设置大对象的值，超过这个值的对象会直接进入老生代；  

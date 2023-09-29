@@ -5,9 +5,14 @@ tags: tag1
 categories: 前端相关
 ---
 
-运行在客户端的脚本语言；  
-脚本语言不需要编译；
+运行在客户端的脚本语言，脚本语言不需要编译；  
+功能：可以处理事件点击、输入等；改变HTML内容、位置和样式等；处理http请求、各种业务逻辑的执行等。
 浏览器本身不会执行js代码，是通过内置的JavaScript引擎（解释器）来执行，逐行解释然后由计算机去执行； 
+
+- 将js放在body的最后面，可以避免资源阻塞，同时使静态的html页面迅速显示。
+
+## 组成
+
 由3部分组成：语法（ECMAScript）、页面文档对象模型（DOM）、浏览器对象模型（BOM）
 
 3种方式：  
@@ -544,9 +549,14 @@ history.go(参数)  //前进或后退；参数是1则前进一个页面，是-1�
 
 ### navigator.clipboard
 剪切板功能  
-### import 
+### import
 js中的import的会最先执行  
-
+```js
+这三种方式都是可以的，因为引入router文件夹却没有指定文件时默认就会找index.js文件（Node.js的规范）
+import router from './router'  
+import router from './router/index'  
+import router from './router/index.js'  
+```
 ### _proto_和prototype
 _proto_是每个对象都有的属性，称为隐式原型，它指向了构造该对象的构造函数的原型，保证了实例能够访问在构造函数原型中定义的属性和方法（toString()、valueOf()）  
 prototype，称为显示原型，函数是个特殊的对象，除了和其他对象一样有_proto_属性外，还有个特有的属性prototype，这个属性是一个指针，指向一个对象，这个对象的用途就是包含所有实例共享的属性和方法（我们把这个对象叫做原型对象）。原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数

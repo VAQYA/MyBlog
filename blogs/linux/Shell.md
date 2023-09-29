@@ -181,14 +181,6 @@ dmidecode -s processor-version
 一般一核对应一个线程，又有超线程技术，一个核心可以有两个线程，8核16线程，可在线程池中创建17个线程
 
 
-### 查看端口占用
-netstat -ano|findstr 8080  
-
-显示的最后一列数为pid:23412  
-
-### 停止端口占用  
-taskkill /pid 23412 /f  
-/f表示强制停用
 
 
 
@@ -235,8 +227,7 @@ find / -name abc.txt
 ### 解压文件
 unzip jczx-app-20220405.zip -d /opt/jczx
 
-### 设置文件夹lib所有权限
-chmod -R 777 lib
+
 
 ### 解压
 centos下

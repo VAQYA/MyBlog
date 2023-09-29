@@ -151,6 +151,26 @@ public class RealDataServiceImpl extends ServiceImpl<RealDataMapper, RealData> i
 *ServiceImpl.java
 
 	return this.lambdaQuery().eq(MonitoringObject::getSyncId, syncId).one();
+
+
+```
+### 更新
+```
+	List<String> membraneCodeList = Stream.of(membraneCode).collect(java.util.stream.Collectors.toList());
+	this.lambdaUpdate().set(sampleId != null, MembraneWeighRecord::getSampleId, sampleId)
+			.set(labPretreatmentId != null, MembraneWeighRecord::getLabPretreatmentId,labPretreatmentId)
+			.in(MembraneWeighRecord::getMembraneCode, membraneCodeList)
+			.update();
+
+```
+### 删除
+
+```
+//  LambdaQueryWrapper 相当于 new QueryWrapper().lambda();
+
+	LambdaQueryWrapper<SampleDetectPlanUser> wrapper = new LambdaQueryWrapper<>();
+	wrapper.eq(SampleDetectPlanUser::getPlanId, planId);
+	this.remove(wrapper);
 ```
 
 
@@ -159,11 +179,8 @@ public class RealDataServiceImpl extends ServiceImpl<RealDataMapper, RealData> i
 
 
 
-
-
-
-
   
+
 
 
 

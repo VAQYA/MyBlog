@@ -1,5 +1,5 @@
 ---
-title: 注释
+title: 注解
 date: 2020-10-01
 tags: tag1
 categories: Java
@@ -118,7 +118,7 @@ public class MybatisPlusAutoFillConfig implements MetaObjectHandler {
 
 @Cacheable  
 
-
+@ModelAttribute
 
 
 

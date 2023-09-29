@@ -232,18 +232,22 @@ List<Person> vaq = redisTemplate.opsForList().range("vaq", 0, -1);
 /etc/redis/redis.conf中
 
 
+### 修改redis的密码
+redis.conf中requirepass foobared
+
+
+### 查看Redis在系统中注册的服务名称
+systemctl list-units --type=service | grep redis
+
+### redis启动状态
+systemctl status redis.service
+
+### 查看正在运行的Redis进程
+ps aux | grep redis-server
 
 
 
-
-
-
-
-
-
-
-
-
+Gerc507!
 
 
 

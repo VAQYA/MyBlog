@@ -5,6 +5,11 @@ tags: tag1
 categories: SVN
 ---
 
+### 本地
+vaq
+123456
+
+
 ### 文件颜色  
 蓝色，不属于版本库的未知文件  
 绿色，表示文件没有修改过  
@@ -42,6 +47,17 @@ Commit有冲突时，左边是服务器上的(Theirs)，右边是本地(Mine)要
 删除有问题的文件，再cleanup
 
 
-### 本地
-vaq
-123456
+
+
+
+
+
+
+## 分支
+branches是release版本的发布分支 
+trunk是开发分支  
+tags目录一般是只读的，这里存储阶段性的发布版本，只是作为一个里程碑的版本进行存档。
+
+
+### 切换分支  
+右键项目 —> Team —> 切换(S)...（Switch to another Branch/Tag/Revision...）

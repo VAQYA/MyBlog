@@ -11,7 +11,7 @@ categories: Nginx
 
 支持热部署  
 
-{官方下载}(https://nginx.org/download/)
+[官方下载](https://nginx.org/download/)
 
 ## 反向代理
 正向代理：代理客户端，在客户端或者浏览器中配置代理，服务端不知道实际发起请求的客户端   
@@ -28,7 +28,8 @@ categories: Nginx
 
 ./nginx -v  版本号  
 ./nginx  启动nginx  
-./nginx -s stop  关闭nginx  
+./nginx -s stop  关闭nginx
+./nginx -t    测试能否运行成功（重启之前-t一下更稳）  
 ./nginx -s reload  热加载nginx（重新加载配置文件）
 
 ### CentOS查看安装目录
@@ -52,3 +53,10 @@ worker_connections 1024;  支持的最大连接数
   配置最频繁的部分，包含了http全局块、server块  
   listen 80;  监听的端口
   server_name localhost;  服务名
+
+![alias和root](../image/Nginx/image-20221229151320928.png)
+
+### proxy_pass
+![proxy_pass](../image/Nginx/image-20230111100748344.png)
+
+如果location或if中用到了正则，则不能再转发除ip:port外的路径请求

@@ -95,13 +95,20 @@ List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.strea
 ```
 
 
-### 
+### 变量list判空遍历 
 ```
 Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 
 ```
 
-
+### 获取集合对象的名称属性转换为`，`隔开的字符串
+```
+ if (CollectionUtils.isNotEmpty(fileList)) {
+	List<String> fileNames = new ArrayList<>();
+	fileList.forEach(file -> fileNames.add(file.getFileName()));
+	String fileName = fileNames.stream().collect(Collectors.joining(",")); //集合转为字符串
+}
+```
 
 
 

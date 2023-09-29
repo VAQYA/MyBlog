@@ -9,7 +9,7 @@ categories: 数据库
 
 人大金仓7
 类名com.kingbase.Driver
-URL模板jdbc:kingbase:://{host}[:{port}]/[{database}]
+URL模板jdbc:kingbase://{host}[:{port}]/[{database}]
 
 人大金仓8
 类名com.kingbase8.Driver

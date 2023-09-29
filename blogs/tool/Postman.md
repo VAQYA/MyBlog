@@ -24,6 +24,8 @@ value 为接收url的参数名（相当于key值）
 ```
 ## @RequestBody  请求体 （用在Post)
 ```
+media type: application/json
+
 对应 raw-->JSON 里写Json数据
 
 ```
@@ -38,7 +40,13 @@ value 为接收url的参数名（相当于key值）
 
 apizza863592923
 
+## 入参
+入参为`List<String> code`或`String[] code`
+当传入`code = "a,b,c"`时，会自动转换为数组，xml中可以直接用`<foreach>`标签
 
 
 
+### application/x-www-form-urlencoded
 
+前端：taskDetailIdList:{"a","b"} 后台：
+前端：taskDetailIdList[0]@RequestParam("taskDetailIdList") Long[] taskDetailIdList

@@ -68,4 +68,10 @@ Encoder最重要的实现类是`MessageToByteEncoder<T>`，这个类的作用就
 
 ### 备注
 netty5.0之后channelRead0已经改名为messageReceived
+netty5版本bug多，已不维护，建议用用4.1版本
+
+
+
+
+
 

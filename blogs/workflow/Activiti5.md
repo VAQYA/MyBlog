@@ -5,10 +5,10 @@ tags: tag1
 categories: 工作流
 ---
 ## 常用Service
->仓库服务：RepositoryService，用来部署流程图
-运行时服务：RuntimeService，开启流程实例
-任务服务：TaskService，获取任务
-历史服务：HistoryService，查询历史任务执行流程
+>仓库服务：RepositoryService，用来部署流程图  
+运行时服务：RuntimeService，开启流程实例  
+任务服务：TaskService，获取任务  
+历史服务：HistoryService，查询历史任务执行流程  
 用户服务：IdentityService，操作用户信息，用户分组信息等
 
 ## 初始化Activiti所需要的的25张表
