@@ -10,4 +10,4 @@ categories: Java
 http://doc.wupaas.com/docs/easypoi/easypoi-1c0u4mo8p4ro8
 
 
-支持的导入导出字段类型 Integer,Long,Double,Date,String,Boolean
+支持的导入导出字段类型 Integer,Long,Double,Date,LocalDateTime,String,Boolean，BigDecimal

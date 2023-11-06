@@ -5,6 +5,8 @@ tags: tag1
 categories: 数据库
 ---
 
+COMPATIBLE_MODE  选择MySQL
+
 ## 常用
 ```
 

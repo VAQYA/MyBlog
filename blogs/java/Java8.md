@@ -78,14 +78,6 @@ optionalB.flatMap(b->{
 ```
 
 ### Stream
-
-
-### 初始化List
-```
-List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.stream.Collectors.toList());
-```
-
-### 
 ```
         List<String> userIds = Stream.of(byId.getFromUserId(), byId.getToUserId()).collect(toList());
         List<SysUser> userList = sysUserService.listByUserIds(userIds);
@@ -93,6 +85,19 @@ List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.strea
         String fromLoginId = hashMap.get(byId.getFromUserId());
         String toLoginId = hashMap.get(byId.getToUserId());
 ```
+
+
+
+### 多个字符串初始化List<String>
+```
+List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.stream.Collectors.toList());
+```
+### 一个字符串初始化List<Long>
+```
+List<Long> numList = Arrays.stream("12,23,34".split(",")).map(Long::valueOf).collect(java.util.stream.Collectors.toList());
+```
+
+
 
 
 ### 变量list判空遍历 
@@ -110,9 +115,22 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 }
 ```
 
+### 分组
+```
+//  List<AppMonitoringProjectDTO> 的列表
+	List<AppMonitoringProjectDTO> list = new ArrayList<>();
 
+// 使用 Stream API 分组
+	Map<Long, List<AppMonitoringProjectDTO>> groupedMap = 
+	list.stream().collect(Collectors.groupingBy(AppMonitoringProjectDTO::getId));
+	
+```
 
-
+### Set 与 String互相转换
+Set<String> labDeptIdSet = new HashSet<>(Arrays.asList(abc.split(",")));
+            
+String deptIds = String.join(",", labDeptIdSet);
+           
 
 
 
