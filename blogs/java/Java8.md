@@ -107,11 +107,18 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 ```
 
 ### 获取集合对象的名称属性转换为`，`隔开的字符串
+方法1
 ```
  if (CollectionUtils.isNotEmpty(fileList)) {
-	List<String> fileNames = new ArrayList<>();
-	fileList.forEach(file -> fileNames.add(file.getFileName()));
-	String fileName = fileNames.stream().collect(Collectors.joining(",")); //集合转为字符串
+	List<String> fileNameList = new ArrayList<>();
+	fileList.forEach(f -> fileNameList.add(f.getFileName()));
+	String fileNames = fileNameList.stream().collect(Collectors.joining(",")); //集合转为字符串
+}
+```
+方法2(建议)
+```
+ if (CollectionUtils.isNotEmpty(fileList)) {
+	String fileNames = fileList.stream().map(File::getFileName).collect(Collectors.joining(","));
 }
 ```
 
@@ -127,10 +134,18 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 ```
 
 ### Set 与 String互相转换
-Set<String> labDeptIdSet = new HashSet<>(Arrays.asList(abc.split(",")));
-            
-String deptIds = String.join(",", labDeptIdSet);
-           
+```
+String=》Set<String>
+Set<String> labDeptIdSet = new HashSet<>(Arrays.asList(.split(",")));  
+或 
+Arrays.stream(abc.split(",")).collect(java.util.stream.Collectors.toSet()); 
+
+Set<String>=》String
+String deptIds = 
+labDeptIdSet.stream().collect(Collectors.joining(","));
+或
+String.join(",", labDeptIdSet);
+```
 
 
 

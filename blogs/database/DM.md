@@ -72,7 +72,9 @@ netstat -lntp |grep dm
 
 ## 分组查询GROUP_CONCAT和WM_CONCAT
 mysql用法  GROUP_CONCAT(c_remark SEPARATOR '!')  as remark    // 默认是,这里是将,改为！
-达梦用法  REPLACE(WM_CONCAT("c_remark") ,',','!') as remark  
+达梦用法  REPLACE(WM_CONCAT("c_remark") ,',','!') as remark   
+WM_CONCAT("c_remark")为null时直接REPLACE会报"试图在blob或者clob列上排序或比较"错误，应改为下面的方式  
+REPLACE(TO_CHAR(WM_CONCAT("c_remark")) ,',','!') as remark
 
 ```
 select
