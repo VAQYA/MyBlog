@@ -159,7 +159,7 @@ public class RealDataServiceImpl extends ServiceImpl<RealDataMapper, RealData> i
 	List<String> membraneCodeList = Stream.of(membraneCode).collect(java.util.stream.Collectors.toList());
 	this.lambdaUpdate().set(sampleId != null, MembraneWeighRecord::getSampleId, sampleId)
 			.set(labPretreatmentId != null, MembraneWeighRecord::getLabPretreatmentId,labPretreatmentId)
-			.in(MembraneWeighRecord::getMembraneCode, membraneCodeList)
+			.in(MembraneWeighRecord::getMembraneCode, membraneCodeList) / in的使用必须是类型一样的List
 			.update();
 
 ```
@@ -173,13 +173,31 @@ public class RealDataServiceImpl extends ServiceImpl<RealDataMapper, RealData> i
 	this.remove(wrapper);
 ```
 
-
-
-
-
-
-
-  
+### sql片段
+Sql语句
+```
+	<sql id="for_page_query">
+      SELECT t.*
+      FROM task t
+	  <where>
+	   
+	  </where>
+	</sql>
+```
+查询列表数据
+```
+    <select id="pageQuery" resultType="com.qm.boot.web.business.lab.vo.TaskPageVo">
+      <include refid="for_page_query"/>
+      ORDER BY  t.UPDATE_TIME  desc
+    </select>
+```
+查询所有数据的数量
+```
+    <select id="queryTaskNumber" resultType="java.lang.Long">
+      select count(1)
+      from (<include refid="for_page_query"/>)
+    </select>
+```
 
 
 

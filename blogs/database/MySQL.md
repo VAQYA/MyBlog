@@ -851,6 +851,16 @@ MySQL：2022-03-12
 datetime相比于date只是在数据库中存储了时分秒，和Java中类型对应关系是一样的
 
 
+## 拼接字段以#隔开
+SELECT CONCAT(field1, '#', field2, '#', field3) AS concatenated_data
+FROM table_name;
+
+SELECT CONCAT_WS('#', field1, field2, field3) AS concatenated_data
+FROM table_name;
+CONCAT_WS会自动过滤null数据
+
+
+
 
 # Others
 SELECT * FROM information_schema.innodb_trx
@@ -865,3 +875,7 @@ SHOW OPEN TABLES WHERE In_use > 0;
 SHOW PROCESSLIST;
 
 kill 45760
+
+
+
+

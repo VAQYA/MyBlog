@@ -11,6 +11,15 @@ split access.log -b 100m
 ```
 
 ## 查看某个端口占用情况
+
+`netstat -ano | findstr 9901`
+
+`tasklist|findstr  12953` //查看进程
+
+`taskkill /f /t /im java.exe`// 结束进程
+
+
+
 `netstat -lnp|grep 9901`
 得到进程号12953
 `ll /proc/12953/cwd` 命令得到当前进程的文件目录

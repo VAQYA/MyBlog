@@ -78,14 +78,6 @@ optionalB.flatMap(b->{
 ```
 
 ### Stream
-
-
-### 初始化List
-```
-List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.stream.Collectors.toList());
-```
-
-### 
 ```
         List<String> userIds = Stream.of(byId.getFromUserId(), byId.getToUserId()).collect(toList());
         List<SysUser> userList = sysUserService.listByUserIds(userIds);
@@ -95,6 +87,19 @@ List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.strea
 ```
 
 
+
+### 多个字符串初始化List<String>
+```
+List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.stream.Collectors.toList());
+```
+### 一个字符串初始化List<Long>
+```
+List<Long> numList = Arrays.stream("12,23,34".split(",")).map(Long::valueOf).collect(java.util.stream.Collectors.toList());
+```
+
+
+
+
 ### 变量list判空遍历 
 ```
 Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
@@ -102,17 +107,45 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 ```
 
 ### 获取集合对象的名称属性转换为`，`隔开的字符串
+方法1
 ```
  if (CollectionUtils.isNotEmpty(fileList)) {
-	List<String> fileNames = new ArrayList<>();
-	fileList.forEach(file -> fileNames.add(file.getFileName()));
-	String fileName = fileNames.stream().collect(Collectors.joining(",")); //集合转为字符串
+	List<String> fileNameList = new ArrayList<>();
+	fileList.forEach(f -> fileNameList.add(f.getFileName()));
+	String fileNames = fileNameList.stream().collect(Collectors.joining(",")); //集合转为字符串
+}
+```
+方法2(建议)
+```
+ if (CollectionUtils.isNotEmpty(fileList)) {
+	String fileNames = fileList.stream().map(File::getFileName).collect(Collectors.joining(","));
 }
 ```
 
+### 分组
+```
+//  List<AppMonitoringProjectDTO> 的列表
+	List<AppMonitoringProjectDTO> list = new ArrayList<>();
 
+// 使用 Stream API 分组
+	Map<Long, List<AppMonitoringProjectDTO>> groupedMap = 
+	list.stream().collect(Collectors.groupingBy(AppMonitoringProjectDTO::getId));
+	
+```
 
+### Set 与 String互相转换
+```
+String=》Set<String>
+Set<String> labDeptIdSet = new HashSet<>(Arrays.asList(.split(",")));  
+或 
+Arrays.stream(abc.split(",")).collect(java.util.stream.Collectors.toSet()); 
 
+Set<String>=》String
+String deptIds = 
+labDeptIdSet.stream().collect(Collectors.joining(","));
+或
+String.join(",", labDeptIdSet);
+```
 
 
 
