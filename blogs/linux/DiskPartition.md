@@ -44,7 +44,7 @@ cp -r /abc/* /qm  //将abc文件夹下的内容复制到/qm（如果需要的话
 vim /etc/fstab 修改文件,尾部添加`/dev/vdb1 /qm ext4 defaults 0 0`
 ```
 如果磁盘是根据分区的UUID动态挂载的（如华为云），则需要以下方式设置开机自动挂载
-![开机自动挂载磁盘分区](../image/CentOS/开机自动挂载磁盘分区.png)
+![开机自动挂载磁盘分区](../image/CentOS/1.png)
 
 
 
@@ -60,7 +60,7 @@ systemctl enable remote-fs.target
 
 分区后/qm文件夹下会生成一个lost+found的目录
 
-![lost+found](../image/CentOS/lost+found.png)
+![lost+found](../image/CentOS/lostfound.png)
 
 
 
