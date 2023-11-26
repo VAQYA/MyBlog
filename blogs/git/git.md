@@ -83,7 +83,7 @@ git pull：
 项目地址：https://github.com/lenve/vhr 
 git clone https://github.com/lenve/vhr.git
 
-![image-20221106142010098](../image/git/image-20221106142010098.png)
+![image-20221106142010098](../image/Git/image-20221106142010098.png)
 
 
 
