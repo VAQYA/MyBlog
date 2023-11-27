@@ -45,7 +45,7 @@ vim /etc/fstab 修改文件,尾部添加`/dev/vdb1 /qm ext4 defaults 0 0`
 ```
 如果磁盘是根据分区的UUID动态挂载的（如华为云），则需要以下方式设置开机自动挂载
 
-`![开机自动挂载磁盘分区](../image/CentOS/1.png)`
+![开机自动挂载磁盘分区](../image/CentOS/MountDiskPartitions.png)
 
 
 
@@ -61,7 +61,7 @@ systemctl enable remote-fs.target
 
 分区后/qm文件夹下会生成一个lost+found的目录
 
-`![lost+found](../image/CentOS/lostfound.png)`
+![lost+found](../image/CentOS/lostfound.png)
 
 
 

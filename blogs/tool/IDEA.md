@@ -123,6 +123,7 @@ F7 单步调试，进入函数内部
 Shift+F8 跳出函数  
 F9 继续执行到下一个断点的位置或执行完程序
 Ctrl+Shift+F8 查看断点  
+调试时选中表达式，Ctrl+Shift+F8快速展示运行结果
 
 断点处右击，勾选Suspend，选择为Thread，可进行多线程调试  
 Variables中选中参数，右击可以修改值，实现动态设置运行时的变量  
@@ -158,8 +159,11 @@ Debug过程中，想在当前立马结束，不让它继续执行后面的代码
 
 > TEAM URL整理：
 
-https://[jrebel](https://jrebel..qekang.com/{GUID}
+https://[jrebel](https://jrebel.qekang.com/{GUID}
 http://jrebel-license.jiweichengzhu.com/{GUID}
+
+[在线guid](https://www.guidgen.com/)
+激活时ReverseProxy_windows_amd64.exe保持运行
 
 > 解决步骤：
 
@@ -172,7 +176,7 @@ http://jrebel-license.jiweichengzhu.com/{GUID}
 7. 配置TEAM URL、email随意
 8. 完成激活
 
-
+9. 点击Work offline，设置为离线模式
 
 ## SVN
 当前项目是SVN项目的话，已在idea中打开了，添加SVN关联

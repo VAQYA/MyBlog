@@ -9,15 +9,6 @@ tags:
 
 ### foreach标签
 
-<if test="query.employeeList != null  and query.employeeList.size()>0">
-            
-			and eil.account_id not in
-            <foreach collection="query.employeeList" item="id" index="index" open="(" close=")" separator=",">
-                #{id}
-            </foreach>
-</if>
-not in ()会报错，所以要对queryemployeeList判空
-
 collection 传入的集合，list、array、自定义的参数（@Param("query") ）
 item 集合中迭代元素的别名
 index list和数组中，index表示元素的序号，map中表示key 。 可选
@@ -25,6 +16,29 @@ open 代码的开始符号
 close 代码的结束符号
 separator 分隔符
 
+not in ()会报错，所以要对queryemployeeList判空
+```
+	<if test="query.employeeList != null  and query.employeeList.size()>0">
+				
+				and eil.account_id not in
+				<foreach collection="query.employeeList" item="id" index="index" open="(" close=")" separator=",">
+					#{id}
+				</foreach>
+	</if>
+```
+```
+  <if test="search.completeStatus != null and search.completeStatus.size()>0">
+	and
+	  <foreach collection="search.completeStatus" item="statusValue" index="index" open="(" close=")" separator="OR">
+		<if test="statusValue == 1">
+		td.detect_status != 3
+		</if>
+		<if test="statusValue == 2">
+		  DATEADD( DAY , 4, CURRENT_TIMESTAMP) > td.detect_deadline
+		</if>
+	  </foreach>
+  </if>
+```
 ### in和exist
 in没有用到索引
 

@@ -23,3 +23,6 @@ split access.log -b 100m
 `netstat -lnp|grep 9901`
 得到进程号12953
 `ll /proc/12953/cwd` 命令得到当前进程的文件目录
+
+## 开始菜单固定程序没有图标
+C:\Users\VAQ\AppData\Roaming\Microsoft\Windows\Start Menu\Programs，此文件夹下没有快捷方式的图标，复制进去就好了。

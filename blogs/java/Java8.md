@@ -91,6 +91,7 @@ optionalB.flatMap(b->{
 ### 多个字符串初始化List<String>
 ```
 List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.stream.Collectors.toList());
+List<String> list = Stream.of("apple", "banana", "orange").collect(Collectors.toCollection(ArrayList::new));
 ```
 ### 一个字符串初始化List<Long>
 ```
@@ -124,7 +125,7 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 
 ### 分组
 ```
-//  List<AppMonitoringProjectDTO> 的列表
+//  列表
 	List<AppMonitoringProjectDTO> list = new ArrayList<>();
 
 // 使用 Stream API 分组
