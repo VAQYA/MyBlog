@@ -74,10 +74,10 @@ module.exports = {
         "link": "https://www.recoluan.com"
       },
       {
-        "title": "vuepress-theme-reco",
-        "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-        "logo": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        "link": "https://vuepress-theme-reco.recoluan.com"
+        "title": "Java知识体系",
+        "desc": "非常全面的Java知识网站",
+        "logo": "/pdai.gif",
+        "link": "https://www.pdai.tech/"
       },
       {
         "title": "被删的前端游乐场",
