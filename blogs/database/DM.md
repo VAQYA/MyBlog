@@ -68,9 +68,9 @@ netstat -lntp |grep dm
 
 
 
-# 与MySQL的区别
+## 与MySQL的区别
 
-## 分组查询GROUP_CONCAT和WM_CONCAT
+### 分组查询GROUP_CONCAT和WM_CONCAT
 mysql用法  GROUP_CONCAT(c_remark SEPARATOR '!')  as remark    // 默认是,这里是将,改为！
 达梦用法  REPLACE(WM_CONCAT("c_remark") ,',','!') as remark   
 WM_CONCAT("c_remark")为null时直接REPLACE会报"试图在blob或者clob列上排序或比较"错误，应改为下面的方式  
@@ -97,11 +97,11 @@ group by DBMS_LOB.SUBSTR(uniqueKey)
 
 ```
 
-## DATE_ADD、DATE_SUB和DATEADD
+### DATE_ADD、DATE_SUB和DATEADD
 MySQL用法：DATE_ADD(a, INTERVAL b DAY)等同于DATE_SUB(a, INTERVAL -b DAY)  
 达梦用法：DATEADD( DAY , b, a )  
 
-## `和“
+### `和“
 MySQL用法：a.`name`
 达梦用法：a."name"
 
@@ -124,6 +124,23 @@ CONNECT BY PRIOR(id) = parent_id
 ## 将查询的字段转换成字符串返回
 `SELECT CAST(field_name AS VARCHAR) FROM table_name;`
 
+
+## 函数
+
+### COALESCE
+COALESCE 函数用于返回参数列表中的第一个非 NULL 表达式。如果所有参数都是 NULL，那么 COALESCE 返回 NULL
+
+### DATEDIFF
+获取两个时间相差的分钟数
+```
+SELECT DATEDIFF(MINUTE, MEASURE_BEGIN_TIME , MEASURE_END_TIME) AS minutes_difference
+FROM detect_record 
+```
+
+
+
+
+
 ## 增
 ```
 alter table "FSJCZX"."table_test" add column("operate" VARCHAR(50));
@@ -144,8 +161,13 @@ alter table "FSJCZX"."table_test" drop column "abc";
 `alter table "SPOT_MONITORING_EXPAND" drop identity;`
 
 
-
-
+## 更新
+```
+UPDATE detect_record dr 
+LEFT JOIN task_detail td ON td.TASK_DETAIL_ID = dr.TASK_DETAIL_ID 
+LEFT JOIN task t ON t.TASK_ID = td.TASK_ID 
+SET dr.task_type = t.TASK_TYPE 
+```
 
 
 

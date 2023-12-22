@@ -21,7 +21,12 @@ if(a.status = #{status},1,0)
 ### if、else语句
 
 case 字段 when 值 then 结果 else 其他情况 end
-case when 表达式（字段=值） then 结果 else 其他情况 end
+
+case 
+	when 表达式1（字段=值） then 结果1
+	when 表达式2（字段=值） then 结果2 
+	else 其他情况 
+end
 
 ### format（）
 format(100.234,2) 四舍五入取两位小数 结果为100.23
@@ -126,6 +131,10 @@ insert into  user （id，name,gender,age)  select id ,name ,gender ,age from us
 
 ### 更新数据
 update user set age = "28" , gender = 0  where id = "1"
+
+UPDATE table_A a
+JOIN table_B b ON b.id = a.b_id 
+SET a.b_name = b.name 
 
 ### 删除数据
 delete from user where id = "2" 
@@ -673,7 +682,7 @@ and get_time < DATE_FORMAT(DATE_ADD(now() ,INTERVAL 2 day),'%Y-%m-%d')
 
 ### 排序
 ORDER BY FIELD( r.onlineStatus , 0 , 2 )  , FIELD(r.title, "医师", "副主任医师", "主任医师" ) DESC
-
+ORDER BY 列名 ASC NULLS LAST;// 默认null在最前面，加`NULLS LAST`表示null值在最后面
 
 
 ### CentOS7里操作命令
@@ -878,4 +887,9 @@ kill 45760
 
 
 
-
+       SELECT DETECT_EQUIPMENT_ID ,dr.* FROM DETECT_RECORD dr  WHERE DETECT_RECORD_CODE = 'DR2023120503282'
+       
+     UPDATE detect_record SET DETECT_EQUIPMENT_ID = 1605463849174675457
+      WHERE DETECT_RECORD_CODE = 'DR2023120503282'
+      
+       
