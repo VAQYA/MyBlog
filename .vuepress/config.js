@@ -119,6 +119,48 @@ module.exports = {
     }
   },
   plugins: [
+    // 彩色背景 npm install vuepress-plugin-ribbon-animation -D
+ ["ribbon-animation", {
+  size: 80,   // 默认数据
+  opacity: 0.4,  //  透明度
+  zIndex: -1,   //  层级
+  opt: {
+    // 色带HSL饱和度
+    colorSaturation: "70%",
+    // 色带HSL亮度量
+    colorBrightness: "60%",
+    // 带状颜色不透明度
+    colorAlpha: 0.35,
+    // 在HSL颜色空间中循环显示颜色的速度有多快
+    colorCycleSpeed: 2,
+    // 从哪一侧开始Y轴 (top|min, middle|center, bottom|max, random)
+    verticalPosition: "center",
+    // 到达屏幕另一侧的速度有多快
+    horizontalSpeed: 30,
+    // 在任何给定时间，屏幕上会保留多少条带
+    ribbonCount: 2,
+    // 添加笔划以及色带填充颜色
+    strokeSize: 0,
+    // 通过页面滚动上的因子垂直移动色带
+    parallaxAmount: -0.5,
+    // 随着时间的推移，为每个功能区添加动画效果
+    animateSections: true
+  },
+  ribbonShow: false, //  点击彩带  true显示  false为不显示
+  ribbonAnimationShow: true  // 滑动彩带
+}],
+    // 樱花插件 npm install vuepress-plugin-sakura -D
+ ["sakura", 
+ {
+  num: 5,  // 默认数量
+  show: true, //  是否显示
+  zIndex: -1,   // 层级
+  img: {
+    replace: false,  // false 默认图 true 换图 需要填写httpUrl地址
+    httpUrl: '...'     // 绝对路径
+  }
+}
+],
     [
       //先安装在配置， npm install @vuepress-reco/vuepress-plugin-kan-ban-niang --save
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
@@ -138,15 +180,6 @@ module.exports = {
     [
       "@vuepress-reco/vuepress-plugin-pagation"
     ],
-    // [
-    //   //彩带背景 先安装在配置， npm install vuepress-plugin-ribbon --save
-    //   "ribbon",
-    //   {
-    //     size: 90, // width of the ribbon, default: 90
-    //     opacity: 0.8, // opacity of the ribbon, default: 0.3
-    //     zIndex: -1 // z-index property of the background, default: -1
-    //   }
-    // ],
     [
       //鼠标点击特效 先安装在配置， npm install vuepress-plugin-cursor-effects --save
       "cursor-effects",
