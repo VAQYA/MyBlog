@@ -124,7 +124,7 @@ module.exports = {
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
       {
         theme: ['blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
-        clean: false,
+        clean: true,
         messages: {
           welcome: '我是lookroot欢迎你的关注 ',
           home: '心里的花，我想要带你回家。',
