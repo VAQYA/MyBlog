@@ -1,7 +1,7 @@
 ---
 title: 计算机网络常用
 date: 2020-10-01
-tags: tag1
+tags:  IP
 categories: 计算机网络
 ---
 ## ip

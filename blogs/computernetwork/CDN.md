@@ -1,7 +1,7 @@
 ---
 title: CDN
 date: 2020-10-01
-tags: tag1
+tags:  
 categories: 计算机网络
 ---
 

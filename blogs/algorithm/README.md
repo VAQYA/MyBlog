@@ -1,7 +1,7 @@
 ---
 title: 算法
 date: 2020-10-01
-tags: tag1
+tags: 
 categories: 算法
 --- 
 ## 查找算法
@@ -88,7 +88,7 @@ int right_bound(int[] nums, int target) {
 ### 插值查找
 
 
-### 算法
+## 算法
 加密算法都是可逆的；  
 摘要算法都是不可逆的，有信息丢失，不可逆
 
