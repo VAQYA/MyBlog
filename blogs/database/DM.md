@@ -74,7 +74,7 @@ netstat -lntp |grep dm
 mysql用法  GROUP_CONCAT(c_remark SEPARATOR '!')  as remark    // 默认是,这里是将,改为！
 达梦用法  REPLACE(WM_CONCAT("c_remark") ,',','!') as remark   
 WM_CONCAT("c_remark")为null时直接REPLACE会报"试图在blob或者clob列上排序或比较"错误，应改为下面的方式  
-REPLACE(TO_CHAR(WM_CONCAT("c_remark")) ,',','!') as remark
+REPLACE(  ,',','!') as remark
 
 ```
 select
@@ -124,6 +124,8 @@ CONNECT BY PRIOR(id) = parent_id
 ## 将查询的字段转换成字符串返回
 `SELECT CAST(field_name AS VARCHAR) FROM table_name;`
 
+## 将参数id类型转换为字符串，防止字符串转换错误
+`SELECT * FROM table_A WHERE a = CAST(#{id} AS VARCHAR)`
 
 ## 函数
 
@@ -171,7 +173,39 @@ SET dr.task_type = t.TASK_TYPE
 
 
 
+## SQL
 
+### 获取监测项目id、名称列表，有重复名称的则获取update_time最新的那个projectId
+```
+ SELECT
+	a.PROJECT_NAME AS "projectName",
+	to_char(a.PROJECT_ID) AS "projectId",
+	b.is_sample AS "isSample"
+FROM
+	( WITH RankedProjects AS (
+	SELECT
+		PROJECT_NAME,
+		PROJECT_ID,
+		ROW_NUMBER() 
+		OVER (PARTITION BY PROJECT_NAME ORDER BY update_time DESC) AS row_num
+	FROM
+		MONITORING_PROJECT
+	WHERE
+		USABLE = 1 )
+	SELECT
+		DISTINCT PROJECT_NAME,
+		PROJECT_ID
+	FROM
+		RankedProjects
+	WHERE
+		row_num = 1 ) a
+LEFT JOIN MONITORING_PROJECT_TERM t ON
+	t.PROJECT_TERM_NAME = a.PROJECT_NAME
+LEFT JOIN PROJECT_BASE_TERM p ON
+	p.PROJECT_TERM_ID = t.PROJECT_TERM_ID
+LEFT JOIN MONITORING_PROJECT_BASE b ON
+	b.PROJECT_BASE_ID = p.PROJECT_BASE_ID;
+```
 
 
 

@@ -111,6 +111,9 @@ curtime() 当前时间
 
 2、round(x)  ,其实就是round(x,0),也就是默认d为0；
 
+COALESCE(value1,value2,...);
+COALESCE函数返回第一个非NULL参数。如果所有参数都为NULL，则COALESCE函数返回NULL。
+
 ### 全文本搜索
 
 1. normal：普通索引; unique：唯一索引; fulltext：全文本索引; spatial：空间索引
@@ -868,7 +871,9 @@ SELECT CONCAT_WS('#', field1, field2, field3) AS concatenated_data
 FROM table_name;
 CONCAT_WS会自动过滤null数据
 
-
+## 逗号隔开的数据字段
+a字段保存了逗号隔开的多个数值，只查询包含1的，包含11的不能查出
+`where concat(',',a,',') LIKE concat('%,','1',',%')`
 
 
 # Others

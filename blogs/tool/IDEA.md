@@ -159,7 +159,7 @@ Debug过程中，想在当前立马结束，不让它继续执行后面的代码
 
 > TEAM URL整理：
 
-https://[jrebel](https://jrebel.qekang.com/{GUID}
+https://jrebel.qekang.com/{GUID}
 http://jrebel-license.jiweichengzhu.com/{GUID}
 
 [在线guid](https://www.guidgen.com/)

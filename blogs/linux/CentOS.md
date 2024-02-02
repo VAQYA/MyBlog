@@ -96,4 +96,10 @@ x  代表解压缩文件，并且是按原始目录树解压（还有个参数 e
 -o 是指定解压到的目录，-o后是没有空格的，直接接目录。这一点需要注意。
 
 
-  
+   unzip qm-framework-web-1.0.0-SNAPSHOT.war -d /jczx/TongWeb7048/deployment/jczx-web-lib
+
+
+
+
+
+
