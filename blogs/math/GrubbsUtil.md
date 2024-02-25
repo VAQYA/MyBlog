@@ -5,7 +5,7 @@ tags: 数学
 categories: 计算相关
 ---
 
-```
+``` Java
 
 import lombok.Data;
 
