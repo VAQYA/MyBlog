@@ -1,5 +1,5 @@
 ---
-title: 搭建自己的ChatGPT
+title: 搭建个人ChatGPT(无需服务器)
 date: 2024-02-25
 tags: ChatGPT
 categories: ChatGPT
@@ -38,3 +38,6 @@ categories: ChatGPT
 ![](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/788a27b8-fe45-4a12-a731-38e52c85253b.png)
 
 ### 4.结束
+以上为搭建个人ChatGPT的方式，如果需要升级使用GPT4，请看这篇文章[如何升级ChatGPT Plus（GPT4）](https://vaq86.cn/blogs/chatgpt/BuyChatGPTPlus.html)，有任何Chat GPT相关的疑问欢迎添加我的微信咨询  
+
+<img src="https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/32e7ce8a-3d3c-4926-bcd1-7451cbf51aa5.png" style="zoom:33%;" />
