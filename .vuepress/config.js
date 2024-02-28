@@ -50,6 +50,12 @@ module.exports = {
         "icon": "reco-home"
       },
       {
+        "text": "ChatGPT",
+        "icon": "",
+        "link": "/categories/ChatGPT/"
+        
+      },
+      {
         "text": "时间轴",
         "link": "/timeline/",
         "icon": "reco-date"
@@ -79,11 +85,11 @@ module.exports = {
     "type": "blog",
     "blogConfig": {
       "category": {
-        "location": 2, // 在导航栏所占的位置
+        "location": 3, // 在导航栏所占的位置
         "text": "分类"
       },
       "tag": {
-        "location": 3,
+        "location": 4,
         "text": "标签"
       }
     },
