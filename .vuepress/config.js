@@ -201,7 +201,19 @@ module.exports = {
     }],
     [
       "vuepress-plugin-boxx"
-    ]
+    ],
+    [     
+       '@vuepress/last-updated',      
+      {        
+         transformer: (timestamp, lang) => { return new Date(timestamp).toLocaleDateString();}      
+      }    
+    ],
+    [
+			"sitemap",
+			{
+				hostname: "https://www.vaq86.cn",
+			},
+		]
     // ["@vuepress-yard/vuepress-plugin-window",{
     //   title: "**の公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
     //   contentInfo: {
