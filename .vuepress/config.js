@@ -17,7 +17,28 @@ module.exports = {
       "meta",
       {
         "name": "viewport",
-        "content": "width=device-width,initial-scale=1,user-scalable=no"
+        "content": "width=device-width,initial-scale=1"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "baidu-site-verification",
+        "content": "codeva-ukCnWHmRj4"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "referrer",
+        "content": "no-referrer"
+      }
+    ],
+    [
+      "meta",
+      {
+        "name": "keys",
+        "content": "ChatGPT,GPT Plus,GPT4,国外虚拟卡"
       }
     ]
   ],
