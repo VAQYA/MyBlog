@@ -108,8 +108,8 @@ queryWrapper.and(wrapper -> wrapper.like("patient_name",query.getKeyword()).or()
 
 ### 大于小于
 ```
-gt 大于，     .gt("create_time", startTime); 
-ge 大于等于， .ge("create_time", startTime);
+gt 大于，     .gt("create_time", beginTime); 
+ge 大于等于， .ge("create_time", beginTime);
 lt 小于，     .lt("create_time",endTime);
 le 小于等于   .le("create_time",endTime);
 

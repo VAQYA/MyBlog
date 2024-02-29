@@ -47,11 +47,11 @@ npm,Node Package Manager，基于Node.js的包管理器
 # 淘宝镜像
 ## 方式一
 ```shell script
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install -g cnpm --registry=https://registry.npmmirror.com
 ```
 或者直接用以下命令进行安装
 ```shell script
-npm install --registry=https://registry.npm.taobao.org
+npm install --registry=https://registry.npmmirror.com
 ```
 使用
 ```
@@ -60,7 +60,7 @@ cnpm install
 ## 方式二
 更换成淘宝的源
 ```
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 ```
 配置后可通过下面方式来验证是否成功
 ```

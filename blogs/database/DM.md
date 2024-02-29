@@ -171,7 +171,13 @@ LEFT JOIN task t ON t.TASK_ID = td.TASK_ID
 SET dr.task_type = t.TASK_TYPE 
 ```
 
+## 保留3为小数
+round(a,3)
 
+达梦数据库精度最大值是38
+
+## 长度
+length(a)
 
 ## SQL
 
