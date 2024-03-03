@@ -1,0 +1,3 @@
+Sitemap: https://vaq86.cn/sitemap.xml
+
+User-agent: *
