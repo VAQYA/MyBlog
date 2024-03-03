@@ -50,9 +50,15 @@ module.exports = {
         "icon": "reco-home"
       },
       {
-        "text": "ChatGPT",
+        "text": "ChatGPT4升级方法",
         "icon": "",
-        "link": "/categories/ChatGPT/"
+        "link": "/blogs/chatgpt/BuyChatGPTPlus.html"
+        
+      },
+      {
+        "text": "Onlyfans订阅指南",
+        "icon": "",
+        "link": "/blogs/chatgpt/onlyfans.html"
         
       },
       {
@@ -85,11 +91,11 @@ module.exports = {
     "type": "blog",
     "blogConfig": {
       "category": {
-        "location": 3, // 在导航栏所占的位置
+        "location": 4, // 在导航栏所占的位置
         "text": "分类"
       },
       "tag": {
-        "location": 4,
+        "location": 5,
         "text": "标签"
       }
     },
