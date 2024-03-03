@@ -14,6 +14,17 @@ module.exports = {
       }
     ],
     [
+      "script",
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?74ca4e8f49a2fce33bd8375637e32b07";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`,
+    ],
+    [
       "meta",
       {
         "name": "viewport",

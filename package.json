@@ -14,6 +14,7 @@
     "vuepress-theme-reco": "1.6.10"
   },
   "dependencies": {
+    "@starzkg/vuepress-plugin-baidu-analytics": "^1.1.2",
     "@vuepress-reco/vuepress-plugin-comments": "^1.6.0",
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "@vuepress-reco/vuepress-plugin-pagation": "^1.6.0",
