@@ -262,7 +262,8 @@ module.exports = {
     ],
     [
       'vuepress-plugin-baidu-autopush'
-    ]
+    ],
+    require('./vuepress-plugin-jsonld')
     // ["@vuepress-yard/vuepress-plugin-window",{
     //   title: "**の公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
     //   contentInfo: {
