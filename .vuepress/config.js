@@ -63,7 +63,7 @@ module.exports = {
       {
         "text": "ChatGPT4升级方法",
         "icon": "",
-        "link": "/blogs/chatgpt/BuyChatGPTPlus.html"
+        "link": "/blogs/chatgpt/upgrade-chatgptplus.html"
 
       },
       {
