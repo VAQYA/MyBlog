@@ -20,7 +20,7 @@ OnlyFans并不支持我们国内这些常见的银行卡，因此国内用户想
 2. 在[OnlyFans官网](https://onlyfans.com)注册账号，可以通过国内邮箱，如：QQ 邮箱、网易邮箱等进行注册。（如果你有推特、谷歌这些国外账号，也可以进行登录）
 
 ##  一、虚拟卡平台WildCard开卡
-在[WildCard平台](https://bewildcard.com/i/HOME)注册的时候如果没有邀请码，可以手动填入内部邀请码HOME，可免 2 美元的开卡费，开通的是有效期1-2年的虚拟信用卡，其他费用无，根据个人需求充值，而且开通虚拟卡后还可以用来[升级ChatGPT Plus（GPT-4）](https://vaq86.cn/blogs/chatgpt/BuyChatGPTPlus.html)），或者订阅**苹果的 App Store、绑定Googel Play商店、美区 Steam、Midjourney、OnlyFans** 等软件服务，如图，![](https://files.mdnice.com/user/57040/b21ed1e7-2e7c-4fd0-81cd-14eff2a1c4ed.png)
+在[WildCard平台](https://bewildcard.com/i/HOME)注册的时候如果没有邀请码，可以手动填入内部邀请码HOME，可免 2 美元的开卡费，开通的是有效期1-2年的虚拟信用卡，其他费用无，根据个人需求充值，而且开通虚拟卡后还可以用来[升级ChatGPT Plus（GPT-4）](https://vaq86.cn/blogs/chatgpt/upgrade-chatgptplus.html)），或者订阅**苹果的 App Store、绑定Googel Play商店、美区 Steam、Midjourney、OnlyFans** 等软件服务，如图，![](https://files.mdnice.com/user/57040/b21ed1e7-2e7c-4fd0-81cd-14eff2a1c4ed.png)
 
 关键是，如果充值后没有消费，可以**随时提现余额到支付宝**，亲测可以秒提现到支付宝。
 

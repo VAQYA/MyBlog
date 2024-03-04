@@ -7,7 +7,7 @@ categories: ChatGPT
 
 ## 一、升级ChatGPT Plus为什么这么难？
 
-在上一文已经介绍了[ChatGPT4.0相较于ChatGPT3.5的区别以及优势](https://vaq86.cn/blogs/chatgpt/comparegpt4.html)，
+在上一文已经介绍了[ChatGPT4.0相较于ChatGPT3.5的区别以及优势](https://vaq86.cn/blogs/chatgpt/compare-gpt.html)，
 然而想要使用GPT4.0就必须先升级ChatGPT Plus，对于普通用户而言只能使用ChatGPT3.5，如果想要使用3.5以上的版本就必须对账号进行付费升级为ChatGPT Plus用户，然而升级过程很麻烦，不仅需要国外 VISA、Master 等双币信用卡，还需要有干净的 IP （国外IP），CHATGPT 是使用 stripe 进行收款，stripe 会根据账单地址、IP 地址等进行风控，国内付款一般都会被拦截。
 
 常常会见到这些报错：
