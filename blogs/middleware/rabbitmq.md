@@ -2,7 +2,7 @@
 title: RabbitMQ
 date: 2020-10-01
 tags: tag1
-categories: 消息中间件
+categories: 中间件
 ---
 ## RabbitMQ
 
