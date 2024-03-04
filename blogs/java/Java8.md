@@ -37,7 +37,8 @@ lambda表达式只能引用标记了final的外层局部变量，即不能lambda
 后面没()
 
 ### Optional
-```
+
+```  java
 Student stu1 = null;
 Student stu2 = new Student();
 stu2.setId("123");
@@ -71,14 +72,15 @@ optionalB.flatMap(b->{
 	return Optional.ofNullable(b);
 });
 
-
 * static<T> Optional<T> empty();	//返回一个空的 Optional实例   
 * T get();	//如果 Optional中有一个值，返回值，否则抛出 NoSuchElementException   
 * public static <T> Optional<T> of(T value);	//返回具有 Optional的当前非空值的Optional,如果值为null，则NullPointerException
+
 ```
 
+
 ### Stream
-```
+``` java
         List<String> userIds = Stream.of(byId.getFromUserId(), byId.getToUserId()).collect(toList());
         List<SysUser> userList = sysUserService.listByUserIds(userIds);
         Map<String, String> hashMap = userList.stream().collect(toMap(SysUser::getUserId, SysUser::getLoginId));
@@ -89,12 +91,12 @@ optionalB.flatMap(b->{
 
 
 ### 多个字符串初始化List<String>
-```
+``` java
 List<String> colors = Stream.of("blue", "red", "yellow").collect(java.util.stream.Collectors.toList());
 List<String> list = Stream.of("apple", "banana", "orange").collect(Collectors.toCollection(ArrayList::new));
 ```
 ### 一个字符串初始化List<Long>
-```
+``` java
 List<Long> numList = Arrays.stream("12,23,34".split(",")).map(Long::valueOf).collect(java.util.stream.Collectors.toList());
 ```
 
@@ -102,14 +104,14 @@ List<Long> numList = Arrays.stream("12,23,34".split(",")).map(Long::valueOf).col
 
 
 ### 变量list判空遍历 
-```
+``` java
 Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 
 ```
 
 ### 获取集合对象的名称属性转换为`，`隔开的字符串
 方法1
-```
+``` java
  if (CollectionUtils.isNotEmpty(fileList)) {
 	List<String> fileNameList = new ArrayList<>();
 	fileList.forEach(f -> fileNameList.add(f.getFileName()));
@@ -117,14 +119,14 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 }
 ```
 方法2(建议)
-```
+``` java
  if (CollectionUtils.isNotEmpty(fileList)) {
 	String fileNames = fileList.stream().map(File::getFileName).collect(Collectors.joining(","));
 }
 ```
 
 ### 分组
-```
+``` java
 //  列表
 	List<AppMonitoringProjectDTO> list = new ArrayList<>();
 
@@ -135,7 +137,7 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 ```
 
 ### Set 与 String互相转换
-```
+``` java
 String=》Set<String>
 Set<String> labDeptIdSet = new HashSet<>(Arrays.asList(.split(",")));  
 或 
@@ -147,7 +149,6 @@ labDeptIdSet.stream().collect(Collectors.joining(","));
 或
 String.join(",", labDeptIdSet);
 ```
-
 
 
 
