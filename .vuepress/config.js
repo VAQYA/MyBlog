@@ -135,6 +135,79 @@ module.exports = {
         "logo": "/codeSheep.jpg",
         "link": "https://www.r2coding.com"
       },
+      {
+        "title": "ChatGPT中文导航站",
+        "desc": "ChatGPT 账号、订阅教程、代充",
+        "logo": "https://chatgptzhinan.com/wp-content/uploads/2023/12/favicon.ico",
+        "link": "http://chatgptzhinan.com"
+      },
+      {
+        "title": "ChatGPT中文站",
+        "desc": "提供ChatGPT账号、GPT4代充服务、Sora最新情报、海外APP使用教程",
+        "logo": "https://groot-1253585616.cos.ap-shanghai.myqcloud.com/md/avatar.png",
+        "link": "https://cngptplus.com"
+      },
+      {
+        "title": "Ai导航中文网",
+        "desc": "Ai变现 ChatGPT、Sora订阅及使用教程，代充代注册",
+        "logo": "https://sorachatgpt4.com/img/avatar.png",
+        "link": "https://sorachatgpt4.com"
+      },
+      {
+        "title": "ChatGPT精选站",
+        "desc": "ChatGPT 精选信息: 分享 OpenAI 各类产品的使用方法，第一资讯，精选信息。包括 ChatGPT、Sora 等",
+        "logo": "https://chatgpt-jx.com/img/avatar.svg",
+        "link": "https://chatgpt-jx.com"
+      },
+      {
+        "title": "ChatGPT指南",
+        "desc": "专注分享国内ChatGPT、Sora最新资讯/使用方法",
+        "logo": "https://muyiio-1300292673.cos.ap-chongqing.myqcloud.com/favicon.ico",
+        "link": "https://chatgptbom.com"
+      },
+      {
+        "title": "ChatGPT-Share",
+        "desc": "这里提供技术分享及一些教程，比如ChatGPT升级，如何充值GPT4，也提供一些云服务器（腾讯云服务器、阿里云服务器）的优惠活动",
+        "logo": "https://leedu.ac.cn/static/favicon-32x32.png",
+        "link": "https://leedu.ac.cn"
+      },
+      {
+        "title": "ChatGPT甜品铺",
+        "desc": "分享ChatGPT4.0升级方法、GPT代充、OnlyFans订阅等干货教程😀",
+        "logo": "https://whalecoding.com/img/avatar.jpg",
+        "link": "https://whalecoding.com"
+      },
+      {
+        "title": "ChatGPT指南、最新咨询",
+        "desc": "ChatGPT 注册、升级教程、代充",
+        "logo": "https://anyubenyu.oss-cn-shanghai.aliyuncs.com/img202402272321577.jpg",
+        "link": "https://anyubenyu.com"
+      },
+      {
+        "title": "GPT教程",
+        "desc": "ChatGPT 账号、订阅教程、代充",
+        "logo": "https://duanduanhh.oss-cn-hangzhou.aliyuncs.com/gpt/icon.png",
+        "link": "https://gpt-boot.com"
+      },
+      {
+        "title": "OpenAI-ChatGPT订阅教程 ",
+        "desc": "ChatGPT、OnlyFans、Sora订阅使用教程",
+        "logo": "https://gpt4-1317472746.cos.ap-shanghai.myqcloud.com/OpenAI/gpt/202402271938538.jpg",
+        "link": "https://actoyouai.com"
+      },
+      {
+        "title": "扑扑特桔",
+        "desc": "ChatGPT4.0升级、OnlyFans订阅指南、AI最新资讯",
+        "logo": "https://puputeju-tc.oss-cn-beijing.aliyuncs.com/pptj.png",
+        "link": "https://puputeju.com"
+      },
+      {
+        "title": "Kaiho小站",
+        "desc": "",
+        "logo": "https://kaiho.cc/wp-content/uploads/2024/02/logo.png",
+        "link": "https://kaiho.cc"
+      },
+      
     ],
     "logo": "/logo.png",
     "search": true,
