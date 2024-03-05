@@ -29,8 +29,8 @@ Your credit card was declined.Try paying with a debit card instead.
 **以下是在WildCard平台开通虚拟信用卡升级ChatGPT4的简易过程：**
 
 1. **手机号注册**
-  ![WildCard注册](https://files.mdnice.com/user/57040/d7d95bb3-ad00-40ec-a8bb-32975f1371b0.png)
-  ![邀请码减免](https://files.mdnice.com/user/57040/d2a85441-cd61-47ce-affe-b627e0a2538b.png)
+    ![WildCard注册](https://files.mdnice.com/user/57040/d7d95bb3-ad00-40ec-a8bb-32975f1371b0.png)
+    ![邀请码减免](https://files.mdnice.com/user/57040/d2a85441-cd61-47ce-affe-b627e0a2538b.png)
   
 2. **选择支付宝免押金进行刷脸安全认证，大家不用担心安全问题，这个是因为走银联通道购汇的需要**
    ![支付宝认证](https://files.mdnice.com/user/57040/62a85e5b-e161-4dd5-9e35-16103fd2a2bc.png)
