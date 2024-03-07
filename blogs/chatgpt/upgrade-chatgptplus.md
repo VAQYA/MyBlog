@@ -44,7 +44,7 @@ Your credit card was declined.Try paying with a debit card instead.
 5. **选择所需的订阅类型**
   ![订阅ChatGPT Plus](https://files.mdnice.com/user/57040/f7c2a740-b9a3-472b-9e61-63645e61ecd7.png)
   
-6. **最后复制链接后确认支付并升级就完成了**
+6. **最后进入GPT官网复制支付链接，确认支付并升级就完成了**
 ![升级ChatGPT Plus成功](https://files.mdnice.com/user/57040/e3c9c1ce-e921-4631-92f7-0db1e10569a0.png) 
 
 ![ChatGPT Plus成功](https://files.mdnice.com/user/57040/f76911bc-5ed4-4de4-8c4d-a7a03ddafe79.png)
