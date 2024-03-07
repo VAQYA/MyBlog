@@ -3,6 +3,12 @@ title: 搭建个人ChatGPT(无需服务器)
 date: 2024-02-25
 tags: ChatGPT
 categories: ChatGPT
+meta:
+  - name: description
+    content: 使用GitHub和Vercel搭建个人ChatGPT,无需服务器
+  - name: keywords
+    content: 搭建,ChatGPT,Github,Vercel,服务器,个人,网站
+
 ---
 
 ## 先看成果

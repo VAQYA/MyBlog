@@ -48,7 +48,7 @@ module.exports = {
     [
       "meta",
       {
-        "name": "keys",
+        "name": "keywords",
         "content": "ChatGPT,GPT Plus,GPT4,国外虚拟卡"
       }
     ]
@@ -213,7 +213,7 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     // "sidebar": "auto", // 自动形成侧边导航
-    "subSidebar": 'auto', // 自动形成侧边导航
+    "subSidebar": 'auto', // 自动生成子侧边栏，放在了页面的右侧
     "lastUpdated": "Last Updated",
     "author": "VAQ",
     "authorAvatar": "/avatar.png", // 首页右侧信息栏头像
@@ -225,14 +225,18 @@ module.exports = {
     valineConfig: {
       appId: 'CztB6WmRz21DKX6LGoTqBgLB-gzGzoHsz', // your appId
       appKey: 't9s1uuIYevQUwsblFgtz1vDc', // your appKey
-    }
+    },
+    /**
+     * 取消腾讯公益的404页面
+     */
+    noFoundPageByTencent: false
   },
   "markdown": {
     "lineNumbers": true // 代码显示行号
   },
   "locales": {
     "/": {
-      lang: "zh-CN", // 仅供参考，具体 lang 配置根据自己需求定义
+      lang: "zh-CN", // 仅供参考，具体 lang 配置根据自己需求定义，文章中的日期格式会由13/12/2021变为2021/12/13
     }
   },
   plugins: [
