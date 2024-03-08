@@ -240,6 +240,33 @@ module.exports = {
     }
   },
   plugins: [
+
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          return new Date(timestamp).toLocaleDateString();
+        }
+      }
+    ],
+    [
+      "sitemap",
+      {
+        hostname: "https://www.vaq86.cn",
+      },
+    ],
+    // Facebook 的 Open Graph Protocol
+    ['seo', {
+      siteTitle: (_, $site) => 'VAQ的博客1',
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description,
+      author: (_, $site) => 'VAQ',
+      type: $page => 'article',
+      url: (_, $site, path) => 'https://vaq86.cn' + path,
+      image: ($page, $site) => "https://vaq86.cn/avatar.png",
+      publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+    }],
     // 彩色背景 npm install vuepress-plugin-ribbon-animation -D
     ["ribbon-animation", {
       size: 80, // 默认数据
@@ -322,20 +349,6 @@ module.exports = {
     }],
     [
       "vuepress-plugin-boxx"
-    ],
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          return new Date(timestamp).toLocaleDateString();
-        }
-      }
-    ],
-    [
-      "sitemap",
-      {
-        hostname: "https://www.vaq86.cn",
-      },
     ],
     [
       'vuepress-plugin-baidu-autopush'
