@@ -5,9 +5,9 @@ tags: ChatGPT
 categories: ChatGPT
 meta:
   - name: description
-    content: 使用GitHub和Vercel搭建个人ChatGPT,无需服务器
+    content: 使用GitHub搭配Vercel搭建个人私用ChatGPT,无需服务器
   - name: keywords
-    content: 搭建,ChatGPT,Github,Vercel,服务器,个人,网站
+    content: 搭建,ChatGPT,Github,Vercel,服务器,个人,网站,私人
 
 ---
 

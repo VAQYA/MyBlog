@@ -49,7 +49,7 @@ module.exports = {
       "meta",
       {
         "name": "keywords",
-        "content": "ChatGPT,GPT Plus,GPT4,国外虚拟卡"
+        "content": "ChatGPT,ChatGPT Plus,GPT4,国外虚拟卡,OnlyFans,订阅,支付,教程"
       }
     ]
   ],

@@ -3,6 +3,12 @@ title: ChatGPT4.0和ChatGPT3.5的区别及优势
 date: 2024-02-26
 tags: ChatGPT
 categories: ChatGPT
+meta:
+  - name: description
+    content: ChatGPT3.5和ChatGPT4的区别
+  - name: keywords
+    content: ChatGPT3.5,ChatGPT4,区别,优势
+
 ---
 
 **先说结论，ChatGPT3.5和ChatGPT4.0差距很大，并且是全方位的差距，ChatGPT3.5在GPT-4.0面前就是小学生对大学生一般的差距**。
