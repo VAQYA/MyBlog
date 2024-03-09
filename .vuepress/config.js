@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         "text": "Onlyfans订阅指南",
-        "icon": "",
+        "icon": "icon-sort",
         "link": "/blogs/chatgpt/onlyfans.html"
 
       },
@@ -207,7 +207,7 @@ module.exports = {
         "logo": "https://kaiho.cc/wp-content/uploads/2024/02/logo.png",
         "link": "https://kaiho.cc"
       },
-      
+
     ],
     "logo": "/logo.png",
     "search": true,
@@ -256,14 +256,16 @@ module.exports = {
       },
     ],
     // Facebook 的 Open Graph Protocol
-    ['seo', {
-      siteTitle: (_, $site) => 'VAQ的博客1',
+    ["seo", {
+      siteTitle: (_, $site) => $site.title,
       title: $page => $page.title,
       description: $page => $page.frontmatter.description,
-      author: (_, $site) => 'VAQ',
-      type: $page => 'article',
-      url: (_, $site, path) => 'https://vaq86.cn' + path,
-      image: ($page, $site) => "https://vaq86.cn/avatar.png",
+      author: (_, $site) => $site.themeConfig.author,
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => 'summary_large_image',
+      type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+      url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+      image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http') || '') + $page.frontmatter.image),
       publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }],
@@ -380,11 +382,11 @@ module.exports = {
   // 使博客支持.webp格式的图片
   chainWebpack: (config) => {
     config.module
-        .rule('url-loader')
-        .test(/\.(webp)(\?.*)?$/)
-        .use('url-loader')
-        .loader('url-loader')
-        .end()
-}
+      .rule('url-loader')
+      .test(/\.(webp)(\?.*)?$/)
+      .use('url-loader')
+      .loader('url-loader')
+      .end()
+  }
 
 }
