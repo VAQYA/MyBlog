@@ -1,7 +1,7 @@
 module.exports = {
   "base": "/",
   "title": "VAQ的博客",
-  "description": "网站提供了OpenAI的ChatGPT指南,ChatGPT账号升级ChatGPT Plus,虚拟信用卡的使用,国内购买ChatGPT4,OnlyFans订阅教程等",
+  "description": "网站提供了OpenAI的ChatGPT账号升级ChatGPT Plus指南,国内购买ChatGPT4,虚拟信用卡的使用,OnlyFans订阅教程等",
   "dest": "dist", // 博客部署时输出的文件夹
   "host": "localhost",
   "port": "8888",
