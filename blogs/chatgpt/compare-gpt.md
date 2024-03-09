@@ -3,6 +3,7 @@ title: ChatGPT4.0和ChatGPT3.5的区别及优势
 date: 2024-02-26
 tags: ChatGPT
 categories: ChatGPT
+image: https://vaq86.cn/chatgpt.ico
 meta:
   - name: description
     content: ChatGPT3.5和ChatGPT4的区别

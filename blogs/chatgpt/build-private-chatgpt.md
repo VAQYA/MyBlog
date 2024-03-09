@@ -3,6 +3,7 @@ title: 搭建个人ChatGPT(无需服务器)
 date: 2024-02-25
 tags: ChatGPT
 categories: ChatGPT
+image: https://vaq86.cn/chatgpt.ico
 meta:
   - name: description
     content: 使用GitHub搭配Vercel搭建个人私用ChatGPT,无需服务器

@@ -1,8 +1,9 @@
 ---
 title: OnlyFans订阅教程-2024年最新虚拟卡支付充值
-date: 2024-02-28
+date: 2024-03-01
 tags: OnlyFans
 categories: OnlyFans
+image: https://vaq86.cn/onlyfans.png
 meta:
   - name: description
     content: onlyfans在国内怎么支付？本文提供了详细的教程，教您如何在OnlyFans平台上订阅博主HongkongDoll，使用了Wildcard虚拟信用卡，包括注册购买虚拟卡的支付方法，以及如何在OnlyFans上绑定虚拟卡。

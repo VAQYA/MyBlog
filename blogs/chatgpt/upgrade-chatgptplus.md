@@ -1,13 +1,12 @@
 ---
 title: 升级为ChatGPT Plus账户使用GPT4.0
-date: 2024/03/01 06:06:06
+date: 2024/02/27
 tags: ChatGPT
 categories: ChatGPT
-description: 123456
-type: article
-url: https://vaq86.cn/blogs/chatgpt/upgrade-chatgptplus.html
-image: https://vaq86.cn/avatar.png
+image: https://vaq86.cn/chatgpt.ico
 meta:
+  - name: description
+    content: 国内怎么购买ChatGPT4?本文教程解说了如何使用Wildcard虚拟信用卡一键升级购买ChatGPT Plus,体验ChatGPT4,教程包括开通步骤、优惠信息等。
   - name: keywords
     content: 升级,支付,购买,开通,ChatGPT4,ChatGPT Plus,教程,指南
 
