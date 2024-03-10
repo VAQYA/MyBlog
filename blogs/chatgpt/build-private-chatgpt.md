@@ -31,20 +31,23 @@ meta:
 
 ### 1.先将ChatGPT-Next-Webfork到自己的仓库
 
-![](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/66cfbd7a-f8a3-41c8-a4dc-eac1a1a2f0a9.png)
+![ChatGPT-Next-Web](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/66cfbd7a-f8a3-41c8-a4dc-eac1a1a2f0a9.png)
 
 ### 2.注册、登录Vercel，添加GitHub账号并导入该项目，在环境变量中配置OPENAI_API_KEY
 
-![](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/b187ca02-9963-44fe-b80f-76ba92759a3a.png)
+![注册Vercel](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/b187ca02-9963-44fe-b80f-76ba92759a3a.png)
 
-![](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/9d62fb4b-6a54-452c-adc5-eb11f1040aa5.png)
+![配置openaiapikey](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/9d62fb4b-6a54-452c-adc5-eb11f1040aa5.png)
 ### 3.分别在Vercel和域名服务商配置域名解析
 
-![](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/26193f3a-1fcd-4024-8483-f45fb0dfea52.png)
+![配置domains](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/26193f3a-1fcd-4024-8483-f45fb0dfea52.png)
 
-![](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/788a27b8-fe45-4a12-a731-38e52c85253b.png)
+![解析域名](https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/788a27b8-fe45-4a12-a731-38e52c85253b.png)
 
 ### 4.结束
-以上为搭建个人私有ChatGPT的方式，如果需要升级使用GPT4，请看这篇文章[如何升级ChatGPT Plus（GPT4）](https://vaq86.cn/blogs/chatgpt/upgrade-chatgptplus.html)，如果觉得麻烦可免费试用我搭建的这个GPT（https://chat.vaq86.cn），有任何Chat GPT相关的疑问欢迎添加我的微信咨询  
+在手机网页也可以使用  
+<img src="https://files.mdnice.com/user/57040/a404d699-ce81-408b-acdf-0d16f4ea3476.jpg" alt="手机使用chatgpt" style="zoom: 35%;">  
+
+以上为搭建个人私有ChatGPT的方式，如果需要升级使用GPT4，请看这篇文章[如何升级ChatGPT Plus（GPT4）](https://vaq86.cn/blogs/chatgpt/upgrade-chatgptplus.html)，如果觉得麻烦可免费试用我搭建的这个GPT（[https://chat.vaq86.cn](https://chat.vaq86.cn)），有任何Chat GPT相关的疑问欢迎添加我的微信咨询  
 
 <img src="https://images.weserv.nl/?url=https://files.mdnice.com/user/57040/32e7ce8a-3d3c-4926-bcd1-7451cbf51aa5.png" style="zoom:33%;" />
