@@ -112,7 +112,24 @@ categories: 软件工具
 * Ctrl+Alt+L，格式化代码
 * Ctrl+J，代码提示
 * psvm 快速生成main方法
-* 
+* Ctrl+空格 代码提示  
+* Ctrl+Shift+Enter 补全代码（后面的分号）
+* Ctrl+W 选中当前单词（代码块）
+* Ctrl+W+W 选中当前字符串
+* Ctrl+W+W+W 选中当前字符串包括前后的双引号
+* Ctrl+Shift+/ 对整个代码块注释
+
+* Alt+Shift+↑ 将当前行上移
+* Ctrl+Shift+↑ 将整个方法上移
+* (Ctrl)+(减号) 收起整个方法
+* Ctrl+Alt+T 将代码块包围(try,catch等)
+
+* 可以在右键本地历史记录中还原刚才的操作
+
+* F2转到下一个错误出
+* （Ctrl+F12）或（Alt+7） 打开当前文件的方法列表
+
+
 
 
 
@@ -133,6 +150,8 @@ Debug过程中，修改某个类，点击run->Reload Changed Classes重新加载
 Debug过程中，想在当前立马结束，不让它继续执行后面的代码，`Debugger->Frames`,右击选择Force Return，然后F9就结束了     
 
 点击 mute breakpoints ，就会忽略剩下的断点，直接运行完
+
+断点时，选中表达式，按Ctrl+Alt+F8，快速展示值
 
 ## Git文件颜色   
 红色，未加入版本控制  
