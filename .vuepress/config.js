@@ -62,21 +62,27 @@ module.exports = {
       },
       {
         "text": "ChatGPT4升级方法",
-        "icon": "",
+        "icon": "reco-message",
         "link": "/blogs/chatgpt/upgrade-chatgptplus.html"
 
       },
       {
         "text": "Onlyfans订阅指南",
-        "icon": "icon-sort",
+        "icon": "reco-coding",
         "link": "/blogs/chatgpt/onlyfans.html"
 
       },
       {
-        "text": "时间轴",
-        "link": "/timeline/",
-        "icon": "reco-date"
+        "text": "WildCard",
+        "icon": "reco-coding",
+        "link": "https://bewildcard.com/i/HOME"
+
       },
+      // {
+      //   "text": "时间轴",
+      //   "link": "/timeline/",
+      //   "icon": "reco-date"
+      // },
       // {
       //   "text": "Docs",
       //   "icon": "reco-message",
@@ -85,11 +91,11 @@ module.exports = {
       //     "link": "/docs/theme-reco/"
       //   }]
       // },
-      {
-        "text": "联系我",
-        "link": "/blogs/contact/",
-        "icon": "reco-message"
-      }
+      // {
+      //   "text": "联系我",
+      //   "link": "/blogs/contact/",
+      //   "icon": "reco-message"
+      // }
     ],
     "sidebar": {
       // "/": [
@@ -367,22 +373,22 @@ module.exports = {
     [
       'vuepress-plugin-baidu-autopush'
     ],
-    require('./vuepress-plugin-jsonld')
-    // ["@vuepress-yard/vuepress-plugin-window",{
-    //   title: "**の公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
-    //   contentInfo: {
-    //     title: "欢迎进来的小耳朵 🎉🎉🎉",
-    //     needImg: true,
-    //     imgUrl: "https://reinness.com/avatar.png",
-    //     content: "喜欢博皮可以到博客园关注教程",
-    //     contentStyle: ""
-    //   },
-    //   bottomInfo: {
-    //     btnText: '关于',
-    //     linkTo: 'https://cnblogs.com/glassysky'
-    //   },
-    //   closeOnce: false
-    // }]
+    require('./vuepress-plugin-jsonld'),
+    ["@vuepress-yard/vuepress-plugin-window",{
+      title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
+      contentInfo: {
+        title: "任何ChatGPT相关疑问欢迎添加微信咨询",
+        needImg: true,
+        imgUrl: "https://vaq86.cn/img/wechat1.png",
+        content: "",
+        contentStyle: ""
+      },
+      bottomInfo: {
+        btnText: '关于',
+        linkTo: '/'
+      },
+      closeOnce: false
+    }]
 
   ],
   markdown: {
