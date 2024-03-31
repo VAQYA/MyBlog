@@ -207,6 +207,18 @@ module.exports = {
         "logo": "https://kaiho.cc/wp-content/uploads/2024/02/logo.png",
         "link": "https://kaiho.cc"
       },
+      {
+        "title": "ChatGPT相关知识学习指南",
+        "desc": "ChatGPT Plus升级教程,代充,最新ai信息分享。",
+        "logo": "ttps://txccai.github.io/gptDocs/favicon.ico",
+        "link": "https://txccai.github.io/gptDocs"
+      },
+      {
+        "title": "ChatSoraGPT",
+        "desc": "分享Sora和GPT等资讯教程",
+        "logo": "https://gcore.jsdelivr.net/gh/JiangEthan/picgo/img/LogoAI.png",
+        "link": "https://chatsoragpt.com"
+      },
 
     ],
     "logo": "/logo.png",
