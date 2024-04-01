@@ -86,8 +86,8 @@ select
     td.object_id,
     td.object_name,
     td.sample_deadline sampleDeadline,
-    REPLACE( WM_CONCAT( DISTINCT td.project_id) , ',' , '、') as projectIds,
-    REPLACE(WM_CONCAT(DISTINCT td.project_name) , ',' , '、')as projectNames    
+    REPLACE( to_char(WM_CONCAT( DISTINCT td.project_id)) , ',' , '、') as projectIds,
+    REPLACE( to_char(WM_CONCAT(DISTINCT td.project_name)) , ',' , '、')as projectNames    
 from task_detail td
 WHERE 1=1
 AND task_id = 1588363669413154818
