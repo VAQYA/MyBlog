@@ -1,7 +1,7 @@
 module.exports = {
   "base": "/",
   "title": "VAQ的博客",
-  "description": "平庸，就是失去追求卓越信念的那个瞬间！",
+  "description": "网站提供了OpenAI的ChatGPT账号升级ChatGPT Plus指南,国内购买ChatGPT4,虚拟信用卡的使用,OnlyFans订阅教程等",
   "dest": "dist", // 博客部署时输出的文件夹
   "host": "localhost",
   "port": "8888",
@@ -49,7 +49,7 @@ module.exports = {
       "meta",
       {
         "name": "keywords",
-        "content": "ChatGPT,GPT Plus,GPT4,国外虚拟卡"
+        "content": "ChatGPT,ChatGPT Plus,GPT4,国外虚拟卡,OnlyFans,订阅,支付,教程"
       }
     ]
   ],
@@ -62,21 +62,27 @@ module.exports = {
       },
       {
         "text": "ChatGPT4升级方法",
-        "icon": "",
+        "icon": "reco-message",
         "link": "/blogs/chatgpt/upgrade-chatgptplus.html"
 
       },
       {
         "text": "Onlyfans订阅指南",
-        "icon": "",
+        "icon": "reco-coding",
         "link": "/blogs/chatgpt/onlyfans.html"
 
       },
       {
-        "text": "时间轴",
-        "link": "/timeline/",
-        "icon": "reco-date"
+        "text": "WildCard",
+        "icon": "reco-coding",
+        "link": "https://bewildcard.com/i/HOME"
+
       },
+      // {
+      //   "text": "时间轴",
+      //   "link": "/timeline/",
+      //   "icon": "reco-date"
+      // },
       // {
       //   "text": "Docs",
       //   "icon": "reco-message",
@@ -85,11 +91,11 @@ module.exports = {
       //     "link": "/docs/theme-reco/"
       //   }]
       // },
-      {
-        "text": "联系我",
-        "link": "/blogs/contact/",
-        "icon": "reco-message"
-      }
+      // {
+      //   "text": "联系我",
+      //   "link": "/blogs/contact/",
+      //   "icon": "reco-message"
+      // }
     ],
     "sidebar": {
       // "/": [
@@ -207,7 +213,19 @@ module.exports = {
         "logo": "https://kaiho.cc/wp-content/uploads/2024/02/logo.png",
         "link": "https://kaiho.cc"
       },
-      
+      {
+        "title": "ChatGPT相关知识学习指南",
+        "desc": "ChatGPT Plus升级教程,代充,最新ai信息分享。",
+        "logo": "ttps://txccai.github.io/gptDocs/favicon.ico",
+        "link": "https://txccai.github.io/gptDocs"
+      },
+      {
+        "title": "ChatSoraGPT",
+        "desc": "分享Sora和GPT等资讯教程",
+        "logo": "https://gcore.jsdelivr.net/gh/JiangEthan/picgo/img/LogoAI.png",
+        "link": "https://chatsoragpt.com"
+      },
+
     ],
     "logo": "/logo.png",
     "search": true,
@@ -256,14 +274,16 @@ module.exports = {
       },
     ],
     // Facebook 的 Open Graph Protocol
-    ['seo', {
-      siteTitle: (_, $site) => 'VAQ的博客1',
+    ["seo", {
+      siteTitle: (_, $site) => $site.title,
       title: $page => $page.title,
       description: $page => $page.frontmatter.description,
-      author: (_, $site) => 'VAQ',
-      type: $page => 'article',
-      url: (_, $site, path) => 'https://vaq86.cn' + path,
-      image: ($page, $site) => "https://vaq86.cn/avatar.png",
+      author: (_, $site) => $site.themeConfig.author,
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => 'summary_large_image',
+      type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+      url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+      image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http') || '') + $page.frontmatter.image),
       publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }],
@@ -353,22 +373,22 @@ module.exports = {
     [
       'vuepress-plugin-baidu-autopush'
     ],
-    require('./vuepress-plugin-jsonld')
-    // ["@vuepress-yard/vuepress-plugin-window",{
-    //   title: "**の公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
-    //   contentInfo: {
-    //     title: "欢迎进来的小耳朵 🎉🎉🎉",
-    //     needImg: true,
-    //     imgUrl: "https://reinness.com/avatar.png",
-    //     content: "喜欢博皮可以到博客园关注教程",
-    //     contentStyle: ""
-    //   },
-    //   bottomInfo: {
-    //     btnText: '关于',
-    //     linkTo: 'https://cnblogs.com/glassysky'
-    //   },
-    //   closeOnce: false
-    // }]
+    require('./vuepress-plugin-jsonld'),
+    ["@vuepress-yard/vuepress-plugin-window",{
+      title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
+      contentInfo: {
+        title: "任何ChatGPT相关疑问欢迎添加微信咨询",
+        needImg: true,
+        imgUrl: "https://vaq86.cn/img/wechat1.png",
+        content: "",
+        contentStyle: ""
+      },
+      bottomInfo: {
+        btnText: '关于',
+        linkTo: '/'
+      },
+      closeOnce: false
+    }]
 
   ],
   markdown: {
@@ -380,11 +400,11 @@ module.exports = {
   // 使博客支持.webp格式的图片
   chainWebpack: (config) => {
     config.module
-        .rule('url-loader')
-        .test(/\.(webp)(\?.*)?$/)
-        .use('url-loader')
-        .loader('url-loader')
-        .end()
-}
+      .rule('url-loader')
+      .test(/\.(webp)(\?.*)?$/)
+      .use('url-loader')
+      .loader('url-loader')
+      .end()
+  }
 
 }
