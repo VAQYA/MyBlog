@@ -374,21 +374,21 @@ module.exports = {
       'vuepress-plugin-baidu-autopush'
     ],
     require('./vuepress-plugin-jsonld'),
-    ["@vuepress-yard/vuepress-plugin-window",{
-      title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
-      contentInfo: {
-        title: "任何ChatGPT相关疑问欢迎添加微信咨询",
-        needImg: true,
-        imgUrl: "https://vaq86.cn/img/wechat1.png",
-        content: "",
-        contentStyle: ""
-      },
-      bottomInfo: {
-        btnText: '关于',
-        linkTo: '/'
-      },
-      closeOnce: false
-    }]
+    // ["@vuepress-yard/vuepress-plugin-window",{
+    //   title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
+    //   contentInfo: {
+    //     title: "任何ChatGPT相关疑问欢迎添加微信咨询",
+    //     needImg: true,
+    //     imgUrl: "https://vaq86.cn/img/wechat1.png",
+    //     content: "",
+    //     contentStyle: ""
+    //   },
+    //   bottomInfo: {
+    //     btnText: '关于',
+    //     linkTo: '/'
+    //   },
+    //   closeOnce: false
+    // }]
 
   ],
   markdown: {
