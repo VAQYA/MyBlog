@@ -4,8 +4,8 @@
   "author": "VAQ",
   "description": "VAQ的博客",
   "scripts": {
-    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev .",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build ."
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
   },
   "devDependencies": {
     "vuepress": "1.8.2",
