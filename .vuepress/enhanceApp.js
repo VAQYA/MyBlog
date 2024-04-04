@@ -7,5 +7,7 @@ export default ({ router }) => {
       }
       
       next();
+      // return true;
+      // next(false);
     });
   };

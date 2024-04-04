@@ -361,12 +361,12 @@ module.exports = {
       //插件广场的流程图插件 先安装在配置 npm install vuepress-plugin-flowchart --save
       "flowchart"
     ],
-    ["vuepress-plugin-nuggets-style-copy", {
-      copyText: "复制代码", //vuepress复制粘贴提示插件P 先安装在配置 npm install vuepress-plugin-nuggets-style-copy --save
-      tip: {
-        content: "复制成功!"
-      }
-    }],
+    // ["vuepress-plugin-nuggets-style-copy", {
+      // copyText: "复制代码", //vuepress复制粘贴提示插件P 先安装在配置 npm install vuepress-plugin-nuggets-style-copy --save
+      // tip: {
+      //   content: "复制成功!"
+      // }
+    // }],
     [
       "vuepress-plugin-boxx"
     ],
@@ -374,21 +374,21 @@ module.exports = {
       'vuepress-plugin-baidu-autopush'
     ],
     require('./vuepress-plugin-jsonld'),
-    // ["@vuepress-yard/vuepress-plugin-window",{
-    //   title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
-    //   contentInfo: {
-    //     title: "任何ChatGPT相关疑问欢迎添加微信咨询",
-    //     needImg: true,
-    //     imgUrl: "https://vaq86.cn/img/wechat1.png",
-    //     content: "",
-    //     contentStyle: ""
-    //   },
-    //   bottomInfo: {
-    //     btnText: '关于',
-    //     linkTo: '/'
-    //   },
-    //   closeOnce: false
-    // }]
+    ["@vuepress-yard/vuepress-plugin-window",{
+      title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
+      contentInfo: {
+        title: "任何ChatGPT相关疑问欢迎添加微信咨询",
+        needImg: true,
+        imgUrl: "https://vaq86.cn/img/wechat1.png",
+        content: "",
+        contentStyle: ""
+      },
+      bottomInfo: {
+        btnText: '关于',
+        linkTo: '/'
+      },
+      closeOnce: false
+    }]
 
   ],
   markdown: {
