@@ -5,7 +5,7 @@
   "description": "VAQ的博客",
   "scripts": {
     "dev": "vuepress dev .",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build ."
+    "build": "vuepress build ."
   },
   "devDependencies": {
     "@starzkg/vuepress-plugin-baidu-analytics": "^1.1.2",
