@@ -384,7 +384,7 @@ module.exports = {
         contentStyle: ""
       },
       bottomInfo: {
-        btnText: '关于',
+        btnText: '',//关于
         linkTo: '/'
       },
       closeOnce: false
