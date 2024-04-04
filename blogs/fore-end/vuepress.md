@@ -44,9 +44,9 @@ build时，当前的Node.js版本可能不支持，建议用以下对应版本
 6. URL的单词之间用-分隔，最好用小写字母
 ```
 
+**部署在Vercel上，当用18.*版本的Nodejs部署时，必须在环境变量中配置NODE_OPTIONS：--openssl-legacy-provider**
 
-
-
+![配置环境变量](../image/Vue/vercel-environment-variables.jpg)
 
 
 
