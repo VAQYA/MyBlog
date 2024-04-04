@@ -21,10 +21,14 @@ npm run dev
 ## build
 npm run build
 
-build时，当前的Node.js版本可能不支持，建议用  
-Nodejs: 14.16.0  
-vuepress: 1.8.2  
-vuepress-theme-reco: 1.6.10  
+build时，当前的Node.js版本可能不支持，建议用以下对应版本  
+
+|                     | 版本号  | 版本号  |
+| ------------------- | ------- | ------- |
+| Nodejs              | 14.16.0 | 18.19.1 |
+| vue                 | 2.7.16  | 2.7.16  |
+| vuepress            | 1.8.2   | 1.8.2   |
+| vuepress-theme-reco | 1.6.10  | 1.6.17  |
 
 
 当用git管理有.git文件夹时，再npm run build，插件`"vuepress-plugin-sitemap": "^2.3.1"`会报错

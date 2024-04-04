@@ -379,7 +379,7 @@ module.exports = {
       contentInfo: {
         title: "任何ChatGPT相关疑问欢迎添加微信咨询",
         needImg: true,
-        imgUrl: "https://vaq86.cn/img/wechat1.png",
+        imgUrl: "https://vaq86.cn/img/wechat1.jpg",
         content: "",
         contentStyle: ""
       },
