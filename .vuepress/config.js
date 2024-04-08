@@ -235,8 +235,12 @@ module.exports = {
     "lastUpdated": "Last Updated",
     "author": "VAQ",
     "authorAvatar": "/avatar.png", // 首页右侧信息栏头像
-    "record": "豫ICP备2023021688号-1", // 备案号
-    "startYear": "2019",
+    "record": "豫ICP备2023021688号-1", // ICP 备案文案
+    "recordLink": "https://beian.miit.gov.cn",//ICP 备案指向链接
+    "cyberSecurityRecord":"豫公网安备41090002410905号",//公安部备案文案
+    "cyberSecurityLink":"https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41090002410905",//公安部备案指向链接
+    "startYear": "2023",
+    "lastUpdated": "Last Updated",
     /**
      *评论
      */
