@@ -62,7 +62,7 @@ module.exports = {
       },
       {
         "text": "ChatGPT4升级方法",
-        "icon": "reco-message",
+        "icon": "reco-tongzhi",
         "link": "/blogs/chatgpt/upgrade-chatgptplus.html"
 
       },
@@ -74,7 +74,7 @@ module.exports = {
       },
       {
         "text": "WildCard",
-        "icon": "reco-coding",
+        "icon": "reco-api",
         "link": "https://bewildcard.com/i/HOME"
 
       },
