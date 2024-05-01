@@ -870,7 +870,7 @@ vaq.funName();//调用方法
 
 ```
 ### 实例的方法
-* $mount，用来挂载扩展，配合Vue.extend使用
+* $mount，用来挂载扩展
 ```html
 <!DOCTYPE html>
 <html lang="en">

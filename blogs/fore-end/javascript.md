@@ -221,6 +221,30 @@ Object.values(obj);  //返回包括所有value的Array数组
 
 ```
 
+#### Object.defineProperty(target,prop,descriptor); 
+```
+let number = 18;
+let person = {
+	name: 'vaq',
+	sex: '男'
+}
+
+Object.defineProperty(person,'age',{
+	value: 18,
+	enumerable: true, // 控制属性是否可以枚举，Object.keys()，默认为false
+	writable: true, // 控制属性是否可以被修改，默认为false
+	configurable: true // 控制属性是否可以被删除，默认为false,
+	get(){
+		console.log('有人读取了age属性');
+		return number
+	},
+	set(value){
+		console.log('有人修改了age属性，且值是',value);
+		number = value
+	}
+})
+```
+
 ### for in  遍历对象
 
 ```js

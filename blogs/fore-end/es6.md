@@ -226,7 +226,7 @@ copyWithIn(); // 将数组指定位置的成员复制到其他位置（会覆盖
 find(); //找出第一个符合条件的数组成员，都不符合条件则返回undefined，参数是个函数  
 findIndex(); //找出第一个符合条件的数组成员的位置，都不符合条件则返回-1，参数是个函数  
 fill(); //填充数组  
-entires()、keys()、values() 用于数组的遍历  
+entires()、   ()、values() 用于数组的遍历  
 includes(); // 是否包含给定的值  
 
 ## 对象的扩展
@@ -497,8 +497,8 @@ Proxy 可以理解成在目标对象前架设 个“拦截”层 ，外界对该
 
 ## Reflect
 
-1. Object 对象的一些明显属于语言内部的方法（比如 Object defineProperty)放到 Reflect 对象上。
-2. 修改某些 Object 方法的返回结果，让其变得更合理。比如，Object,defineProperty(obj , name , desc )在无法定义属性时会抛出 个错误，而Reflect.defineProperty(obj , name , desc )则会返回 false
+1. Object 对象的一些明显属于语言内部的方法（比如 Object.defineProperty)放到 Reflect 对象上。
+2. 修改某些 Object 方法的返回结果，让其变得更合理。比如，Object.defineProperty(obj , name , desc )在无法定义属性时会抛出 个错误，而Reflect.defineProperty(obj , name , desc )则会返回 false
 
 ## Promise
 > 
