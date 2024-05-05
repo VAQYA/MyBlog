@@ -875,6 +875,18 @@ CONCAT_WS会自动过滤null数据
 a字段保存了逗号隔开的多个数值，只查询包含1的，包含11的不能查出
 `where concat(',',a,',') LIKE concat('%,','1',',%')`
 
+## FIND_IN_SET
+```
+TASK_DETAIL_IDS保存了多个以逗号隔开的TASK_DETAIL_ID
+SELECT *
+FROM TASK_DETAIL td
+WHERE FIND_IN_SET(TASK_DETAIL_ID, (
+    SELECT TASK_DETAIL_IDS
+    FROM sample
+    WHERE sample_id = 17807800441808158731
+    ORDER BY UPDATE_TIME DESC
+)) > 0;
+```
 
 # Others
 SELECT * FROM information_schema.innodb_trx

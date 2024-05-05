@@ -14,9 +14,11 @@ categories: Java
 ```
 	 DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	 LocalDateTime time = LocalDateTime.now();
+	 
 	 String localTime = df.format(time);
-	 LocalDateTime ldt = LocalDateTime.parse("2018-01-12 17:07:05",df);
 	 System.out.println("LocalDateTime转成String类型的时间："+localTime);
+	 
+	 LocalDateTime ldt = LocalDateTime.parse("2018-01-12 17:07:05",df);
 	 System.out.println("String类型的时间转成LocalDateTime："+ldt);
 ```
 
@@ -34,10 +36,14 @@ categories: Java
 
 ## Date 与 LocalDateTime 相互转换 
 ```
-LocalDateTime createTime = LocalDateTime.now();
+LocalDateTime time = LocalDateTime.now();
 ZoneId zoneId = ZoneId.systemDefault();
-ZonedDateTime zdt = createTime.atZone(zoneId);
+ZonedDateTime zdt = time.atZone(zoneId);
 Date date = Date.from(zdt.toInstant());
+
+Instant instantFromDate = date.toInstant();
+ZoneId systemZone = ZoneId.systemDefault();
+LocalDateTime time = instantFromDate.atZone(systemZone).toLocalDateTime();
 
 ```
 

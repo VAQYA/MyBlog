@@ -146,7 +146,7 @@ FROM detect_record
 ## 增
 ```
 alter table "FSJCZX"."table_test" add column("operate" VARCHAR(50));
-comment on column "FSJCZX"."table_test"."operate" is '操作：锁定、申请解锁';
+comment on column "FSJCZX"."table_test"."operate" is '操作';
 ```
 ## 删
 alter table "FSJCZX"."table_test" drop column "abc";
