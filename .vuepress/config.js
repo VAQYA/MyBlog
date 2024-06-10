@@ -142,12 +142,6 @@ module.exports = {
         "link": "https://www.r2coding.com"
       },
       {
-        "title": "ChatGPT中文导航站",
-        "desc": "ChatGPT 账号、订阅教程、代充",
-        "logo": "https://chatgptzhinan.com/wp-content/uploads/2023/12/favicon.ico",
-        "link": "http://chatgptzhinan.com"
-      },
-      {
         "title": "ChatGPT中文站",
         "desc": "提供ChatGPT账号、GPT4代充服务、Sora最新情报、海外APP使用教程",
         "logo": "https://groot-1253585616.cos.ap-shanghai.myqcloud.com/md/avatar.png",
@@ -224,6 +218,18 @@ module.exports = {
         "desc": "分享Sora和GPT等资讯教程",
         "logo": "https://gcore.jsdelivr.net/gh/JiangEthan/picgo/img/LogoAI.png",
         "link": "https://chatsoragpt.com"
+      },
+      {
+        "title": "ChatGPT365",
+        "desc": "ChatGPT最新详细资讯信息, ChatGPT Plus 会员升级 订阅 支付",
+        "logo": "https://gpt365blog.com/wp-content/uploads/2024/03/cropped-images-192x192.png",
+        "link": "https://gpt365blog.com"
+      },
+      {
+        "title": "番茄炒饭",
+        "desc": "提供订阅海外软件服务的详细教程，ChatGPT Plus订阅，最新AI资讯",
+        "logo": "https://fanqiechaofan.oss-cn-hangzhou.aliyuncs.com/img/202403021548895.png",
+        "link": "https://fanqiecf.com"
       },
 
     ],
@@ -391,7 +397,7 @@ module.exports = {
         btnText: '',//关于
         linkTo: '/'
       },
-      closeOnce: false
+      closeOnce: true
     }]
 
   ],
