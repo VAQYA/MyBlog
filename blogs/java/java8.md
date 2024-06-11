@@ -124,6 +124,12 @@ Optional.ofNullable(list).orElse(new ArrayList<>()).forEach
 	String fileNames = fileList.stream().map(File::getFileName).collect(Collectors.joining(","));
 }
 ```
+### 获取集合对象的名称属性转换为数组
+```
+if (CollectionUtils.isNotEmpty(fileList)) {
+	String[] fileNameList = fileList.stream().map(File::getFileName).toArray(String[]::new);
+}
+```
 
 ### 分组
 ``` java

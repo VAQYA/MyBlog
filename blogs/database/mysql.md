@@ -147,15 +147,15 @@ delete from user where id = "2"
 ### 删除表
 drop table [IF EXISTS] <表名1> [ , <表名2> , <表名3> …];
 
-### in和exist
+### in和exists
 in没有用到索引
 
 select *
 from A 
 where 1=1 
-and exist （select 1 from B where 。。。） exist检测行的存在，返回的是true或false 
+and exists （select 1 from B where 。。。） exists检测行的存在，返回的是true或false 
 
-exist用于B表比A表数据大的情况
+exists用于B表比A表数据大的情况
 
 ### 自动增长
 Auto_increment 每个表只允许一个自动增长列
@@ -888,6 +888,30 @@ WHERE FIND_IN_SET(TASK_DETAIL_ID, (
 )) > 0;
 ```
 
+
+## 操作更新表数据之前的备份
+```
+             
+  CREATE TABLE task_detail_20240510 AS 
+  SELECT td.* 
+  FROM TASK_DETAIL td 
+   LEFT JOIN (
+	SELECT t.PROJECT_TERM_NAME ,b.*
+	FROM MONITORING_PROJECT_TERM t
+	LEFT JOIN PROJECT_BASE_TERM p ON p.PROJECT_TERM_ID = t.PROJECT_TERM_ID
+	LEFT JOIN MONITORING_PROJECT_BASE b ON b.PROJECT_BASE_ID = p.PROJECT_BASE_ID
+   )a ON a.PROJECT_TERM_NAME = td.PROJECT_NAME 
+   WHERE 1=1
+   AND td.BENEFICIATION_SEPARATION_STATUS != 1
+   AND td.BENEFICIATION_SEPARATION_ID IS NULL 
+   AND a.is_beneficiation = 1
+
+```              
+               
+## where s.sample_id != td.sample_id
+两个字段有一个为null，就不会被查出来
+			   
+			   
 # Others
 SELECT * FROM information_schema.innodb_trx
 

@@ -145,8 +145,11 @@ FROM detect_record
 
 ## 增
 ```
-alter table "FSJCZX"."table_test" add column("operate" VARCHAR(50));
+alter table "FSJCZX"."table_test" add column("operate" VARCHAR(50)) ;
 comment on column "FSJCZX"."table_test"."operate" is '操作';
+或
+
+alter table SPOT add SCENE_ENTER TINYINT DEFAULT 0;
 ```
 ## 删
 alter table "FSJCZX"."table_test" drop column "abc";
@@ -169,6 +172,7 @@ UPDATE detect_record dr
 LEFT JOIN task_detail td ON td.TASK_DETAIL_ID = dr.TASK_DETAIL_ID 
 LEFT JOIN task t ON t.TASK_ID = td.TASK_ID 
 SET dr.task_type = t.TASK_TYPE 
+where dr.task_type is null 
 ```
 
 ## 保留3为小数

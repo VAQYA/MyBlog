@@ -185,6 +185,12 @@ public class RealDataServiceImpl extends ServiceImpl<RealDataMapper, RealData> i
 	LambdaQueryWrapper<SampleDetectPlanUser> wrapper = new LambdaQueryWrapper<>();
 	wrapper.eq(SampleDetectPlanUser::getPlanId, planId);
 	this.remove(wrapper);
+	
+	或
+	
+	sysUserRoleService.lambdaUpdate().in(SysUserRole::getRoleId, roleIdList).remove()
+	
+	
 ```
 
 ### sql片段

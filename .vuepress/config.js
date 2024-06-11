@@ -210,7 +210,7 @@ module.exports = {
       {
         "title": "ChatGPT相关知识学习指南",
         "desc": "ChatGPT Plus升级教程,代充,最新ai信息分享。",
-        "logo": "ttps://txccai.github.io/gptDocs/favicon.ico",
+        "logo": "https://txccai.github.io/gptDocs/favicon.ico",
         "link": "https://txccai.github.io/gptDocs"
       },
       {
@@ -389,7 +389,7 @@ module.exports = {
       contentInfo: {
         title: "任何ChatGPT相关疑问欢迎添加微信咨询",
         needImg: true,
-        imgUrl: "https://vaq86.cn/img/wechat1.jpg",
+        imgUrl: "/img/wechat1.jpg",
         content: "",
         contentStyle: ""
       },

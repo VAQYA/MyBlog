@@ -42,3 +42,10 @@ org.apache.ibatis.binding.BindingException: Invalid bound statement (not found).
 			<version>${mybatis-plus.version}</version>
 		</dependency>
 ```
+
+## 导出word时
+
+### OPCPackage.open(inputStream);报错
+org.apache.poi.openxml4j.exceptions.NotOfficeXmlFileException: No valid entries or contents found, this is not a valid OOXML (Office Open XML) file
+
+解决：打开word文件，左右调整下列的距离就好了
