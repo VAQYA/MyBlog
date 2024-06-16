@@ -280,7 +280,7 @@ module.exports = {
     [
       "sitemap",
       {
-        hostname: "https://www.vaq86.cn",
+        hostname: "https://vaq86.cn",
       },
     ],
     // Facebook 的 Open Graph Protocol
