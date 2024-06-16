@@ -12,7 +12,7 @@ meta:
 
 ---
 
-虽然按照上文的[升级ChatGPT Plus账号，使用GPT4教程](https://vaq86.github.io/blogs/chatgpt/upgrade-chatgptplus.html)中，可以正常使用官方正版的GPT4了，但是如果自己不是高强度使用GPT，并且不想开通虚拟卡，只是临时使用几次，完全没有必要高价开通一整个月的ChatGPT Plus账号，这里介绍一下可以低价随意使用CPT4的方式，而且价格只要官网的一半，重要的是在国内网络免翻墙就能使用，并且有独立的对话记录，无需担心封号问题。
+虽然按照上文的[升级ChatGPT Plus账号，使用GPT4教程](https://vaq86.cn/blogs/chatgpt/upgrade-chatgptplus.html)中，可以正常使用官方正版的GPT4了，但是如果自己不是高强度使用GPT，并且不想开通虚拟卡，只是临时使用几次，完全没有必要高价开通一整个月的ChatGPT Plus账号，这里介绍一下可以低价随意使用CPT4的方式，而且价格只要官网的一半，重要的是在国内网络免翻墙就能使用，并且有独立的对话记录，无需担心封号问题。
 
 ## ChatGPT 随心用
 
